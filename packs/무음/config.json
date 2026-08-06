@@ -1,0 +1,9 @@
+{
+  "id": "무음",
+  "name": "무음 (저소음 멤브레인 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 95], [145, 140], [335, 120], [505, 80]],
+  "category": "brand",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Writing In Membrane Keyboard.wav\" by SebastianBuitrago+ (membrane keyboard typing), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/SebastianBuitrago+/sounds/626326/)"
+}

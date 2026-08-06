@@ -1,0 +1,53 @@
+{
+  "name": "keyboard-sound-simulator",
+  "version": "1.0.0",
+  "description": "Mechvibes 스타일의 한국형 키보드 음향 시뮬레이터",
+  "main": "src/main.js",
+  "homepage": "./",
+
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "test": "node --test tests/*.test.js",
+    "lint": "eslint src --fix",
+    "build": "npm run clean && npm run build:win",
+    "build:win": "electron-builder --win --publish never",
+    "build:win:signed": "cross-env CERT_PASS=$SIGN_CERT_PASS electron-builder --win",
+    "build:all": "electron-builder --multi",
+    "pack": "electron-builder --dir",
+    "clean": "rm -rf dist/ out/",
+    "prerelease": "npm run test && npm run lint",
+    "release": "cross-env CERT_PASS=$SIGN_CERT_PASS electron-builder --win --publish always"
+  },
+
+  "keywords": [
+    "keyboard",
+    "sound",
+    "simulator",
+    "mechvibes",
+    "typing",
+    "korean"
+  ],
+  "author": "박지우",
+  "license": "MIT",
+  "type": "commonjs",
+
+  "devDependencies": {
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "electron-updater": "^6.1.7",
+    "@sentry/electron": "^7.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "cross-env": "^7.0.3",
+    "webpack-bundle-analyzer": "^4.10.1"
+  },
+
+  "dependencies": {
+    "electron-store": "^11.0.2",
+    "howler": "^2.2.4",
+    "uiohook-napi": "^1.5.5",
+    "axios": "^1.6.8"
+  }
+}

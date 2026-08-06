@@ -1,0 +1,9 @@
+{
+  "id": "노트북",
+  "name": "노트북 (칩클릿 키보드 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 55], [105, 58], [213, 85]],
+  "category": "brand",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Laptop Keyboard\" by bassboybg (slow typing on a laptop keyboard), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/bassboybg/sounds/346589/)"
+}

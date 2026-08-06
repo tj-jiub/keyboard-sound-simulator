@@ -1,0 +1,9 @@
+{
+  "id": "Ducky",
+  "name": "Ducky (Varmilo Miya 갈축 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 55], [105, 69], [224, 62], [336, 77]],
+  "category": "brand",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Mechanical Keyboard Typing\" by eclectic-kitty (Ducky X Varmilo Miya, brown switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/eclectic-kitty/sounds/757638/)"
+}

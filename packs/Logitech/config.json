@@ -1,0 +1,9 @@
+{
+  "id": "Logitech",
+  "name": "Logitech (K811 저소음 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 62], [112, 76], [238, 71]],
+  "category": "brand",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Typing on Logitech K811 Keyboard HQ.mp3\" by SoundsLikeFoley, Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/SoundsLikeFoley/sounds/396304/)"
+}

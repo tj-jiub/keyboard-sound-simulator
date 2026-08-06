@@ -1,0 +1,9 @@
+{
+  "id": "타자기",
+  "name": "타자기 (빈티지 클랙 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 95], [145, 85], [280, 130]],
+  "category": "brand",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Olimpia Typewriter clicks\" by ikomlino (vintage 1970s Olimpia typewriter, recorded with shotgun microphone thru Sound Devices 442 mixer), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/ikomlino/sounds/852744/)"
+}

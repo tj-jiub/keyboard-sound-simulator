@@ -1,0 +1,9 @@
+{
+  "id": "청축",
+  "name": "청축 (Cherry MX Blue 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 90], [140, 70], [260, 95], [405, 95]],
+  "category": "switch",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Clicky Keyboard Fast Typing\" by JonasTisell (Cherry MX Blue switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/JonasTisell/sounds/442260/)"
+}

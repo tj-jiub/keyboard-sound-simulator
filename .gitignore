@@ -1,0 +1,7 @@
+node_modules/
+dist/
+raw-audio/
+certs/
+.env
+.superpowers/
+run*.log
