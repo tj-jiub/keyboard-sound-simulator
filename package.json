@@ -35,7 +35,6 @@
   "devDependencies": {
     "electron": "^43.2.0",
     "electron-builder": "^26.15.3",
-    "electron-updater": "^6.1.7",
     "@sentry/electron": "^7.16.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -46,6 +45,7 @@
 
   "dependencies": {
     "electron-store": "^11.0.2",
+    "electron-updater": "^6.1.7",
     "howler": "^2.2.4",
     "uiohook-napi": "^1.5.5",
     "axios": "^1.6.8"
