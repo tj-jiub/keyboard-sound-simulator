@@ -79,14 +79,3 @@ test('setTone/getTone round-trip', () => {
   settings.setTone(0.2);
   assert.equal(settings.getTone(), 0.2);
 });
-
-test('getResponseSpeed defaults to 1', () => {
-  const settings = createSettingsStore(createMockStore());
-  assert.equal(settings.getResponseSpeed(), 1);
-});
-
-test('setResponseSpeed/getResponseSpeed round-trip', () => {
-  const settings = createSettingsStore(createMockStore());
-  settings.setResponseSpeed(0.4);
-  assert.equal(settings.getResponseSpeed(), 0.4);
-});

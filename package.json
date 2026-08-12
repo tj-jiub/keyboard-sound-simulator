@@ -4,7 +4,6 @@
   "description": "Mechvibes 스타일의 한국형 키보드 음향 시뮬레이터",
   "main": "src/main.js",
   "homepage": "./",
-
   "scripts": {
     "start": "electron .",
     "dev": "cross-env NODE_ENV=development electron .",
@@ -15,11 +14,11 @@
     "build:win:signed": "cross-env CERT_PASS=$SIGN_CERT_PASS electron-builder --win",
     "build:all": "electron-builder --multi",
     "pack": "electron-builder --dir",
+    "add-pack": "node scripts/addPack.js",
     "clean": "rm -rf dist/ out/",
     "prerelease": "npm run test && npm run lint",
     "release": "cross-env CERT_PASS=$SIGN_CERT_PASS electron-builder --win --publish always"
   },
-
   "keywords": [
     "keyboard",
     "sound",
@@ -31,23 +30,20 @@
   "author": "박지우",
   "license": "MIT",
   "type": "commonjs",
-
   "devDependencies": {
+    "@sentry/electron": "^7.16.0",
+    "cross-env": "^7.0.3",
     "electron": "^43.2.0",
     "electron-builder": "^26.15.3",
-    "@sentry/electron": "^7.16.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
-    "cross-env": "^7.0.3",
     "webpack-bundle-analyzer": "^4.10.1"
   },
-
   "dependencies": {
+    "axios": "^1.6.8",
     "electron-store": "^11.0.2",
     "electron-updater": "^6.1.7",
-    "howler": "^2.2.4",
-    "uiohook-napi": "^1.5.5",
-    "axios": "^1.6.8"
+    "uiohook-napi": "^1.5.5"
   }
 }

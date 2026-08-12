@@ -81,36 +81,6 @@ if (singleInstanceLockAcquired) {
   app.on('second-instance', () => openSettingsWindow());
 }
 
-let adInfoWindow = null;
-
-function openAdInfoWindow() {
-  if (adInfoWindow && !adInfoWindow.isDestroyed()) {
-    adInfoWindow.show();
-    adInfoWindow.focus();
-    return;
-  }
-  adInfoWindow = new BrowserWindow({
-    width: 460,
-    height: 680,
-    minWidth: 380,
-    minHeight: 480,
-    resizable: true,
-    title: '광고 진행 안내',
-    icon: APP_ICON_PATH,
-    parent: settingsWindow && !settingsWindow.isDestroyed() ? settingsWindow : undefined,
-    webPreferences: { nodeIntegration: true, contextIsolation: false },
-  });
-  adInfoWindow.setMenuBarVisibility(false);
-  adInfoWindow.loadFile(path.join(__dirname, 'renderer', 'ad-info.html'));
-  adInfoWindow.on('closed', () => {
-    adInfoWindow = null;
-  });
-}
-
-ipcMain.handle('open-ad-info', () => {
-  openAdInfoWindow();
-});
-
 function loadPack(packId) {
   try {
     const pack = loadPackConfig(path.join(PACKS_DIR, packId));
@@ -118,6 +88,8 @@ function loadPack(packId) {
     playerWindow.webContents.send('load-pack', {
       soundFilePath: toFileUrl(pack.soundFilePath),
       variants: pack.variants,
+      releaseVariants: pack.releaseVariants,
+      thocky: pack.thocky,
     });
     return true;
   } catch (err) {
@@ -166,14 +138,13 @@ ipcMain.handle('set-tone', (event, tone) => {
   return tone;
 });
 
-ipcMain.handle('get-response-speed', () => settings.getResponseSpeed());
+// Windows 시작 시 자동 실행 — Electron의 네이티브 로그인 항목 API를 그대로 사용.
+// (Mechvibes의 startup_handler.js와 동일한 setLoginItemSettings 기반 접근)
+ipcMain.handle('get-startup-enabled', () => app.getLoginItemSettings().openAtLogin);
 
-ipcMain.handle('set-response-speed', (event, speed) => {
-  settings.setResponseSpeed(speed);
-  if (playerWindow && !playerWindow.isDestroyed()) {
-    playerWindow.webContents.send('set-response-speed', speed);
-  }
-  return speed;
+ipcMain.handle('set-startup-enabled', (event, enabled) => {
+  app.setLoginItemSettings({ openAtLogin: enabled });
+  return app.getLoginItemSettings().openAtLogin;
 });
 
 function buildTrayMenu() {
@@ -229,14 +200,24 @@ app.whenReady().then(() => {
       });
       playerWindow.webContents.send('set-volume', settings.getVolume());
       playerWindow.webContents.send('set-tone', settings.getTone());
-      playerWindow.webContents.send('set-response-speed', settings.getResponseSpeed());
     });
   }
 
-  startKeyHook((event) => {
-    if (settings.isMuted()) return;
-    if (!playerWindow || playerWindow.isDestroyed()) return;
-    playerWindow.webContents.send('trigger-key', { keycode: event.keycode });
+  startKeyHook(
+    (event) => {
+      if (settings.isMuted()) return;
+      if (!playerWindow || playerWindow.isDestroyed()) return;
+      playerWindow.webContents.send('trigger-key', { keycode: event.keycode, sentAt: Date.now() });
+    },
+    () => {
+      if (settings.isMuted()) return;
+      if (!playerWindow || playerWindow.isDestroyed()) return;
+      playerWindow.webContents.send('trigger-key-release');
+    },
+  );
+
+  ipcMain.on('key-latency-debug', (event, latencyMs) => {
+    console.log(`[latency] key -> playback: ${latencyMs}ms`);
   });
 
   if (app.isPackaged) {

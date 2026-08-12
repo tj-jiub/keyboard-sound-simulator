@@ -4,6 +4,7 @@
   "sound": "sound.wav",
   "variants": [[0, 100], [150, 100], [300, 100], [450, 100]],
   "category": "brand",
+  "thocky": true,
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"Mechanical Keyboard Typing (Treble Version)\" by stu556 (Leopold FC660M, Cherry MX Brown switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/stu556/sounds/450282/)"
 }

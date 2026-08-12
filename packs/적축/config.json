@@ -4,6 +4,7 @@
   "sound": "sound.wav",
   "variants": [[0, 85], [135, 85], [270, 85], [405, 85]],
   "category": "switch",
+  "thocky": true,
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"keyboard2.wav\" by samchitto (linear switches, Cherry MX Red 느낌), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/samchitto/sounds/696040/)"
 }

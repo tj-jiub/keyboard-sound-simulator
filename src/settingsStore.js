@@ -29,12 +29,6 @@ function createSettingsStore(store) {
     setTone(tone) {
       store.set('tone', tone);
     },
-    getResponseSpeed() {
-      return store.get('responseSpeed', 1);
-    },
-    setResponseSpeed(speed) {
-      store.set('responseSpeed', speed);
-    },
   };
   return api;
 }

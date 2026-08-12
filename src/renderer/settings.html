@@ -48,76 +48,6 @@
       border-bottom: 1px solid var(--divider);
       -webkit-app-region: drag;
     }
-    .mascot-btn {
-      position: relative;
-      flex: none;
-      display: flex;
-      align-items: center;
-      border: 0;
-      background: transparent;
-      padding: 0;
-      cursor: pointer;
-    }
-    .titlebar .mascot {
-      width: 26px;
-      height: 18px;
-      overflow: visible;
-      color: var(--mascot-color, var(--slate));
-      transition: color .25s ease;
-    }
-    .speech-bubble {
-      position: absolute;
-      left: 30px;
-      top: 20px;
-      z-index: 5;
-      background: #fff;
-      color: #1d1d1f;
-      font-size: 9.5px;
-      font-weight: 700;
-      line-height: 1;
-      padding: 4px 7px;
-      border-radius: 8px;
-      white-space: nowrap;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
-      animation: bubble-pulse 1.8s ease-in-out infinite;
-      pointer-events: none;
-    }
-    .speech-bubble::after {
-      content: '';
-      position: absolute;
-      left: -4px;
-      top: 4px;
-      border-width: 4px 5px 4px 0;
-      border-style: solid;
-      border-color: transparent #fff transparent transparent;
-    }
-    @keyframes bubble-pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.06); opacity: .85; }
-    }
-    .mascot .cat-body {
-      transform-box: fill-box;
-      transform-origin: 50% 100%;
-      animation: cat-bob .6s ease-in-out infinite;
-    }
-    .mascot .cat-leg {
-      transform-box: fill-box;
-      transform-origin: 50% 0%;
-    }
-    .mascot .cat-leg-back { animation: cat-swing-a .6s ease-in-out infinite; }
-    .mascot .cat-leg-front { animation: cat-swing-b .6s ease-in-out infinite; }
-    @keyframes cat-bob {
-      0%, 50%, 100% { transform: translateY(0); }
-      25%, 75% { transform: translateY(-1px); }
-    }
-    @keyframes cat-swing-a {
-      0%, 100% { transform: rotate(-18deg); }
-      50% { transform: rotate(18deg); }
-    }
-    @keyframes cat-swing-b {
-      0%, 100% { transform: rotate(18deg); }
-      50% { transform: rotate(-18deg); }
-    }
     .titlebar .title { flex: 1; text-align: center; font-size: 13px; font-weight: 600; margin-right: 27px; }
 
     .panel { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
@@ -326,116 +256,11 @@
     }
     .font-pill.selected { background: var(--orange); color: #fff; border-color: var(--orange); }
 
-    /* 광고 배너 */
-    .ad-banner {
-      width: 100%;
-      border: 0;
-      font: inherit;
-      color: inherit;
-      text-align: left;
-      cursor: pointer;
-      padding: 11px 14px;
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      transition: filter .15s ease;
-    }
-    .ad-banner:hover { filter: brightness(1.06); }
-    .ad-disclosure {
-      text-align: center;
-      font-size: 10px;
-      color: var(--text-dim);
-      opacity: .75;
-      margin-top: -6px;
-      padding: 0 10px;
-    }
-    .ad-badge {
-      flex: none;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .03em;
-      color: var(--text-dim);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1px 5px;
-    }
-    .ad-copy { flex: 1; font-size: 12.5px; }
-    .ad-copy .ad-sub { display: block; font-size: 11px; color: var(--text-dim); margin-top: 1px; }
-    .ad-cta { flex: none; font-size: 12px; font-weight: 600; color: var(--slate); }
-
-    .credit-btn {
-      all: unset;
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-      text-align: center;
-      font-size: 10.5px;
-      color: var(--text-dim);
-      margin-top: 2px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .credit-btn:hover { color: var(--slate); }
     .error { color: #ff6b6b; font-size: 12px; text-align: center; padding: 0 14px; }
-
-    /* 카카오페이 QR 모달 */
-    .qr-modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, .55);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 200;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .2s ease;
-    }
-    .qr-modal-overlay.open { opacity: 1; pointer-events: auto; }
-    .qr-modal {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      width: 220px;
-      text-align: center;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
-    }
-    .qr-modal img { width: 100%; border-radius: 8px; display: block; }
-    .qr-modal .qr-caption { margin-top: 10px; font-size: 12.5px; color: #444; line-height: 1.4; }
-    .qr-modal .qr-close {
-      margin-top: 12px;
-      border: 0;
-      background: var(--slate);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 7px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
   <div class="titlebar">
-    <button id="mascot-btn" class="mascot-btn" title="응원하기">
-      <svg class="mascot" viewBox="0 0 32 22" aria-hidden="true">
-        <path class="cat-leg cat-leg-back" d="M9 15 L9 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-        <path class="cat-leg cat-leg-front" d="M20 15 L20 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-        <g class="cat-body" fill="currentColor">
-          <path d="M4 10 Q -2 5 1 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
-          <ellipse cx="14" cy="11" rx="9" ry="6" />
-          <circle cx="24" cy="6.5" r="5" />
-          <polygon points="20.5,3 22,-1 24,3" />
-          <polygon points="26,3 28.5,-1 29.5,3.5" />
-        </g>
-        <g class="cat-face">
-          <circle cx="22.4" cy="5.8" r="0.7" fill="rgba(0,0,0,.65)" />
-          <circle cx="25.6" cy="5.8" r="0.7" fill="rgba(0,0,0,.65)" />
-          <path d="M23.3 7.6 Q24 8.3 24.7 7.6" stroke="rgba(0,0,0,.5)" stroke-width="0.5" fill="none" stroke-linecap="round" />
-        </g>
-      </svg>
-      <span class="speech-bubble">Click me!</span>
-    </button>
     <div class="title">타건 소리</div>
   </div>
 
@@ -474,16 +299,21 @@
         <div class="slabel"><span>톤</span><span class="val" id="tone-val">50</span></div>
         <input id="tone-slider" type="range" min="0" max="1" step="0.01" value="0.5" />
       </div>
-      <div class="slider-row">
-        <div class="slabel"><span>반응 속도</span><span class="val" id="speed-val">100</span></div>
-        <input id="speed-slider" type="range" min="0" max="1" step="0.01" value="1" />
-      </div>
     </div>
 
     <div class="card darkmode-card">
       <span class="label">다크 모드</span>
       <label class="toggle">
         <input id="dark-toggle" type="checkbox" />
+        <span class="track"></span>
+        <span class="thumb"></span>
+      </label>
+    </div>
+
+    <div class="card darkmode-card">
+      <span class="label">Windows 시작 시 자동 실행</span>
+      <label class="toggle">
+        <input id="startup-toggle" type="checkbox" />
         <span class="track"></span>
         <span class="thumb"></span>
       </label>
@@ -513,22 +343,6 @@
       </div>
     </div>
 
-    <button id="ad-banner-btn" class="card ad-banner">
-      <span class="ad-badge">AD</span>
-      <span class="ad-copy">완소 키보드 — 타건감 끝판왕<span class="ad-sub">지금 이 소리, 이 키보드에서 납니다</span></span>
-      <span class="ad-cta">보러가기 →</span>
-    </button>
-    <div class="ad-disclosure">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
-
-    <button id="ad-inquiry-btn" class="credit-btn">광고주 모집 중입니다</button>
-  </div>
-
-  <div id="qr-modal-overlay" class="qr-modal-overlay">
-    <div class="qr-modal">
-      <img src="assets/kakaopay-qr.jpg" alt="카카오페이 송금 QR" />
-      <div class="qr-caption">2000원으로 커피값을 선물해주세요! ☕<br />폰 카메라로 QR을 스캔하면 금액이 자동으로 입력돼요 🐱</div>
-      <button id="qr-modal-close" class="qr-close">닫기</button>
-    </div>
   </div>
 
   <script src="settings.js"></script>

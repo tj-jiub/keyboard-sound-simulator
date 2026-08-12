@@ -1,0 +1,9 @@
+{
+  "id": "갈축 (리마스터)",
+  "name": "갈축 리마스터 (Cherry MX Brown 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 88], [138, 83], [271, 85], [406, 109]],
+  "category": "switch",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Cherry MX Brown Mechanical Keyboard Sound\" by NickTHH (Cherry MX Brown switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/NickTHH/sounds/432432/)"
+}

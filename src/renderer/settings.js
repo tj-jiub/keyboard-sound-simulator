@@ -1,10 +1,5 @@
-const { ipcRenderer, shell } = require('electron');
+const { ipcRenderer } = require('electron');
 
-const mascotBtnEl = document.getElementById('mascot-btn');
-const qrModalOverlayEl = document.getElementById('qr-modal-overlay');
-const qrModalCloseEl = document.getElementById('qr-modal-close');
-const adBannerBtnEl = document.getElementById('ad-banner-btn');
-const adInquiryBtnEl = document.getElementById('ad-inquiry-btn');
 const nowPlayingTitleEl = document.getElementById('now-playing-title');
 const nowPlayingCaptionEl = document.getElementById('now-playing-caption');
 const dropdownTriggerEl = document.getElementById('dropdown-trigger');
@@ -18,9 +13,8 @@ const volumeSliderEl = document.getElementById('volume-slider');
 const volumeValEl = document.getElementById('volume-val');
 const toneSliderEl = document.getElementById('tone-slider');
 const toneValEl = document.getElementById('tone-val');
-const speedSliderEl = document.getElementById('speed-slider');
-const speedValEl = document.getElementById('speed-val');
 const darkToggleEl = document.getElementById('dark-toggle');
+const startupToggleEl = document.getElementById('startup-toggle');
 const prefsHeaderEl = document.getElementById('prefs-header');
 const prefsContentEl = document.getElementById('prefs-content');
 const bgSwatchesEl = document.getElementById('bg-swatches');
@@ -250,15 +244,9 @@ function complementaryColor(hex) {
   return hslToHex((h + 180) % 360, s, l);
 }
 
-function updateMascotColor() {
-  const effectiveBg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
-  document.documentElement.style.setProperty('--mascot-color', complementaryColor(effectiveBg));
-}
-
 function applyBg(color) {
   document.documentElement.style.setProperty('--bg', color);
   markSelectedChild(bgSwatchesEl, color);
-  updateMascotColor();
 }
 
 function applyText(color) {
@@ -327,7 +315,6 @@ function refreshBgSwatches(theme) {
   } else {
     document.documentElement.style.removeProperty('--bg');
     markSelectedChild(bgSwatchesEl, options[0]);
-    updateMascotColor();
   }
 }
 
@@ -363,28 +350,12 @@ darkToggleEl.addEventListener('change', () => {
   localStorage.setItem(THEME_STORAGE_KEY, next);
 });
 
-mascotBtnEl.addEventListener('click', () => {
-  qrModalOverlayEl.classList.add('open');
+startupToggleEl.addEventListener('change', () => {
+  ipcRenderer.invoke('set-startup-enabled', startupToggleEl.checked);
 });
 
-qrModalCloseEl.addEventListener('click', () => {
-  qrModalOverlayEl.classList.remove('open');
-});
-
-qrModalOverlayEl.addEventListener('click', (event) => {
-  if (event.target === qrModalOverlayEl) {
-    qrModalOverlayEl.classList.remove('open');
-  }
-});
-
-const AD_LINK_URL = 'https://link.coupang.com/a/fTAaOcI5iC';
-
-adBannerBtnEl.addEventListener('click', () => {
-  shell.openExternal(AD_LINK_URL);
-});
-
-adInquiryBtnEl.addEventListener('click', () => {
-  ipcRenderer.invoke('open-ad-info');
+ipcRenderer.invoke('get-startup-enabled').then((enabled) => {
+  startupToggleEl.checked = enabled;
 });
 
 function formatPercent(value) {
@@ -399,11 +370,6 @@ volumeSliderEl.addEventListener('input', () => {
 toneSliderEl.addEventListener('input', () => {
   toneValEl.textContent = formatPercent(toneSliderEl.value);
   ipcRenderer.invoke('set-tone', Number(toneSliderEl.value));
-});
-
-speedSliderEl.addEventListener('input', () => {
-  speedValEl.textContent = formatPercent(speedSliderEl.value);
-  ipcRenderer.invoke('set-response-speed', Number(speedSliderEl.value));
 });
 
 const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
@@ -426,8 +392,4 @@ ipcRenderer.invoke('get-volume').then((volume) => {
 ipcRenderer.invoke('get-tone').then((tone) => {
   toneSliderEl.value = tone;
   toneValEl.textContent = formatPercent(tone);
-});
-ipcRenderer.invoke('get-response-speed').then((speed) => {
-  speedSliderEl.value = speed;
-  speedValEl.textContent = formatPercent(speed);
 });

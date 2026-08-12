@@ -19,11 +19,19 @@ function loadPackConfig(packDir) {
     throw new Error(`Pack config at ${configPath} must have a non-empty "variants" array`);
   }
 
+  // Optional — packs without a dedicated release recording simply omit this,
+  // and no keyup sound plays for them.
+  const releaseVariants = Array.isArray(raw.releaseVariants) && raw.releaseVariants.length > 0
+    ? raw.releaseVariants
+    : null;
+
   return {
     id: raw.id,
     name: raw.name,
     soundFilePath: path.join(packDir, raw.sound),
     variants: raw.variants,
+    releaseVariants,
+    thocky: raw.thocky === true,
   };
 }
 

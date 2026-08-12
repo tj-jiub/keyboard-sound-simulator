@@ -1,6 +1,9 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { sliderToDb, sliderToLowpassFreq, sliderToDelayMs } = require('../src/audioTone');
+const {
+  sliderToDb, sliderToLowpassFreq, sliderToToneCompensationDb, dbToGain,
+  sliderToVolumeGain,
+} = require('../src/audioTone');
 
 test('sliderToDb maps 0.5 to 0dB regardless of maxDb', () => {
   assert.equal(sliderToDb(0.5, 12), 0);
@@ -45,12 +48,42 @@ test('sliderToLowpassFreq is monotonically increasing', () => {
   assert.ok(mid < high);
 });
 
-test('sliderToDelayMs maps 1 to 0ms and 0 to maxDelayMs', () => {
-  assert.equal(sliderToDelayMs(1, 200), 0);
-  assert.equal(sliderToDelayMs(0, 200), 200);
+test('sliderToToneCompensationDb is 0 at tone=1 and maxDb at tone=0', () => {
+  assert.equal(sliderToToneCompensationDb(1, 10), 0);
+  assert.equal(sliderToToneCompensationDb(0, 10), 10);
 });
 
-test('sliderToDelayMs clamps out-of-range values', () => {
-  assert.equal(sliderToDelayMs(-1, 200), 200);
-  assert.equal(sliderToDelayMs(2, 200), 0);
+test('sliderToToneCompensationDb clamps out-of-range values', () => {
+  assert.equal(sliderToToneCompensationDb(-1, 10), 10);
+  assert.equal(sliderToToneCompensationDb(2, 10), 0);
+});
+
+test('dbToGain maps 0dB to unity gain', () => {
+  assert.equal(dbToGain(0), 1);
+});
+
+test('dbToGain doubles amplitude roughly every +6dB', () => {
+  assert.ok(Math.abs(dbToGain(6) - 2) < 0.01);
+});
+
+test('sliderToVolumeGain preserves silence at 0 and unity at 1', () => {
+  assert.equal(sliderToVolumeGain(0), 0);
+  assert.equal(sliderToVolumeGain(1), 1);
+});
+
+test('sliderToVolumeGain boosts the midpoint above raw linear', () => {
+  assert.equal(sliderToVolumeGain(0.5), 0.75);
+});
+
+test('sliderToVolumeGain clamps out-of-range values', () => {
+  assert.equal(sliderToVolumeGain(-1), 0);
+  assert.equal(sliderToVolumeGain(2), 1);
+});
+
+test('sliderToVolumeGain is monotonically increasing', () => {
+  const low = sliderToVolumeGain(0.25);
+  const mid = sliderToVolumeGain(0.5);
+  const high = sliderToVolumeGain(0.75);
+  assert.ok(low < mid);
+  assert.ok(mid < high);
 });

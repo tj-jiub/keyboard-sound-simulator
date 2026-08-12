@@ -16,10 +16,33 @@ function sliderToLowpassFreq(value, minFreq, maxFreq) {
   return minFreq * (maxFreq / minFreq) ** clamped;
 }
 
-// Response speed knob: 1 = instant, 0 = maximally delayed.
-function sliderToDelayMs(value, maxDelayMs) {
+// A lowpass tone knob removes energy as it darkens, which reads as the sound
+// getting quieter, not just duller. This gives the makeup gain (in dB) needed
+// to offset that: 0dB at tone=1 (nothing removed), maxDb at tone=0 (darkest).
+function sliderToToneCompensationDb(value, maxDb) {
   const clamped = clamp01(value);
-  return (1 - clamped) * maxDelayMs;
+  return (1 - clamped) * maxDb;
 }
 
-module.exports = { sliderToDb, sliderToLowpassFreq, sliderToDelayMs };
+function dbToGain(db) {
+  return 10 ** (db / 20);
+}
+
+// Human hearing perceives loudness roughly logarithmically, but the volume
+// slider feeds Howler.volume() a raw linear amplitude (0-1). Linear 0.5 is
+// only about -6dB, which reads as much quieter than "half as loud" — this
+// ease-out curve pushes the middle of the slider louder (0.5 -> 0.75 gain)
+// so mid-range positions are actually usable, while 0 stays silent and 1
+// stays unchanged.
+function sliderToVolumeGain(value) {
+  const clamped = clamp01(value);
+  return 1 - (1 - clamped) ** 2;
+}
+
+module.exports = {
+  sliderToDb,
+  sliderToLowpassFreq,
+  sliderToToneCompensationDb,
+  dbToGain,
+  sliderToVolumeGain,
+};

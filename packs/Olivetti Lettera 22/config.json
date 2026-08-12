@@ -1,0 +1,9 @@
+{
+  "id": "Olivetti Lettera 22",
+  "name": "Olivetti Lettera 22 (헤밍웨이가 쓰던 그 타자기)",
+  "sound": "sound.wav",
+  "variants": [[0, 105], [155, 150], [355, 153], [558, 158]],
+  "category": "brand",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"typewriter-olivetti-lettra-22.wav\" by keithpeter, Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/keithpeter/sounds/123344/)"
+}

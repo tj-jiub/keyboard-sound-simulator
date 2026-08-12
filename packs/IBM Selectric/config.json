@@ -1,0 +1,9 @@
+{
+  "id": "IBM Selectric",
+  "name": "IBM Selectric (사무용 타자기 느낌)",
+  "sound": "sound.wav",
+  "variants": [[0, 131], [181, 128], [359, 145], [554, 167]],
+  "category": "brand",
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Typewriter, IBM Selectric II\" by secretmojo, Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/secretmojo/sounds/224012/)"
+}

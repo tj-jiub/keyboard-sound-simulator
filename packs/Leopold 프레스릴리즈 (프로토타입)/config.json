@@ -1,0 +1,11 @@
+{
+  "id": "Leopold 프레스릴리즈 (프로토타입)",
+  "name": "Leopold 프레스+릴리즈 (프로토타입)",
+  "sound": "sound.wav",
+  "variants": [[0, 56]],
+  "releaseVariants": [[106, 37]],
+  "category": "brand",
+  "thocky": true,
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Keyboard - Press down\" and \"Keyboard - Key release\" by Foxfire- (Cherry MX Brown switches, Leopold FC660M과 동일 스위치 계열), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/Foxfire-/sounds/570754/, https://freesound.org/people/Foxfire-/sounds/570755/)"
+}

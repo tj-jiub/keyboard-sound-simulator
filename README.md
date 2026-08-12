@@ -60,7 +60,24 @@ npm run lint && npm run test
 - `license`, `attribution`: 오디오 출처 표기(CC0 등 사용 시 참고용, `NOTICE.md`에도
   정리해두는 것을 권장).
 
-새 팩을 추가하려면:
+### 새 팩 추가하기 (자동 — 오디오만 있으면 됨)
+
+`variants`의 시작/길이(ms)를 직접 계산해서 손으로 쓸 필요 없습니다. 개별 타건음 클립만
+준비하면 `scripts/addPack.js`가 이어붙이기 + 구간 계산까지 다 해줍니다 (ffmpeg 필요).
+
+1. `raw-audio/<팩이름>/clips/` 폴더에 개별 타건음 클립(`.wav`)들을 넣는다 (파일명 순서대로
+   이어붙여짐 — `c1.wav`, `c2.wav`, ... 식으로 이름 붙이는 걸 권장).
+2. 실행: `npm run add-pack <팩이름>`
+   — `packs/<팩이름>/sound.wav`와 `config.json`(variants 포함)이 자동 생성된다.
+3. 앱을 재시작하면 설정 창의 해당 카테고리 탭에 새 팩이 자동으로 나타난다.
+
+`name`/`category`/`license`/`attribution`처럼 오디오만으로는 알 수 없는 값은
+`config.json`에 직접 채워 넣으면 되고, 이후 같은 팩에 `npm run add-pack`을 다시 돌려도
+그 값들은 덮어쓰지 않고 유지됩니다(variants/sound만 재계산).
+
+### 새 팩 추가하기 (수동)
+
+스크립트 없이 직접 `config.json`을 작성해도 됩니다:
 
 1. `packs/<팩이름>/` 폴더를 새로 만들고 오디오 파일을 넣는다.
 2. 위 형식대로 `config.json`을 작성한다. `variants`는 반드시 비어있지 않은 배열이어야
