@@ -89,7 +89,7 @@ function loadPack(packId) {
       soundFilePath: toFileUrl(pack.soundFilePath),
       variants: pack.variants,
       releaseVariants: pack.releaseVariants,
-      thocky: pack.thocky,
+      profile: pack.profile,
     });
     return true;
   } catch (err) {
@@ -145,6 +145,20 @@ ipcMain.handle('get-startup-enabled', () => app.getLoginItemSettings().openAtLog
 ipcMain.handle('set-startup-enabled', (event, enabled) => {
   app.setLoginItemSettings({ openAtLogin: enabled });
   return app.getLoginItemSettings().openAtLogin;
+});
+
+const PLAYBACK_MODES = ['press-only', 'press-release'];
+
+ipcMain.handle('get-playback-mode', () => settings.getPlaybackMode());
+
+ipcMain.handle('set-playback-mode', (event, mode) => {
+  // Mirrors select-pack's validation idiom: reject and leave the stored
+  // value untouched on invalid input, rather than coercing and persisting.
+  if (!PLAYBACK_MODES.includes(mode)) {
+    return settings.getPlaybackMode();
+  }
+  settings.setPlaybackMode(mode);
+  return mode;
 });
 
 function buildTrayMenu() {
@@ -211,6 +225,13 @@ app.whenReady().then(() => {
     },
     () => {
       if (settings.isMuted()) return;
+      // Note: this must stay inside the callback passed to startKeyHook, not
+      // moved into keyHook.js's own uIOhook 'keyup' handler — that handler
+      // unconditionally releases the repeat-filter's held-keycode tracking
+      // before calling this callback, and that cleanup must always run
+      // regardless of playback mode or the next real press of the key could
+      // be silently swallowed.
+      if (settings.getPlaybackMode() !== 'press-release') return;
       if (!playerWindow || playerWindow.isDestroyed()) return;
       playerWindow.webContents.send('trigger-key-release');
     },

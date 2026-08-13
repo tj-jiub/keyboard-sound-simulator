@@ -31,30 +31,41 @@ const TONE_MAX_FREQ = 20000;
 const TONE_COMPENSATION_MAX_DB = 24;
 
 let pendingTone = 0.5;
-let currentThocky = false;
 
-// Base "도각도각" (thocky/marbly) tonal shaping — only wanted for switches
-// that are actually thocky/muffled in real life (적축, Leopold). Forcing it
-// onto a clicky switch like 청축 fights the recording's own bright character
-// and needs more makeup gain to compensate, which is what pushed those packs
-// into clipping. Packs opt in via `thocky: true` in their config.json; every
-// other pack's hits skip straight to `toneFilter` below, untouched.
+// Neutral fallback for packs shipped without a computed `profile` block —
+// behaves exactly like today's "skip the EQ chain" pass-through.
+const NEUTRAL_PROFILE = {
+  preGainDb: 0,
+  eq: { cutMudDb: 0, boostBodyDb: 0, smoothHighsDb: 0 },
+};
+
+// Per-pack calibrated tonal shaping, replacing the old binary `thocky`
+// flag. Every pack now always routes through preGain -> cutMud -> boostBody
+// -> smoothHighs -> toneFilter, but each pack's gains are computed (see
+// scripts/calibratePack.js docs / packs/*/config.json's `profile` block)
+// from that pack's own measured brightness/loudness relative to a reference
+// pack, instead of one hand-tuned EQ forced onto every pack alike. A pack
+// whose recording is already close to the reference gets near-zero gains
+// here (audibly a pass-through); a duller/quieter pack gets more cut/boost.
+const preGain = ctx.createGain();
+preGain.gain.value = dbToGain(NEUTRAL_PROFILE.preGainDb);
+
 const cutMud = ctx.createBiquadFilter();
 cutMud.type = 'peaking';
 cutMud.frequency.value = 325;
 cutMud.Q.value = 1.2;
-cutMud.gain.value = -4;
+cutMud.gain.value = NEUTRAL_PROFILE.eq.cutMudDb;
 
 const boostBody = ctx.createBiquadFilter();
 boostBody.type = 'peaking';
 boostBody.frequency.value = 600;
 boostBody.Q.value = 1.0;
-boostBody.gain.value = 3;
+boostBody.gain.value = NEUTRAL_PROFILE.eq.boostBodyDb;
 
 const smoothHighs = ctx.createBiquadFilter();
 smoothHighs.type = 'highshelf';
 smoothHighs.frequency.value = 6000;
-smoothHighs.gain.value = -6;
+smoothHighs.gain.value = NEUTRAL_PROFILE.eq.smoothHighsDb;
 
 const toneFilter = ctx.createBiquadFilter();
 toneFilter.type = 'lowpass';
@@ -106,6 +117,7 @@ const softClip = ctx.createWaveShaper();
 softClip.curve = makeSoftClipCurve();
 softClip.oversample = '4x';
 
+preGain.connect(cutMud);
 cutMud.connect(boostBody);
 boostBody.connect(smoothHighs);
 smoothHighs.connect(toneFilter);
@@ -122,8 +134,13 @@ ipcRenderer.on('load-pack', (event, payload) => {
   releaseVariants = payload.releaseVariants || [];
   lastPlayedReleaseIndex = null;
   currentBuffer = null;
-  currentThocky = payload.thocky === true;
   stopAllVoices();
+
+  const profile = payload.profile || NEUTRAL_PROFILE;
+  preGain.gain.value = dbToGain(profile.preGainDb || 0);
+  cutMud.gain.value = profile.eq?.cutMudDb || 0;
+  boostBody.gain.value = profile.eq?.boostBodyDb || 0;
+  smoothHighs.gain.value = profile.eq?.smoothHighsDb || 0;
 
   fetch(payload.soundFilePath)
     .then((res) => res.arrayBuffer())
@@ -212,7 +229,7 @@ function playSlice(offsetMs, durationMs) {
   hitGain.gain.linearRampToValueAtTime(0, startAt + sliceDurationSec);
 
   source.connect(hitGain);
-  hitGain.connect(currentThocky ? cutMud : toneFilter);
+  hitGain.connect(preGain);
   source.start(startAt, startOffsetSec, sliceDurationSec);
 
   const voice = { source, hitGain };

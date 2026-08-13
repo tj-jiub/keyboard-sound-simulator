@@ -4,6 +4,14 @@
   "sound": "sound.wav",
   "variants": [[0, 88], [138, 83], [271, 85], [406, 109]],
   "category": "switch",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -35.6,
+    "peakDb": -14.2,
+    "brightnessGapDb": 4.6,
+    "preGainDb": 7.6,
+    "eq": { "cutMudDb": -4.6, "boostBodyDb": 3.5, "smoothHighsDb": -6.9 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"Cherry MX Brown Mechanical Keyboard Sound\" by NickTHH (Cherry MX Brown switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/NickTHH/sounds/432432/)"
 }

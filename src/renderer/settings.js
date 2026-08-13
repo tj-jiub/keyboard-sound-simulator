@@ -15,6 +15,7 @@ const toneSliderEl = document.getElementById('tone-slider');
 const toneValEl = document.getElementById('tone-val');
 const darkToggleEl = document.getElementById('dark-toggle');
 const startupToggleEl = document.getElementById('startup-toggle');
+const playbackModeToggleEl = document.getElementById('playback-mode-toggle');
 const prefsHeaderEl = document.getElementById('prefs-header');
 const prefsContentEl = document.getElementById('prefs-content');
 const bgSwatchesEl = document.getElementById('bg-swatches');
@@ -356,6 +357,17 @@ startupToggleEl.addEventListener('change', () => {
 
 ipcRenderer.invoke('get-startup-enabled').then((enabled) => {
   startupToggleEl.checked = enabled;
+});
+
+playbackModeToggleEl.addEventListener('change', () => {
+  const mode = playbackModeToggleEl.checked ? 'press-release' : 'press-only';
+  ipcRenderer.invoke('set-playback-mode', mode).then((confirmedMode) => {
+    playbackModeToggleEl.checked = confirmedMode === 'press-release';
+  });
+});
+
+ipcRenderer.invoke('get-playback-mode').then((mode) => {
+  playbackModeToggleEl.checked = mode === 'press-release';
 });
 
 function formatPercent(value) {

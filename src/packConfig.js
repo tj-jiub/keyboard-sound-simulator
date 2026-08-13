@@ -31,7 +31,7 @@ function loadPackConfig(packDir) {
     soundFilePath: path.join(packDir, raw.sound),
     variants: raw.variants,
     releaseVariants,
-    thocky: raw.thocky === true,
+    profile: raw.profile || null,
   };
 }
 

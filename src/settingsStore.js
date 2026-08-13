@@ -29,6 +29,16 @@ function createSettingsStore(store) {
     setTone(tone) {
       store.set('tone', tone);
     },
+    // 'press-release' preserves today's actual behavior — any pack that
+    // ships releaseVariants already plays a release sound unconditionally,
+    // with no mode concept involved. Defaulting to 'press-only' would
+    // silently mute that on upgrade for existing users of those packs.
+    getPlaybackMode() {
+      return store.get('playbackMode', 'press-release');
+    },
+    setPlaybackMode(mode) {
+      store.set('playbackMode', mode);
+    },
   };
   return api;
 }

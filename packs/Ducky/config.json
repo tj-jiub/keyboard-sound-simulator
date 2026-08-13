@@ -4,6 +4,14 @@
   "sound": "sound.wav",
   "variants": [[0, 55], [105, 69], [224, 62], [336, 77]],
   "category": "brand",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -39.8,
+    "peakDb": -14.3,
+    "brightnessGapDb": 8.4,
+    "preGainDb": 7.7,
+    "eq": { "cutMudDb": -9.2, "boostBodyDb": 6.9, "smoothHighsDb": -13.8 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"Mechanical Keyboard Typing\" by eclectic-kitty (Ducky X Varmilo Miya, brown switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/eclectic-kitty/sounds/757638/)"
 }

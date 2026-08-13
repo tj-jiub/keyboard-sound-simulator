@@ -48,27 +48,22 @@ test('loadPackConfig returns releaseVariants when the pack has them', () => {
   fs.rmSync(dir, { recursive: true, force: true });
 });
 
-test('loadPackConfig returns thocky: true only when the config explicitly sets it', () => {
+test('loadPackConfig returns the profile block when the config has one', () => {
+  const profile = { preGainDb: 2, eq: { cutMudDb: -1, boostBodyDb: 1, smoothHighsDb: -2 } };
   const dir = makeTempPack({
-    id: 'test-pack', name: 'Test Pack', sound: 'sound.wav', variants: [[0, 60]], thocky: true,
+    id: 'test-pack', name: 'Test Pack', sound: 'sound.wav', variants: [[0, 60]], profile,
   });
   const pack = loadPackConfig(dir);
-  assert.equal(pack.thocky, true);
+  assert.deepEqual(pack.profile, profile);
   fs.rmSync(dir, { recursive: true, force: true });
 });
 
-test('loadPackConfig defaults thocky to false when missing or not literally true', () => {
-  const dirMissing = makeTempPack({
+test('loadPackConfig returns null profile when the config has none', () => {
+  const dir = makeTempPack({
     id: 'test-pack', name: 'Test Pack', sound: 'sound.wav', variants: [[0, 60]],
   });
-  assert.equal(loadPackConfig(dirMissing).thocky, false);
-  fs.rmSync(dirMissing, { recursive: true, force: true });
-
-  const dirTruthy = makeTempPack({
-    id: 'test-pack', name: 'Test Pack', sound: 'sound.wav', variants: [[0, 60]], thocky: 'yes',
-  });
-  assert.equal(loadPackConfig(dirTruthy).thocky, false);
-  fs.rmSync(dirTruthy, { recursive: true, force: true });
+  assert.equal(loadPackConfig(dir).profile, null);
+  fs.rmSync(dir, { recursive: true, force: true });
 });
 
 test('loadPackConfig throws if variants is missing or empty', () => {

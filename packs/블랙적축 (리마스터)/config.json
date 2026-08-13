@@ -2,8 +2,16 @@
   "id": "블랙적축 (리마스터)",
   "name": "블랙적축 리마스터 (Cherry MX Black 느낌)",
   "sound": "sound.wav",
-  "variants": [[0, 100], [150, 106], [306, 143], [499, 103]],
+  "variants": [[0, 100], [150, 106], [306, 143], [499, 102]],
   "category": "switch",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -34.0,
+    "peakDb": -13.3,
+    "brightnessGapDb": 9.7,
+    "preGainDb": 6.7,
+    "eq": { "cutMudDb": -10.0, "boostBodyDb": 7.5, "smoothHighsDb": -15.0 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"leopold fc980m pd cherry mx black.flac\" by ujonathan (Leopold FC980M PD, Cherry MX Black switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/ujonathan/sounds/628325/)"
 }

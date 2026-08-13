@@ -4,6 +4,14 @@
   "sound": "sound.wav",
   "variants": [[0, 92], [142, 93], [285, 71], [406, 114]],
   "category": "switch",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -24.0,
+    "peakDb": 0.0,
+    "brightnessGapDb": 1.0,
+    "preGainDb": -6.0,
+    "eq": { "cutMudDb": -0.2, "boostBodyDb": 0.2, "smoothHighsDb": -0.4 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"Clicky Keyboard Fast Typing\" by JonasTisell (Cherry MX Blue switches), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/JonasTisell/sounds/442260/)"
 }

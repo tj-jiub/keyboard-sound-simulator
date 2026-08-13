@@ -4,6 +4,14 @@
   "sound": "sound.wav",
   "variants": [[0, 62], [112, 76], [238, 71]],
   "category": "brand",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -31.3,
+    "peakDb": -3.3,
+    "brightnessGapDb": 2.0,
+    "preGainDb": -3.3,
+    "eq": { "cutMudDb": -1.5, "boostBodyDb": 1.1, "smoothHighsDb": -2.2 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"Typing on Logitech K811 Keyboard HQ.mp3\" by SoundsLikeFoley, Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/SoundsLikeFoley/sounds/396304/)"
 }

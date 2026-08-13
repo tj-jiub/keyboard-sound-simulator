@@ -4,6 +4,14 @@
   "sound": "sound.wav",
   "variants": [[0, 95], [145, 85], [280, 130]],
   "category": "brand",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -31.6,
+    "peakDb": -6.7,
+    "brightnessGapDb": 1.6,
+    "preGainDb": 0.1,
+    "eq": { "cutMudDb": -1.0, "boostBodyDb": 0.7, "smoothHighsDb": -1.5 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"Olimpia Typewriter clicks\" by ikomlino (vintage 1970s Olimpia typewriter, recorded with shotgun microphone thru Sound Devices 442 mixer), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/ikomlino/sounds/852744/)"
 }

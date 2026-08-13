@@ -79,3 +79,14 @@ test('setTone/getTone round-trip', () => {
   settings.setTone(0.2);
   assert.equal(settings.getTone(), 0.2);
 });
+
+test('getPlaybackMode defaults to press-release', () => {
+  const settings = createSettingsStore(createMockStore());
+  assert.equal(settings.getPlaybackMode(), 'press-release');
+});
+
+test('setPlaybackMode/getPlaybackMode round-trip', () => {
+  const settings = createSettingsStore(createMockStore());
+  settings.setPlaybackMode('press-only');
+  assert.equal(settings.getPlaybackMode(), 'press-only');
+});

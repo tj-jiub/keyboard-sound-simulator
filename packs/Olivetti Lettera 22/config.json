@@ -4,6 +4,14 @@
   "sound": "sound.wav",
   "variants": [[0, 105], [155, 150], [355, 153], [558, 158]],
   "category": "brand",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -27.9,
+    "peakDb": 0.0,
+    "brightnessGapDb": 0.8,
+    "preGainDb": -6.0,
+    "eq": { "cutMudDb": 0.0, "boostBodyDb": 0.0, "smoothHighsDb": 0.0 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"typewriter-olivetti-lettra-22.wav\" by keithpeter, Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/keithpeter/sounds/123344/)"
 }

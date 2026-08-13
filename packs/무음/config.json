@@ -4,6 +4,14 @@
   "sound": "sound.wav",
   "variants": [[0, 95], [145, 140], [335, 120], [505, 80]],
   "category": "brand",
+  "profile": {
+    "algoVersion": 1,
+    "meanVolumeDb": -34.9,
+    "peakDb": -12.2,
+    "brightnessGapDb": 5.0,
+    "preGainDb": 5.6,
+    "eq": { "cutMudDb": -5.1, "boostBodyDb": 3.8, "smoothHighsDb": -7.6 }
+  },
   "license": "Creative Commons 0 (CC0)",
   "attribution": "freesound.org - \"Writing In Membrane Keyboard.wav\" by SebastianBuitrago+ (membrane keyboard typing), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/SebastianBuitrago+/sounds/626326/)"
 }
