@@ -1,5 +1,5 @@
 const {
-  app, BrowserWindow, Tray, Menu, nativeImage, ipcMain,
+  app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, globalShortcut,
 } = require('electron');
 const path = require('node:path');
 const fs = require('node:fs');
@@ -75,6 +75,18 @@ function openSettingsWindow() {
   settingsWindow.on('closed', () => {
     settingsWindow = null;
   });
+}
+
+// The tray double-click and the global shortcut are the two ways to open
+// this window, and both were open-only — closing meant hunting down the
+// window and clicking its own close button. Toggling means whichever
+// gesture opened it also closes it.
+function toggleSettingsWindow() {
+  if (settingsWindow && !settingsWindow.isDestroyed() && settingsWindow.isFocused()) {
+    settingsWindow.close();
+    return;
+  }
+  openSettingsWindow();
 }
 
 if (singleInstanceLockAcquired) {
@@ -161,6 +173,35 @@ ipcMain.handle('set-playback-mode', (event, mode) => {
   return mode;
 });
 
+// Registers a global (system-wide) hotkey that opens the settings window —
+// an alternative to double-clicking the tray icon. Unregisters the previous
+// accelerator first so re-registering with a new one doesn't leave the old
+// binding active alongside it.
+function registerShortcut(accelerator) {
+  globalShortcut.unregisterAll();
+  try {
+    return globalShortcut.register(accelerator, () => toggleSettingsWindow());
+  } catch {
+    // Electron throws on a malformed accelerator string rather than just
+    // returning false, so a bad capture from the renderer can't crash main.
+    return false;
+  }
+}
+
+ipcMain.handle('get-shortcut', () => settings.getShortcut());
+
+ipcMain.handle('set-shortcut', (event, accelerator) => {
+  const previous = settings.getShortcut();
+  if (registerShortcut(accelerator)) {
+    settings.setShortcut(accelerator);
+    return { success: true, shortcut: accelerator };
+  }
+  // Registration failed (e.g. already claimed by another app) — restore the
+  // previous binding so the app isn't left with no working shortcut at all.
+  registerShortcut(previous);
+  return { success: false, shortcut: previous };
+});
+
 function buildTrayMenu() {
   return Menu.buildFromTemplate([
     {
@@ -178,11 +219,12 @@ function buildTrayMenu() {
 
 app.whenReady().then(() => {
   createPlayerWindow();
+  registerShortcut(settings.getShortcut());
 
   tray = new Tray(nativeImage.createFromPath(APP_ICON_PATH));
   tray.setToolTip('키보드 소리 시뮬레이터');
   tray.setContextMenu(buildTrayMenu());
-  tray.on('double-click', openSettingsWindow);
+  tray.on('double-click', toggleSettingsWindow);
 
   // 트레이 아이콘을 찾아 더블클릭해야만 창이 뜨면 사용자가 발견하기 어렵다 —
   // Mechvibes처럼 앱을 켜면 바로 사운드팩 선택 창이 뜨도록 한다. 창을 닫아도
@@ -219,9 +261,14 @@ app.whenReady().then(() => {
 
   startKeyHook(
     (event) => {
-      if (settings.isMuted()) return;
-      if (!playerWindow || playerWindow.isDestroyed()) return;
-      playerWindow.webContents.send('trigger-key', { keycode: event.keycode, sentAt: Date.now() });
+      if (!settings.isMuted() && playerWindow && !playerWindow.isDestroyed()) {
+        playerWindow.webContents.send('trigger-key', { keycode: event.keycode, sentAt: Date.now() });
+      }
+      // Visual-only feedback (the spacebar graphic) — independent of mute,
+      // and only worth sending while the settings window is actually open.
+      if (settingsWindow && !settingsWindow.isDestroyed()) {
+        settingsWindow.webContents.send('key-pressed-visual');
+      }
     },
     () => {
       if (settings.isMuted()) return;
@@ -252,4 +299,8 @@ app.on('window-all-closed', () => {
 
 app.on('before-quit', () => {
   stopKeyHook();
+});
+
+app.on('will-quit', () => {
+  globalShortcut.unregisterAll();
 });

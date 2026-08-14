@@ -90,3 +90,14 @@ test('setPlaybackMode/getPlaybackMode round-trip', () => {
   settings.setPlaybackMode('press-only');
   assert.equal(settings.getPlaybackMode(), 'press-only');
 });
+
+test('getShortcut defaults to CommandOrControl+Alt+K', () => {
+  const settings = createSettingsStore(createMockStore());
+  assert.equal(settings.getShortcut(), 'CommandOrControl+Alt+K');
+});
+
+test('setShortcut/getShortcut round-trip', () => {
+  const settings = createSettingsStore(createMockStore());
+  settings.setShortcut('CommandOrControl+Shift+K');
+  assert.equal(settings.getShortcut(), 'CommandOrControl+Shift+K');
+});

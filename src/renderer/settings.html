@@ -14,7 +14,7 @@
       --divider: rgba(255, 255, 255, 0.1);
       --slate: #7fb0d9;
       --orange: #e8944f;
-      --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
+      --font-family: 'Noto Sans KR', 'Noto Sans', 'Segoe UI', sans-serif;
     }
     :root[data-theme="light"] {
       --bg: #eceef1;
@@ -29,6 +29,14 @@
     }
     * { box-sizing: border-box; }
     button, select { font-family: inherit; }
+    /* This window is driven by mouse clicks, not keyboard navigation — a
+       global hook plays a sound on every OS keystroke regardless of which
+       window has focus, so if a button here keeps keyboard focus after a
+       click, a later Space/Enter typed elsewhere re-activates it (e.g.
+       silently reopening the pack dropdown mid-sentence). settings.js blurs
+       the active element after every click; this just hides the focus ring
+       so there's no visible flash before that runs. */
+    button:focus, input:focus, .toggle input:focus ~ .track { outline: none; }
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -37,18 +45,73 @@
       font-family: var(--font-family);
       transition: background-color .25s ease, color .25s ease;
       -webkit-user-select: none;
-      overflow-y: auto;
+      overflow-y: scroll;
       scrollbar-gutter: stable;
     }
+    /* overflow-y:auto's scrollbar only occupies space once content actually
+       overflows — appearing/disappearing as accordions open and close, which
+       shifts every card a few pixels narrower each time. scrollbar-gutter
+       alone should prevent that, but isn't reliably honored here, so
+       overflow-y:scroll keeps the track reserved unconditionally instead.
+       That makes it visible even on short content, so it's restyled thin
+       and transparent-until-hover to stay out of the way. */
+    body::-webkit-scrollbar { width: 8px; }
+    body::-webkit-scrollbar-track { background: transparent; }
+    body::-webkit-scrollbar-thumb { background: transparent; border-radius: 999px; border: 2px solid transparent; background-clip: content-box; }
+    body:hover::-webkit-scrollbar-thumb { background-color: var(--border); background-clip: content-box; }
+    body::-webkit-scrollbar-thumb:hover { background-color: var(--text-dim) !important; }
     .titlebar {
       display: flex;
       align-items: center;
-      padding: 10px 12px;
+      padding: 12px 16px;
       background: var(--titlebar-bg);
       border-bottom: 1px solid var(--divider);
       -webkit-app-region: drag;
     }
-    .titlebar .title { flex: 1; text-align: center; font-size: 13px; font-weight: 600; margin-right: 27px; }
+    /* Stands in for the old text title — a keycap that visually depresses on
+       every real keystroke (see key-pressed-visual in settings.js), so the
+       window itself demonstrates what the app does instead of just naming
+       it. The first box-shadow layer is a flat, unblurred "wall" beneath the
+       cap — the classic CSS hard-shadow button trick — and pressing collapses
+       translateY to match its height exactly, so the cap looks like it sinks
+       flush into the case instead of just fading. */
+    .spacebar {
+      width: 100%;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--card-bg) 100%, white 8%), var(--card-bg));
+      border: 1px solid var(--border);
+      box-shadow:
+        0 3px 0 color-mix(in srgb, var(--bg) 100%, black 22%),
+        0 5px 8px rgba(0, 0, 0, .22),
+        inset 0 1px 0 rgba(255, 255, 255, .18),
+        inset 0 -3px 4px rgba(0, 0, 0, .07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .05s ease-out, box-shadow .05s ease-out;
+    }
+    .spacebar.pressed {
+      transform: translateY(3px);
+      box-shadow:
+        0 0 0 color-mix(in srgb, var(--bg) 100%, black 22%),
+        0 1px 2px rgba(0, 0, 0, .18),
+        inset 0 1px 0 rgba(255, 255, 255, .1),
+        inset 0 -1px 2px rgba(0, 0, 0, .05);
+    }
+    /* A keycap legend, not an image — plain colored text is far more
+       reliable than a filtered/masked bitmap. The soft light-catching shadow
+       underneath is what reads as engraved/debossed rather than printed. */
+    .spacebar-legend {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      color: var(--text-dim);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .3);
+      -webkit-user-select: none;
+      pointer-events: none;
+    }
+    :root[data-theme="light"] .spacebar-legend { text-shadow: 0 1px 0 rgba(255, 255, 255, .7); }
 
     .panel { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
     .card {
@@ -59,9 +122,23 @@
     }
 
     /* 재생 카드 */
-    .now-playing { padding: 13px 14px; }
+    .now-playing { padding: 12px 16px; }
     .now-playing .title { font-size: 14px; font-weight: 600; }
     .now-playing .caption { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--text);
+      background: color-mix(in srgb, var(--slate) 14%, transparent);
+      border: 1px solid color-mix(in srgb, var(--slate) 28%, transparent);
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-top: 8px;
+    }
+    .notice svg { flex: none; margin-top: 1px; color: var(--slate); }
     .hr { height: 1px; background: var(--divider); border: none; margin: 0; }
     .dropdown-wrap { position: relative; margin: 10px 12px; }
     .dropdown-trigger {
@@ -84,11 +161,13 @@
     .dropdown-trigger span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .dropdown-trigger svg { flex: none; transition: transform .28s ease; }
     .dropdown-trigger.open svg { transform: rotate(180deg); }
+    .dropdown-trigger.open { border-color: var(--slate); }
     .dropdown-panel {
       position: fixed;
       z-index: 100;
-      background: #f5f5f7;
-      color: #1d1d1f;
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
       border-radius: 10px;
       box-shadow: 0 10px 28px rgba(0, 0, 0, .28);
       overflow: hidden;
@@ -97,7 +176,7 @@
       opacity: 0;
       transform: translateY(-6px) scaleY(.98);
       pointer-events: none;
-      transition: max-height .38s cubic-bezier(.22, 1, .36, 1), opacity .28s ease, transform .28s ease;
+      transition: max-height .38s cubic-bezier(.22, 1, .36, 1), opacity .28s ease, transform .28s ease, background-color .25s ease, color .25s ease;
     }
     .dropdown-panel.open {
       max-height: 280px;
@@ -110,7 +189,7 @@
       font-size: 10.5px;
       font-weight: 600;
       letter-spacing: .04em;
-      color: #9a9a9e;
+      color: var(--text-dim);
       padding: 6px 8px 2px;
     }
     .dropdown-option {
@@ -120,16 +199,20 @@
       cursor: pointer;
       transition: background-color .12s ease;
     }
-    .dropdown-option:hover { background-color: #e4e4e7; }
-    .dropdown-option.selected { background: #e4e4e7; color: #3a3a3c; }
-    .dropdown-option .fav-star { color: #c9793f; margin-right: 3px; }
-    .dropdown-empty { padding: 10px 8px; font-size: 12.5px; color: #9a9a9e; }
+    .dropdown-option:hover { background-color: rgba(128, 128, 128, .16); }
+    .dropdown-option.selected { background-color: rgba(128, 128, 128, .22); color: var(--text); }
+    .dropdown-option .fav-star { color: var(--orange); margin-right: 3px; }
+    .dropdown-empty { padding: 10px 8px; font-size: 12.5px; color: var(--text-dim); }
     .action-bar { display: flex; }
     .action-bar button {
       flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       border: 0;
       background: transparent;
-      padding: 11px;
+      padding: 12px;
       font: inherit;
       font-size: 13px;
       cursor: pointer;
@@ -151,6 +234,7 @@
       font-size: 12.5px;
       margin-bottom: 7px;
     }
+    .slider-row .slabel > span:first-child { display: inline-flex; align-items: center; gap: 6px; }
     .slider-row .slabel .val { color: var(--text-dim); font-variant-numeric: tabular-nums; white-space: nowrap; }
     .slider-row input[type="range"] {
       -webkit-appearance: none;
@@ -173,7 +257,8 @@
 
     /* 다크모드 카드 */
     .darkmode-card { padding: 13px 14px; display: flex; align-items: center; justify-content: space-between; }
-    .darkmode-card .label { font-size: 13.5px; }
+    .darkmode-card .label { font-size: 13.5px; display: inline-flex; align-items: center; gap: 8px; }
+    .label-icon { flex: none; opacity: .6; }
     .toggle { position: relative; display: inline-flex; width: 38px; height: 22px; cursor: pointer; }
     .toggle input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
     .toggle .track { position: absolute; inset: 0; border-radius: 999px; background: var(--divider); transition: background .15s ease; }
@@ -210,8 +295,8 @@
     .prefs-content { overflow: hidden; max-height: 0; transition: max-height .3s ease; }
     .prefs-content.open { max-height: 340px; }
     .prefs-body { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 12px; }
-    .prefs-group-label { font-size: 12px; color: var(--text-dim); margin-bottom: 7px; }
-    .mode-hint { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+    .prefs-group-label { font-size: 12px; color: var(--text-dim); margin-bottom: 7px; display: flex; align-items: center; gap: 7px; }
+    .mode-hint { font-size: 12.5px; line-height: 1.5; color: var(--text-dim); margin-top: 8px; }
     .swatch-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .swatch-circle {
       flex: none;
@@ -262,19 +347,27 @@
 </head>
 <body>
   <div class="titlebar">
-    <div class="title">타건 소리</div>
+    <div id="spacebar" class="spacebar">
+      <span class="spacebar-legend">jiub</span>
+    </div>
   </div>
 
   <div class="panel">
     <div class="card">
       <div class="now-playing">
         <div class="title" id="now-playing-title">사운드팩을 골라주세요</div>
-        <div class="caption" id="now-playing-caption"></div>
+        <div class="notice">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>이 창을 닫아도 괜찮아요 — 아무 키나 눌러보면 바로 소리가 나요.</span>
+        </div>
       </div>
       <hr class="hr" />
       <div class="dropdown-wrap">
         <button id="dropdown-trigger" class="dropdown-trigger">
-          <span id="dropdown-trigger-label">사운드팩 선택</span>
+          <span style="display: inline-flex; align-items: center; gap: 7px; overflow: hidden;">
+            <svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/></svg>
+            <span id="dropdown-trigger-label">사운드팩 선택</span>
+          </span>
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div id="dropdown-panel" class="dropdown-panel">
@@ -283,9 +376,15 @@
       </div>
       <hr class="hr" />
       <div class="action-bar">
-        <button id="random-btn">무작위로 고르기</button>
+        <button id="random-btn">
+          <svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><circle cx="16" cy="8" r="1"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/><circle cx="12" cy="12" r="1"/></svg>
+          무작위로 고르기
+        </button>
         <div class="action-divider"></div>
-        <button id="fav-btn">즐겨찾기에 추가</button>
+        <button id="fav-btn">
+          <svg id="fav-btn-icon" class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span id="fav-btn-label">즐겨찾기에 추가</span>
+        </button>
       </div>
     </div>
 
@@ -293,17 +392,17 @@
 
     <div class="card sliders-card">
       <div class="slider-row">
-        <div class="slabel"><span>키보드 소리 볼륨</span><span class="val" id="volume-val">80</span></div>
+        <div class="slabel"><span><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>키보드 소리 볼륨</span><span class="val" id="volume-val">80</span></div>
         <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.8" />
       </div>
       <div class="slider-row">
-        <div class="slabel"><span>톤</span><span class="val" id="tone-val">50</span></div>
+        <div class="slabel"><span><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="4"/><circle cx="6" cy="10" r="2"/><line x1="12" y1="20" x2="12" y2="4"/><circle cx="12" cy="16" r="2"/><line x1="18" y1="20" x2="18" y2="4"/><circle cx="18" cy="7" r="2"/></svg>톤</span><span class="val" id="tone-val">50</span></div>
         <input id="tone-slider" type="range" min="0" max="1" step="0.01" value="0.5" />
       </div>
     </div>
 
     <div class="card darkmode-card">
-      <span class="label">다크 모드</span>
+      <span class="label"><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>다크 모드</span>
       <label class="toggle">
         <input id="dark-toggle" type="checkbox" />
         <span class="track"></span>
@@ -311,13 +410,31 @@
       </label>
     </div>
 
-    <div class="card darkmode-card">
-      <span class="label">Windows 시작 시 자동 실행</span>
-      <label class="toggle">
-        <input id="startup-toggle" type="checkbox" />
-        <span class="track"></span>
-        <span class="thumb"></span>
-      </label>
+    <div class="card">
+      <button id="app-prefs-header" class="prefs-header">
+        <span>앱 설정</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="app-prefs-content" class="prefs-content">
+        <div class="prefs-body">
+          <hr class="hr" />
+          <div class="darkmode-card" style="padding-left: 0; padding-right: 0;">
+            <span class="label"><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>Windows 시작 시 자동 실행</span>
+            <label class="toggle">
+              <input id="startup-toggle" type="checkbox" />
+              <span class="track"></span>
+              <span class="thumb"></span>
+            </label>
+          </div>
+          <div>
+            <div class="prefs-group-label"><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h12"/></svg>설정 창 열기 단축키</div>
+            <button id="shortcut-trigger" class="dropdown-trigger">
+              <span id="shortcut-label">불러오는 중…</span>
+            </button>
+            <div class="mode-hint" id="shortcut-hint">버튼을 클릭하고 원하는 키 조합을 눌러주세요.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="card">
@@ -329,27 +446,15 @@
         <div class="prefs-body">
           <hr class="hr" />
           <div>
-            <div class="prefs-group-label">누를 때 + 뗄 때 모두 재생</div>
-            <div class="darkmode-card" style="padding-left: 0; padding-right: 0;">
-              <span class="label">프레스+릴리즈 모드</span>
-              <label class="toggle">
-                <input id="playback-mode-toggle" type="checkbox" />
-                <span class="track"></span>
-                <span class="thumb"></span>
-              </label>
-            </div>
-            <div class="mode-hint">사운드팩에 릴리즈 음원이 없으면 뗄 때는 소리가 나지 않아요.</div>
-          </div>
-          <div>
-            <div class="prefs-group-label">배경 색상</div>
+            <div class="prefs-group-label"><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a5 5 0 0 0 5-5c0-5-4.5-8.5-10-8.5z"/></svg>배경 색상</div>
             <div id="bg-swatches" class="swatch-row"></div>
           </div>
           <div>
-            <div class="prefs-group-label">글꼴</div>
+            <div class="prefs-group-label"><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>글꼴</div>
             <div id="font-pills" class="swatch-row"></div>
           </div>
           <div>
-            <div class="prefs-group-label">글씨 색상</div>
+            <div class="prefs-group-label"><svg class="label-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>글씨 색상</div>
             <div id="text-swatches" class="swatch-row"></div>
           </div>
         </div>

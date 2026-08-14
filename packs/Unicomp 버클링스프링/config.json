@@ -1,0 +1,14 @@
+{
+  "id": "Unicomp 버클링스프링",
+  "name": "Unicomp 버클링스프링 (IBM Model M 계열)",
+  "sound": "sound.wav",
+  "variants": [[0, 76], [126, 54], [230, 72], [352, 68]],
+  "category": "brand",
+  "profile": {
+    "algoVersion": 1,
+    "preGainDb": 2.4,
+    "eq": { "cutMudDb": 0, "boostBodyDb": 0, "smoothHighsDb": 0 }
+  },
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Typing on a keyboard\" by SamsterBirdies (Unicomp buckling spring switches, IBM Model M 계열, real typing recording), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/SamsterBirdies/sounds/489423/)"
+}

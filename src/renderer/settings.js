@@ -1,7 +1,7 @@
 const { ipcRenderer } = require('electron');
 
+const spacebarEl = document.getElementById('spacebar');
 const nowPlayingTitleEl = document.getElementById('now-playing-title');
-const nowPlayingCaptionEl = document.getElementById('now-playing-caption');
 const dropdownTriggerEl = document.getElementById('dropdown-trigger');
 const dropdownTriggerLabelEl = document.getElementById('dropdown-trigger-label');
 const dropdownPanelEl = document.getElementById('dropdown-panel');
@@ -9,22 +9,28 @@ const dropdownListEl = document.getElementById('dropdown-list');
 const errorEl = document.getElementById('error-message');
 const randomBtnEl = document.getElementById('random-btn');
 const favBtnEl = document.getElementById('fav-btn');
+const favBtnLabelEl = document.getElementById('fav-btn-label');
+const favBtnIconEl = document.getElementById('fav-btn-icon');
 const volumeSliderEl = document.getElementById('volume-slider');
 const volumeValEl = document.getElementById('volume-val');
 const toneSliderEl = document.getElementById('tone-slider');
 const toneValEl = document.getElementById('tone-val');
 const darkToggleEl = document.getElementById('dark-toggle');
 const startupToggleEl = document.getElementById('startup-toggle');
-const playbackModeToggleEl = document.getElementById('playback-mode-toggle');
 const prefsHeaderEl = document.getElementById('prefs-header');
 const prefsContentEl = document.getElementById('prefs-content');
+const appPrefsHeaderEl = document.getElementById('app-prefs-header');
+const appPrefsContentEl = document.getElementById('app-prefs-content');
+const shortcutTriggerEl = document.getElementById('shortcut-trigger');
+const shortcutLabelEl = document.getElementById('shortcut-label');
+const shortcutHintEl = document.getElementById('shortcut-hint');
 const bgSwatchesEl = document.getElementById('bg-swatches');
 const fontPillsEl = document.getElementById('font-pills');
 const textSwatchesEl = document.getElementById('text-swatches');
 
 const CATEGORIES = [
-  { key: 'brand', label: '브랜드별', caption: '브랜드 사운드팩' },
-  { key: 'switch', label: '스위치 계열', caption: '스위치 계열 사운드팩' },
+  { key: 'brand', label: '브랜드별' },
+  { key: 'switch', label: '스위치 계열' },
 ];
 
 const BG_SWATCHES = {
@@ -36,7 +42,7 @@ const TEXT_SWATCHES = {
   light: ['#1d1d1f', '#3a3a3c', '#5b4636', '#2c3e58'],
 };
 const FONT_OPTIONS = [
-  { key: 'system', label: '시스템', value: "-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text',sans-serif" },
+  { key: 'system', label: '시스템', value: "'Noto Sans KR','Noto Sans','Segoe UI',sans-serif" },
   { key: 'serif', label: '세리프', value: "Georgia,'Times New Roman',serif" },
   { key: 'rounded', label: '라운드', value: "'Arial Rounded MT Bold','SF Pro Rounded',sans-serif" },
 ];
@@ -56,6 +62,7 @@ function textStorageKey(theme) {
 let currentState = { packs: [], currentPackId: null };
 let dropdownOpen = false;
 let prefsOpen = false;
+let appPrefsOpen = false;
 
 function getFavorites() {
   try {
@@ -74,21 +81,19 @@ function renderNowPlaying() {
   const pack = packs.find((p) => p.id === currentPackId);
   if (!pack) {
     nowPlayingTitleEl.textContent = '사운드팩을 골라주세요';
-    nowPlayingCaptionEl.textContent = '';
     dropdownTriggerLabelEl.textContent = '사운드팩 선택';
     return;
   }
-  const category = CATEGORIES.find((c) => c.key === pack.category);
   const isFav = getFavorites().has(pack.id);
   nowPlayingTitleEl.textContent = `${isFav ? '★ ' : ''}지금 재생 중이에요 — ${pack.id}`;
-  nowPlayingCaptionEl.textContent = category ? category.caption : '';
   dropdownTriggerLabelEl.textContent = pack.id;
 }
 
 function renderFavButton() {
   const favorites = getFavorites();
   const isFav = currentState.currentPackId && favorites.has(currentState.currentPackId);
-  favBtnEl.textContent = isFav ? '★ 즐겨찾기 됨' : '즐겨찾기에 추가';
+  favBtnLabelEl.textContent = isFav ? '즐겨찾기 됨' : '즐겨찾기에 추가';
+  favBtnIconEl.setAttribute('fill', isFav ? 'currentColor' : 'none');
   favBtnEl.classList.toggle('active', Boolean(isFav));
 }
 
@@ -153,6 +158,12 @@ async function selectPack(packId) {
   renderDropdownList();
 }
 
+// dropdown-panel is position:fixed but still a DOM descendant of the trigger's
+// card, so clicks inside it (including its own padding, not just an option)
+// would otherwise bubble to the document-level "click outside closes it"
+// listener below and immediately close what was just clicked.
+dropdownPanelEl.addEventListener('click', (event) => event.stopPropagation());
+
 dropdownListEl.addEventListener('click', (event) => {
   const option = event.target.closest('.dropdown-option');
   if (!option) return;
@@ -160,7 +171,17 @@ dropdownListEl.addEventListener('click', (event) => {
   selectPack(option.dataset.packId);
 });
 
-dropdownTriggerEl.addEventListener('click', () => setDropdownOpen(!dropdownOpen));
+dropdownTriggerEl.addEventListener('click', (event) => {
+  event.stopPropagation();
+  setDropdownOpen(!dropdownOpen);
+});
+
+// Clicking anywhere outside the open dropdown (empty space, another card,
+// whatever) closes it — the trigger's own click is stopped from reaching
+// here above, so this can't immediately re-close what it just opened.
+document.addEventListener('click', () => {
+  if (dropdownOpen) setDropdownOpen(false);
+});
 
 randomBtnEl.addEventListener('click', () => {
   if (currentState.packs.length === 0) return;
@@ -186,6 +207,81 @@ prefsHeaderEl.addEventListener('click', () => {
   prefsOpen = !prefsOpen;
   prefsHeaderEl.classList.toggle('open', prefsOpen);
   prefsContentEl.classList.toggle('open', prefsOpen);
+});
+
+appPrefsHeaderEl.addEventListener('click', () => {
+  appPrefsOpen = !appPrefsOpen;
+  appPrefsHeaderEl.classList.toggle('open', appPrefsOpen);
+  appPrefsContentEl.classList.toggle('open', appPrefsOpen);
+});
+
+let capturingShortcut = false;
+
+function formatAccelerator(accelerator) {
+  return accelerator.replace('CommandOrControl', 'Ctrl');
+}
+
+function stopCapturingShortcut() {
+  // stopCapturingShortcut, cancelShortcutCapture and captureShortcutKeydown
+  // call each other (mutually recursive), so one forward reference is
+  // unavoidable no matter the declaration order.
+  // eslint-disable-next-line no-use-before-define
+  document.removeEventListener('keydown', captureShortcutKeydown, true);
+  capturingShortcut = false;
+  shortcutTriggerEl.classList.remove('open');
+}
+
+function cancelShortcutCapture() {
+  stopCapturingShortcut();
+  ipcRenderer.invoke('get-shortcut').then((accelerator) => {
+    shortcutLabelEl.textContent = formatAccelerator(accelerator);
+  });
+  shortcutHintEl.textContent = '버튼을 클릭하고 원하는 키 조합을 눌러주세요.';
+}
+
+function captureShortcutKeydown(event) {
+  event.preventDefault();
+  const { key } = event;
+  if (key === 'Escape') {
+    cancelShortcutCapture();
+    return;
+  }
+  if (['Control', 'Alt', 'Shift', 'Meta'].includes(key)) return;
+
+  const parts = [];
+  if (event.ctrlKey || event.metaKey) parts.push('CommandOrControl');
+  if (event.altKey) parts.push('Alt');
+  if (event.shiftKey) parts.push('Shift');
+  const KEY_NAME_MAP = {
+    ' ': 'Space', ArrowUp: 'Up', ArrowDown: 'Down', ArrowLeft: 'Left', ArrowRight: 'Right', Escape: 'Esc',
+  };
+  parts.push(KEY_NAME_MAP[key] || (key.length === 1 ? key.toUpperCase() : key));
+
+  // Require at least one modifier so this can't collide with normal typing —
+  // the whole point of this app is that every keystroke plays a sound.
+  if (parts.length < 2) {
+    shortcutHintEl.textContent = '조합키(Ctrl/Alt/Shift)를 포함해서 눌러주세요.';
+    return;
+  }
+
+  stopCapturingShortcut();
+  const accelerator = parts.join('+');
+  shortcutLabelEl.textContent = '적용 중…';
+  ipcRenderer.invoke('set-shortcut', accelerator).then((result) => {
+    shortcutLabelEl.textContent = formatAccelerator(result.shortcut);
+    shortcutHintEl.textContent = result.success
+      ? '버튼을 클릭하고 원하는 키 조합을 눌러주세요.'
+      : '이미 다른 프로그램이 사용 중인 조합이에요. 이전 단축키로 되돌렸어요.';
+  });
+}
+
+shortcutTriggerEl.addEventListener('click', () => {
+  if (capturingShortcut) return;
+  capturingShortcut = true;
+  shortcutTriggerEl.classList.add('open');
+  shortcutLabelEl.textContent = '키를 눌러주세요…';
+  shortcutHintEl.textContent = '취소하려면 Esc를 누르세요.';
+  document.addEventListener('keydown', captureShortcutKeydown, true);
 });
 
 function markSelectedChild(container, selectedValue) {
@@ -359,15 +455,8 @@ ipcRenderer.invoke('get-startup-enabled').then((enabled) => {
   startupToggleEl.checked = enabled;
 });
 
-playbackModeToggleEl.addEventListener('change', () => {
-  const mode = playbackModeToggleEl.checked ? 'press-release' : 'press-only';
-  ipcRenderer.invoke('set-playback-mode', mode).then((confirmedMode) => {
-    playbackModeToggleEl.checked = confirmedMode === 'press-release';
-  });
-});
-
-ipcRenderer.invoke('get-playback-mode').then((mode) => {
-  playbackModeToggleEl.checked = mode === 'press-release';
+ipcRenderer.invoke('get-shortcut').then((accelerator) => {
+  shortcutLabelEl.textContent = formatAccelerator(accelerator);
 });
 
 function formatPercent(value) {
@@ -404,4 +493,36 @@ ipcRenderer.invoke('get-volume').then((volume) => {
 ipcRenderer.invoke('get-tone').then((tone) => {
   toneSliderEl.value = tone;
   toneValEl.textContent = formatPercent(tone);
+});
+
+// Buttons/checkboxes in this window keep keyboard focus after a click (normal
+// browser behavior), but a global hook plays a sound on every OS keystroke no
+// matter which window is focused — so a later Space/Enter typed elsewhere
+// re-activates whatever was last clicked here (e.g. silently reopening the
+// pack dropdown mid-sentence). Releasing focus right after the click's own
+// effect has run avoids that without needing to touch every handler above.
+document.addEventListener('click', () => {
+  const { activeElement } = document;
+  if (activeElement && activeElement !== document.body && activeElement.blur) {
+    activeElement.blur();
+  }
+});
+
+window.addEventListener('keydown', (event) => {
+  // Skip while capturing a new shortcut — Escape cancels that capture
+  // instead (handled in captureShortcutKeydown), not this window.
+  if (event.key === 'Escape' && !capturingShortcut) {
+    window.close();
+  }
+});
+
+// Keeps the keycap "held down" for as long as real keystrokes keep arriving
+// (each one just pushes the release back out) rather than a fixed-length
+// animation per keystroke — reads as continuously pressed while typing fast
+// and springs back the moment typing actually stops.
+let spacebarReleaseTimer = null;
+ipcRenderer.on('key-pressed-visual', () => {
+  spacebarEl.classList.add('pressed');
+  clearTimeout(spacebarReleaseTimer);
+  spacebarReleaseTimer = setTimeout(() => spacebarEl.classList.remove('pressed'), 90);
 });

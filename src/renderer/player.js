@@ -24,11 +24,15 @@ const TONE_MIN_FREQ = 600;
 const TONE_MAX_FREQ = 20000;
 // A lowpass cuts real energy as it darkens, which reads as quieter, not just
 // duller. This is the makeup gain applied at tone=0 to cancel that out, so
-// the tone slider only changes character, not overall loudness. A single
-// biquad lowpass rolls off at ~12dB/octave, so cutting at 600Hz attenuates
-// content around 4-8kHz (where most of a click's energy sits) by 30dB+ —
-// 10dB of makeup gain wasn't nearly enough to bring that back to audible.
-const TONE_COMPENSATION_MAX_DB = 24;
+// the tone slider only changes character, not overall loudness. This gain is
+// broadband (boosts the whole signal, not just the rolled-off highs), so it
+// was always a rough approximation — fine on its own, but now stacks with
+// each pack's own calibrated `profile.preGainDb`/EQ (added separately),
+// which pushes some packs (e.g. Ducky: +7.7dB preGain, +6.9dB boostBody)
+// well past 0dBFS before the limiter, forcing it and the soft-clip to work
+// hard and read as loud/harsh. Lowered from 24 to reduce that overlap; the
+// two were never meant to both be maxed out at once.
+const TONE_COMPENSATION_MAX_DB = 10;
 
 let pendingTone = 0.5;
 
@@ -96,7 +100,7 @@ boost.gain.value = 1.25;
 const masterVolumeGain = ctx.createGain();
 masterVolumeGain.gain.value = sliderToVolumeGain(0.55);
 
-// Final safety net: `boost` + `toneCompensationGain` (up to +24dB at tone=0)
+// Final safety net: `boost` + `toneCompensationGain` (up to +10dB at tone=0)
 // stack on top of the punchy `limiter` above, and overlapping voices during
 // fast typing sum before any of this — measured true peaks over +1dB
 // (i.e. actual digital clipping, not just loud) on bright/clicky packs.
@@ -127,29 +131,6 @@ boost.connect(limiter);
 limiter.connect(masterVolumeGain);
 masterVolumeGain.connect(softClip);
 softClip.connect(ctx.destination);
-
-ipcRenderer.on('load-pack', (event, payload) => {
-  variants = payload.variants;
-  lastPlayedIndex = null;
-  releaseVariants = payload.releaseVariants || [];
-  lastPlayedReleaseIndex = null;
-  currentBuffer = null;
-  stopAllVoices();
-
-  const profile = payload.profile || NEUTRAL_PROFILE;
-  preGain.gain.value = dbToGain(profile.preGainDb || 0);
-  cutMud.gain.value = profile.eq?.cutMudDb || 0;
-  boostBody.gain.value = profile.eq?.boostBodyDb || 0;
-  smoothHighs.gain.value = profile.eq?.smoothHighsDb || 0;
-
-  fetch(payload.soundFilePath)
-    .then((res) => res.arrayBuffer())
-    .then((arrayBuffer) => ctx.decodeAudioData(arrayBuffer))
-    .then((buffer) => {
-      currentBuffer = buffer;
-    })
-    .catch((err) => console.error('[player] failed to load pack', payload.soundFilePath, err));
-});
 
 // Subtle per-hit pitch/volume jitter so identical variants don't repeat
 // identically back-to-back and start to sound machine-gunned.
@@ -212,7 +193,6 @@ function playSlice(offsetMs, durationMs) {
   const fadeInSec = Math.min(FADE_IN_SEC, sliceDurationSec / 3);
   const startAt = ctx.currentTime;
   const fadeOutStartAt = startAt + Math.max(0.02, sliceDurationSec - fadeOutSec);
-  const naturalEndAt = startAt + sliceDurationSec;
 
   if (ctx.state === 'suspended') {
     ctx.resume().catch((err) => console.error('[player] failed to resume audio context', err));
@@ -239,6 +219,29 @@ function playSlice(offsetMs, durationMs) {
     if (idx !== -1) activeVoices.splice(idx, 1);
   };
 }
+
+ipcRenderer.on('load-pack', (event, payload) => {
+  variants = payload.variants;
+  lastPlayedIndex = null;
+  releaseVariants = payload.releaseVariants || [];
+  lastPlayedReleaseIndex = null;
+  currentBuffer = null;
+  stopAllVoices();
+
+  const profile = payload.profile || NEUTRAL_PROFILE;
+  preGain.gain.value = dbToGain(profile.preGainDb || 0);
+  cutMud.gain.value = profile.eq?.cutMudDb || 0;
+  boostBody.gain.value = profile.eq?.boostBodyDb || 0;
+  smoothHighs.gain.value = profile.eq?.smoothHighsDb || 0;
+
+  fetch(payload.soundFilePath)
+    .then((res) => res.arrayBuffer())
+    .then((arrayBuffer) => ctx.decodeAudioData(arrayBuffer))
+    .then((buffer) => {
+      currentBuffer = buffer;
+    })
+    .catch((err) => console.error('[player] failed to load pack', payload.soundFilePath, err));
+});
 
 ipcRenderer.on('trigger-key', (event, { sentAt }) => {
   if (!currentBuffer || variants.length === 0) return;

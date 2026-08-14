@@ -1,0 +1,14 @@
+{
+  "id": "갈축 (신규)",
+  "name": "갈축 신규 (Kinesis Cherry MX Brown 실타이핑)",
+  "sound": "sound.wav",
+  "variants": [[0, 52], [102, 61], [213, 50], [313, 72]],
+  "category": "switch",
+  "profile": {
+    "algoVersion": 1,
+    "preGainDb": 1.6,
+    "eq": { "cutMudDb": 0, "boostBodyDb": 0, "smoothHighsDb": 0 }
+  },
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Kinesis Cherry MX Brown Typing.wav\" by DarcyConroy (Kinesis Advantage keyboard, Cherry MX Brown switches, real word typing, noise-removed), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/DarcyConroy/sounds/249889/)"
+}

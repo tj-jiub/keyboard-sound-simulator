@@ -39,6 +39,12 @@ function createSettingsStore(store) {
     setPlaybackMode(mode) {
       store.set('playbackMode', mode);
     },
+    getShortcut() {
+      return store.get('shortcut', 'CommandOrControl+Alt+K');
+    },
+    setShortcut(accelerator) {
+      store.set('shortcut', accelerator);
+    },
   };
   return api;
 }

@@ -1,0 +1,14 @@
+{
+  "id": "청축 (신규)",
+  "name": "청축 신규 (Cherry MX Blue 실타이핑, 클리핑 없음)",
+  "sound": "sound.wav",
+  "variants": [[0, 60], [110, 75], [235, 60], [345, 67]],
+  "category": "switch",
+  "profile": {
+    "algoVersion": 1,
+    "preGainDb": 0,
+    "eq": { "cutMudDb": 0, "boostBodyDb": 0, "smoothHighsDb": 0 }
+  },
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Typing on a keyboard\" by SamsterBirdies (Cherry MX Blue switches, real typing recording), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/SamsterBirdies/sounds/489424/)"
+}

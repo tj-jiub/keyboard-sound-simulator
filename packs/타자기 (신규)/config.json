@@ -1,0 +1,14 @@
+{
+  "id": "타자기 (신규)",
+  "name": "타자기 신규 (빈티지 클린)",
+  "sound": "sound.wav",
+  "variants": [[0, 50], [100, 72], [222, 66], [338, 69]],
+  "category": "brand",
+  "profile": {
+    "algoVersion": 1,
+    "preGainDb": -1.5,
+    "eq": { "cutMudDb": 0, "boostBodyDb": 0, "smoothHighsDb": 0 }
+  },
+  "license": "Creative Commons 0 (CC0)",
+  "attribution": "freesound.org - \"Typewriter\" by exterminat (old typewriter, clean isolated keystrokes recorded for a video game), Creative Commons 0, 저작자 표시 불필요 (https://freesound.org/people/exterminat/sounds/164807/)"
+}
