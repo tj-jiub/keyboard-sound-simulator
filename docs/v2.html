@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>키보드 소리 시뮬레이터</title>
+<meta name="description" content="다른 앱에서 타이핑해도 진짜 기계식 키보드 소리가 나는 Windows 트레이 앱." />
+<link rel="icon" href="app-icon.png" />
+<!-- The tokens doc calls for a plain system sans (Inter / Pretendard) rather
+     than a brand face — Pretendard covers Korean properly, Inter is the
+     Latin fallback, then the OS stack. -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  /* ══════════════════════════════════════════════════════════════════════
+     TOKENS
+     Every rule below reads from this block and nothing else, so swapping in
+     the values from the `download-page-tokens` doc is a single-block edit.
+     ══════════════════════════════════════════════════════════════════════ */
+  :root {
+    /* ── from the `download-page-tokens` doc, names kept verbatim ── */
+    --bg:              #050505;
+    --bg-glow:         #0E2A2C;   /* radial that fades to transparent, hero only */
+    --ghost-key:       rgba(255, 255, 255, .05);
+    --ghost-key-line:  rgba(255, 255, 255, .08);
+    --card-bg:         #111114;
+    --card-line:       #242428;
+    --ink:             #FFFFFF;
+    --ink-dim:         #8A8A90;
+    --cta-bg:          #F4F4F2;
+    --cta-ink:         #111111;
+    /* Held for the sound-demo section (waveform / active chip). The doc asks
+       for this to be used sparingly, so the hero deliberately doesn't. */
+    --accent:          #4DD8D0;
+
+    /* ── not covered by the doc: type scale + geometry ── */
+    --font-sans:       'Pretendard Variable', Pretendard, Inter, -apple-system,
+                       BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --fs-h1:           clamp(27px, 2.7vw, 38px);
+    --fs-h2:           clamp(23px, 2.2vw, 31px);
+    --fs-card-title:   clamp(14px, 1.05vw, 16px);
+    --fs-card-body:    clamp(12px, .92vw, 13.5px);
+    --fs-meta:         12px;
+    --fs-cta:          15px;
+    --lh-tight:        1.38;
+
+    /* geometry */
+    --radius-key:      12px;
+    --radius-card:     16px;
+    --radius-pill:     999px;
+    --key-h:           clamp(66px, 7vw, 106px);
+    --key-gap:         clamp(6px, .72vw, 11px);
+
+    /* the ghost board is pinned right and deliberately runs past the
+       viewport edge; these two values are what keep the four cards inside
+       the visible area while the keys keep bleeding off it */
+    --board-left:      42%;
+    --board-width:     80%;
+
+    /* shadow */
+    --shadow-card:     0 18px 44px rgba(0, 0, 0, .55);
+    --shadow-cta:      0 12px 34px rgba(0, 0, 0, .5);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── header (floats over the hero) ── */
+  .site-header {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1280px; margin: 0 auto;
+    padding: 22px clamp(24px, 4.4vw, 60px) 0;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 700; }
+  .brand img { width: 28px; height: 28px; border-radius: 8px; display: block; }
+  .site-header a { color: var(--ink-dim); text-decoration: none; font-size: 13px; }
+  .site-header a:hover { color: var(--ink); }
+
+  /* ══ HERO ══════════════════════════════════════════════════════════════ */
+  /* Teal glow sits behind the board, not across the whole section — the doc
+     asks for a hint of it, not a teal background. */
+  .hero {
+    position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden;
+    background: radial-gradient(96% 82% at 80% 45%, var(--bg-glow) 0%, transparent 70%);
+  }
+
+  /* Keys and cards live in two separate layers that are given identical
+     geometry — same offset, same 14x6 grid, same fixed row height. That's
+     what lets a card be placed by grid-area alone and still land exactly on
+     a key footprint, and it keeps the ghost mask off the cards. */
+  .board-layer {
+    position: absolute; top: 0; bottom: 0;
+    left: var(--board-left); width: var(--board-width);
+    display: flex; align-items: center;
+  }
+  .board {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(6, var(--key-h));
+    gap: var(--key-gap);
+  }
+  .board-layer--ghost {
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 16%),
+      linear-gradient(to bottom, transparent 0%, #000 13%, #000 87%, transparent 100%);
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 16%),
+      linear-gradient(to bottom, transparent 0%, #000 13%, #000 87%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+  /* The layer itself must not swallow clicks aimed at the copy behind it;
+     only the cards are interactive. */
+  .board-layer--cards { pointer-events: none; }
+  .card { pointer-events: auto; }
+
+  .key {
+    border-radius: var(--radius-key);
+    background: var(--ghost-key);
+    border: 1px solid var(--ghost-key-line);
+    color: var(--ghost-key-line);
+    display: flex; align-items: center; justify-content: center;
+    font-size: clamp(12px, 1.05vw, 17px); font-weight: 500;
+    user-select: none;
+    transition: background-color .55s ease, border-color .55s ease, color .55s ease;
+  }
+  /* A keystroke landing on this key. Fades in fast, decays slowly. */
+  .key.is-hit {
+    background: color-mix(in srgb, var(--accent) 13%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    color: var(--accent);
+    transition-duration: .05s;
+  }
+  .key--dual { flex-direction: column; gap: .28em; }
+  .key--dual .shift { font-size: .82em; opacity: .72; }
+  .key--wide { font-size: clamp(9.5px, .78vw, 12px); font-weight: 400; letter-spacing: .02em; }
+
+  /* ── feature cards, placed onto key positions ── */
+  /* Opaque, unlike the ghost keys — these are the "lit" keys. */
+  .card {
+    border-radius: var(--radius-card);
+    background: var(--card-bg);
+    border: 1px solid var(--card-line);
+    box-shadow: var(--shadow-card);
+    padding: clamp(15px, 1.4vw, 22px);
+    display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+  }
+  .card svg { color: var(--ink-dim); flex: none; }
+  .card h3 {
+    margin: 0 0 5px; font-size: var(--fs-card-title); font-weight: 700;
+    color: var(--ink); word-break: keep-all;
+  }
+  .card p {
+    margin: 0; font-size: var(--fs-card-body); line-height: 1.55;
+    color: var(--ink-dim); word-break: keep-all;
+  }
+
+  /* Row 1 is the function row, so the cards start on the number row. The two
+     pairs are offset by one column: staggered enough to read as keycaps
+     rather than a table, but kept touching so the keys they don't cover stay
+     in contiguous blocks instead of stranded single keys. */
+  .card--1 { grid-area: 2 / 4 / 4 / 7; }
+  .card--2 { grid-area: 2 / 7 / 4 / 10; }
+  .card--3 { grid-area: 4 / 3 / 6 / 6; }
+  .card--4 { grid-area: 4 / 6 / 6 / 9; }
+
+  /* ── spotlight: hovering one card dims everything around it ── */
+  .card, .copy, .board-layer--ghost { transition: opacity .28s ease; }
+  .card {
+    transition: opacity .28s ease, border-color .28s ease, box-shadow .28s ease;
+  }
+  /* The `.is-spot` twin of each selector is what touch devices get (no hover)
+     and what the screenshot harness can trigger. */
+  /* `:not()` matters here: the dim selector is more specific than the
+     highlight one, so without it the hovered card dims along with the rest. */
+  .board-layer--cards:has(.card:hover) .card:not(:hover),
+  .board-layer--cards.is-spot .card:not(.is-spot) { opacity: .17; }
+  .hero:has(.card:hover) .board-layer--ghost,
+  .hero.is-spot .board-layer--ghost { opacity: .34; }
+  .hero:has(.card:hover) .copy,
+  .hero.is-spot .copy { opacity: .42; }
+  .card:hover,
+  .card.is-spot {
+    opacity: 1;
+    border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+                0 26px 64px rgba(0, 0, 0, .62);
+  }
+  .card:hover svg,
+  .card.is-spot svg { color: var(--accent); }
+
+  /* The pack name cycling inside card 2 — the "12 packs" claim, shown. */
+  .cycle {
+    color: var(--ink); font-weight: 600;
+    transition: opacity .26s ease;
+  }
+  .cycle.is-out { opacity: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .key, .card, .copy, .board-layer--ghost, .cycle { transition: none; }
+  }
+
+  /* ── left column ── */
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1280px; margin: 0 auto;
+    padding: 0 clamp(24px, 4.4vw, 60px);
+    min-height: 100vh; min-height: 100svh;
+    display: flex; align-items: center;
+  }
+  .copy { max-width: min(520px, 40vw); }
+  h1 {
+    margin: 0 0 clamp(26px, 3.2vw, 42px);
+    font-size: var(--fs-h1); font-weight: 700;
+    line-height: var(--lh-tight); letter-spacing: -.022em;
+    word-break: keep-all;
+  }
+  h1 .lead { display: block; color: var(--ink); }
+  h1 .trail { display: block; color: var(--ink-dim); font-weight: 400; }
+
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--cta-bg); color: var(--cta-ink);
+    font-size: var(--fs-cta); font-weight: 700; font-family: inherit;
+    padding: 13px 24px; border-radius: var(--radius-pill);
+    text-decoration: none; box-shadow: var(--shadow-cta);
+    transition: filter .15s ease;
+  }
+  /* "호버 시 살짝 밝아지는 정도의 절제된 반응만" */
+  .cta:hover { filter: brightness(1.07); }
+  .cta-meta { margin: 12px 0 0; font-size: var(--fs-meta); color: var(--ink-dim); }
+
+  /* ══ SOUND DEMO ════════════════════════════════════════════════════════ */
+  .demo { padding: clamp(72px, 8vw, 124px) 0 clamp(84px, 9vw, 140px); }
+  .demo-inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 0 clamp(24px, 4.4vw, 60px);
+  }
+  h2 {
+    margin: 0; font-size: var(--fs-h2); font-weight: 700;
+    line-height: var(--lh-tight); letter-spacing: -.02em; word-break: keep-all;
+  }
+  h2 .lead { display: block; color: var(--ink); }
+  h2 .trail { display: block; color: var(--ink-dim); font-weight: 400; font-size: .62em; margin-top: 12px; }
+
+  /* The one place the doc's accent is meant to show up. */
+  .wave {
+    display: block; width: 100%; height: 72px;
+    margin: clamp(24px, 2.4vw, 34px) 0 clamp(18px, 1.8vw, 26px);
+  }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    display: inline-flex; align-items: baseline; gap: 8px;
+    padding: 10px 16px; border-radius: var(--radius-pill);
+    background: var(--card-bg); border: 1px solid var(--card-line);
+    font-family: inherit; cursor: pointer;
+    transition: border-color .15s ease, transform .1s ease;
+  }
+  .chip b { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .chip span { font-size: 12px; color: var(--ink-dim); }
+  .chip:hover { border-color: var(--ink-dim); }
+  .chip:active { transform: scale(.97); }
+  .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .chip.is-active { border-color: var(--accent); }
+  .chip.is-active b { color: var(--accent); }
+
+  .demo-status { margin: 20px 0 0; font-size: 13px; color: var(--ink-dim); }
+
+  /* ── responsive ── */
+  /* Below this width the copy and the board can't share a row without the
+     board landing on the headline. Drop the ghost keys — unreadable at this
+     scale anyway — and let the cards reflow into a stack under the CTA. */
+  @media (max-width: 900px) {
+    /* The cards come first in the source because they belong to the board
+       layer; stacked, the copy has to lead. */
+    .hero { min-height: 0; display: flex; flex-direction: column; }
+    .hero-inner { order: 1; min-height: 0; padding-top: 104px; padding-bottom: 4px; }
+    .copy { max-width: 34em; }
+    .board-layer--ghost { display: none; }
+    /* No `margin: 0 auto` here — an auto cross-axis margin cancels a flex
+       item's stretch, which collapsed this to shrink-to-fit width. */
+    .board-layer--cards {
+      order: 2;
+      position: static; width: 100%; display: block; pointer-events: auto;
+      padding: 30px clamp(24px, 4.4vw, 60px) 60px;
+    }
+    .board { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; gap: 12px; }
+    .card { grid-area: auto !important; min-height: 136px; }
+
+  }
+  @media (max-width: 520px) {
+    .board { grid-template-columns: 1fr; }
+    .card { min-height: 0; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+  <header class="site-header">
+    <div class="brand">
+      <img src="app-icon.png" alt="" />
+      키보드 소리 시뮬레이터
+    </div>
+    <a href="https://github.com/tj-jiub/keyboard-sound-simulator" target="_blank" rel="noopener">GitHub</a>
+  </header>
+
+  <div class="board-layer board-layer--ghost" aria-hidden="true">
+    <div class="board">
+      <!-- function row -->
+      <div class="key key--wide">Esc</div>
+      <div class="key key--wide">F1</div><div class="key key--wide">F2</div>
+      <div class="key key--wide">F3</div><div class="key key--wide">F4</div>
+      <div class="key key--wide">F5</div><div class="key key--wide">F6</div>
+      <div class="key key--wide">F7</div><div class="key key--wide">F8</div>
+      <div class="key key--wide">F9</div><div class="key key--wide">F10</div>
+      <div class="key key--wide">F11</div><div class="key key--wide">F12</div>
+      <div class="key key--wide">Del</div>
+
+      <!-- number row -->
+      <div class="key key--dual"><span class="shift">~</span><span>`</span></div>
+      <div class="key key--dual"><span class="shift">!</span><span>1</span></div>
+      <div class="key key--dual"><span class="shift">@</span><span>2</span></div>
+      <div class="key key--dual"><span class="shift">#</span><span>3</span></div>
+      <div class="key key--dual"><span class="shift">$</span><span>4</span></div>
+      <div class="key key--dual"><span class="shift">%</span><span>5</span></div>
+      <div class="key key--dual"><span class="shift">^</span><span>6</span></div>
+      <div class="key key--dual"><span class="shift">&amp;</span><span>7</span></div>
+      <div class="key key--dual"><span class="shift">*</span><span>8</span></div>
+      <div class="key key--dual"><span class="shift">(</span><span>9</span></div>
+      <div class="key key--dual"><span class="shift">)</span><span>0</span></div>
+      <div class="key key--dual"><span class="shift">_</span><span>-</span></div>
+      <div class="key key--wide" style="grid-column: span 2;">⌫</div>
+
+      <!-- qwerty row -->
+      <div class="key key--wide" style="grid-column: span 2;">Tab</div>
+      <div class="key">Q</div><div class="key">W</div><div class="key">E</div>
+      <div class="key">R</div><div class="key">T</div><div class="key">Y</div>
+      <div class="key">U</div><div class="key">I</div><div class="key">O</div>
+      <div class="key">P</div>
+      <div class="key">[</div><div class="key">]</div>
+
+      <!-- home row -->
+      <div class="key key--wide" style="grid-column: span 2;">Caps</div>
+      <div class="key">A</div><div class="key">S</div><div class="key">D</div>
+      <div class="key">F</div><div class="key">G</div><div class="key">H</div>
+      <div class="key">J</div><div class="key">K</div><div class="key">L</div>
+      <div class="key">;</div>
+      <div class="key key--wide" style="grid-column: span 2;">Enter</div>
+
+      <!-- bottom letter row -->
+      <div class="key key--wide" style="grid-column: span 2;">Shift</div>
+      <div class="key">Z</div><div class="key">X</div><div class="key">C</div>
+      <div class="key">V</div><div class="key">B</div><div class="key">N</div>
+      <div class="key">M</div>
+      <div class="key">,</div><div class="key">.</div><div class="key">/</div>
+      <div class="key key--wide" style="grid-column: span 2;">Shift</div>
+
+      <!-- modifier row -->
+      <div class="key key--wide">Ctrl</div>
+      <div class="key key--wide">Win</div>
+      <div class="key key--wide">Alt</div>
+      <div class="key key--wide" style="grid-column: span 6;">Space</div>
+      <div class="key key--wide">Alt</div>
+      <div class="key key--wide">Ctrl</div>
+      <div class="key key--wide">←</div>
+      <div class="key key--wide">↑</div>
+      <div class="key key--wide">→</div>
+    </div>
+  </div>
+
+  <div class="board-layer board-layer--cards">
+    <div class="board">
+
+      <div class="card card--1">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        <div>
+          <h3>어디서든 재생</h3>
+          <p>앱을 설치하면 메신저·문서·게임, 어디서 타이핑하든 따라옵니다.</p>
+        </div>
+      </div>
+
+      <div class="card card--2">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+        <div>
+          <h3>12가지 사운드팩</h3>
+          <p><span class="cycle" id="pack-cycle">도각도각 · Leopold</span><br />설치하면 12종을 즉시 바꿔가며 씁니다.</p>
+        </div>
+      </div>
+
+      <div class="card card--3">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h12"/></svg>
+        <div>
+          <h3>단축키 지원</h3>
+          <p>Ctrl+Alt+K로 언제든 설정 창을 열어요.</p>
+        </div>
+      </div>
+
+      <div class="card card--4">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        <div>
+          <h3>무료 · 가벼움</h3>
+          <p>트레이에 상주하는 Windows 앱.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="copy">
+      <h1>
+        <span class="lead">타이핑할 때마다, 도각도각.</span>
+        <span class="trail">노트북 키보드에도 기계식 소리를 입혀요.</span>
+      </h1>
+
+      <a class="cta" data-dl href="https://github.com/tj-jiub/keyboard-sound-simulator/releases/latest">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.6 10.2 4.6v6.7H3V5.6Zm8.6-1.2L21 3.1v8.2h-9.4V4.4ZM3 12.6h7.2v6.7L3 18.4v-5.8Zm8.6 0H21v8.3l-9.4-1V12.6Z"/></svg>
+        <span>다운로드</span>
+      </a>
+      <p class="cta-meta" data-dl-meta>최신 버전 정보를 불러오는 중…</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="demo" id="demo">
+  <div class="demo-inner">
+    <h2>
+      <span class="lead">설치 전에, 여기서 먼저 들어보세요.</span>
+      <span class="trail">칩을 누르면 그 키보드 소리가 납니다. 고른 뒤엔 아무 키나 쳐보세요.</span>
+    </h2>
+
+    <canvas id="wave" class="wave" aria-hidden="true"></canvas>
+
+    <div class="chips" id="chips"></div>
+    <p class="demo-status" id="demo-status" aria-live="polite">사운드팩을 하나 골라보세요.</p>
+  </div>
+</section>
+
+<script src="packs.js"></script>
+<script>
+  // ── Hero motion ────────────────────────────────────────────────────────
+  // Two things the page has to say without a paragraph of copy: the sound
+  // follows you everywhere (keys light up all over the board, not in one
+  // spot), and there are twelve of them (card 2 cycles through the real
+  // pack list). Both idle when the hero is off-screen or the tab is hidden.
+  (function () {
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) return;
+
+    var hero = document.querySelector('.hero');
+    var keys = Array.prototype.slice.call(document.querySelectorAll('.board-layer--ghost .key'));
+    var cycleEl = document.getElementById('pack-cycle');
+    var spreadCard = document.querySelector('.card--1');
+
+    // 무음 is a real pack but has no sample in the web manifest, so it's
+    // appended here to keep the cycle honest at twelve.
+    var names = (window.KSS_PACKS || []).map(function (p) { return p.onom + ' · ' + p.label; });
+    names.push('무음 · 집중할 때');
+
+    var running = false;
+    var keyTimer = null;
+    var cycleTimer = null;
+    var gap = 420;           // ms between keystrokes; drops while card 1 is hovered
+    var nameIndex = 0;
+
+    function tapKey() {
+      var k = keys[Math.floor(Math.random() * keys.length)];
+      k.classList.add('is-hit');
+      setTimeout(function () { k.classList.remove('is-hit'); }, 90);
+      keyTimer = setTimeout(tapKey, gap + Math.random() * gap * 0.7);
+    }
+
+    function nextName() {
+      cycleEl.classList.add('is-out');
+      setTimeout(function () {
+        nameIndex = (nameIndex + 1) % names.length;
+        cycleEl.textContent = names[nameIndex];
+        cycleEl.classList.remove('is-out');
+      }, 260);
+      cycleTimer = setTimeout(nextName, 1900);
+    }
+
+    function start() {
+      if (running || document.hidden) return;
+      running = true;
+      if (keys.length) keyTimer = setTimeout(tapKey, gap);
+      if (cycleEl && names.length > 1) cycleTimer = setTimeout(nextName, 1900);
+    }
+
+    function stop() {
+      running = false;
+      clearTimeout(keyTimer);
+      clearTimeout(cycleTimer);
+    }
+
+    if (cycleEl && names.length) cycleEl.textContent = names[0];
+
+    // Hovering "어디서든 재생" makes the point literal: the whole board starts
+    // firing, not just the keys near the card.
+    if (spreadCard) {
+      spreadCard.addEventListener('mouseenter', function () { gap = 120; });
+      spreadCard.addEventListener('mouseleave', function () { gap = 420; });
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) start(); else stop();
+      }, { threshold: 0 }).observe(hero);
+    } else {
+      start();
+    }
+  }());
+
+  // ── Sound demo ─────────────────────────────────────────────────────────
+  // Mirrors the desktop app's playback: one sprite WAV per pack sliced by
+  // `variants` offsets, routed through that pack's calibrated EQ profile so
+  // the preview matches what the app actually sounds like.
+  (function () {
+    var packs = window.KSS_PACKS || [];
+    var chipsEl = document.getElementById('chips');
+    var statusEl = document.getElementById('demo-status');
+    var canvas = document.getElementById('wave');
+    var g2d = canvas.getContext('2d');
+
+    var ctx = null;
+    var chain = null;
+    var analyser = null;
+    var buffers = {};
+    var current = packs[0] || null;
+    var lastVariant = -1;
+
+    function dbToGain(db) { return Math.pow(10, db / 20); }
+
+    // Built once, on the first user gesture — browsers refuse to start an
+    // AudioContext before one.
+    function ensureAudio() {
+      if (ctx) return;
+      ctx = new (window.AudioContext || window.webkitAudioContext)({ latencyHint: 'interactive' });
+      var preGain = ctx.createGain();
+      var cutMud = ctx.createBiquadFilter();
+      cutMud.type = 'peaking'; cutMud.frequency.value = 325; cutMud.Q.value = 1.2;
+      var boostBody = ctx.createBiquadFilter();
+      boostBody.type = 'peaking'; boostBody.frequency.value = 600; boostBody.Q.value = 1.0;
+      var smoothHighs = ctx.createBiquadFilter();
+      smoothHighs.type = 'highshelf'; smoothHighs.frequency.value = 6000;
+      var master = ctx.createGain();
+      master.gain.value = 0.9;
+      analyser = ctx.createAnalyser();
+      analyser.fftSize = 2048;
+
+      preGain.connect(cutMud); cutMud.connect(boostBody);
+      boostBody.connect(smoothHighs); smoothHighs.connect(master);
+      master.connect(analyser); analyser.connect(ctx.destination);
+      chain = { preGain: preGain, cutMud: cutMud, boostBody: boostBody, smoothHighs: smoothHighs };
+    }
+
+    function loadPack(pack) {
+      if (buffers[pack.slug]) return Promise.resolve(buffers[pack.slug]);
+      return fetch('sounds/' + pack.slug + '.wav')
+        .then(function (r) { return r.arrayBuffer(); })
+        .then(function (ab) { return ctx.decodeAudioData(ab); })
+        .then(function (buf) { buffers[pack.slug] = buf; return buf; });
+    }
+
+    function applyProfile(pack) {
+      var p = pack.profile || {};
+      var eq = p.eq || {};
+      chain.preGain.gain.value = dbToGain(p.preGainDb || 0);
+      chain.cutMud.gain.value = eq.cutMudDb || 0;
+      chain.boostBody.gain.value = eq.boostBodyDb || 0;
+      chain.smoothHighs.gain.value = eq.smoothHighsDb || 0;
+    }
+
+    function playOnce(pack) {
+      ensureAudio();
+      if (ctx.state === 'suspended') ctx.resume();
+      return loadPack(pack).then(function (buffer) {
+        applyProfile(pack);
+        var variants = pack.variants || [[0, 120]];
+        var i = Math.floor(Math.random() * variants.length);
+        if (variants.length > 1 && i === lastVariant) i = (i + 1) % variants.length;
+        lastVariant = i;
+
+        var offsetSec = variants[i][0] / 1000;
+        var durSec = Math.max(variants[i][1] / 1000, 0.05);
+        var remaining = Math.max(0.01, buffer.duration - offsetSec);
+        durSec = Math.min(durSec, remaining);
+
+        var src = ctx.createBufferSource();
+        src.buffer = buffer;
+        src.playbackRate.value = 1 + (Math.random() * 2 - 1) * 0.03;
+
+        // Same declick envelope the app uses — hard-cutting a sprite slice
+        // mid-waveform pops audibly.
+        var g = ctx.createGain();
+        var t = ctx.currentTime;
+        var fadeOut = Math.min(0.03, Math.max(0.008, durSec * 0.35));
+        g.gain.setValueAtTime(0, t);
+        g.gain.linearRampToValueAtTime(0.7, t + 0.001);
+        g.gain.setValueAtTime(0.7, t + Math.max(0.02, durSec - fadeOut));
+        g.gain.linearRampToValueAtTime(0, t + durSec);
+
+        src.connect(g);
+        g.connect(chain.preGain);
+        src.start(t, offsetSec, durSec);
+        wake();
+      }).catch(function () {
+        statusEl.textContent = '소리를 불러오지 못했어요. 새로고침 후 다시 시도해주세요.';
+      });
+    }
+
+    // ── waveform ──
+    // Only animates while something is actually sounding; the rest of the
+    // time it's a single flat line, so an idle tab isn't burning frames.
+    var awakeUntil = 0;
+    var rafId = null;
+
+    function css(name) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+
+    function sizeCanvas() {
+      var dpr = window.devicePixelRatio || 1;
+      var r = canvas.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.round(r.width * dpr));
+      canvas.height = Math.max(1, Math.round(r.height * dpr));
+      g2d.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (!rafId) drawFlat();
+    }
+
+    function drawFlat() {
+      var r = canvas.getBoundingClientRect();
+      g2d.clearRect(0, 0, r.width, r.height);
+      g2d.strokeStyle = css('--ghost-key-line') || 'rgba(255,255,255,.08)';
+      g2d.lineWidth = 1;
+      g2d.beginPath();
+      g2d.moveTo(0, r.height / 2);
+      g2d.lineTo(r.width, r.height / 2);
+      g2d.stroke();
+    }
+
+    function drawFrame() {
+      var r = canvas.getBoundingClientRect();
+      var n = analyser.frequencyBinCount;
+      var data = new Uint8Array(n);
+      analyser.getByteTimeDomainData(data);
+
+      g2d.clearRect(0, 0, r.width, r.height);
+      g2d.strokeStyle = css('--accent') || '#4DD8D0';
+      g2d.lineWidth = 1.6;
+      g2d.lineJoin = 'round';
+      g2d.beginPath();
+      var step = r.width / n;
+      for (var i = 0; i < n; i++) {
+        // 128 is silence in getByteTimeDomainData; scale the deviation so a
+        // quiet click still reads as a visible wiggle.
+        var y = r.height / 2 + ((data[i] - 128) / 128) * (r.height / 2) * 1.5;
+        if (i === 0) g2d.moveTo(0, y); else g2d.lineTo(i * step, y);
+      }
+      g2d.stroke();
+
+      if (performance.now() < awakeUntil) {
+        rafId = requestAnimationFrame(drawFrame);
+      } else {
+        rafId = null;
+        drawFlat();
+      }
+    }
+
+    function wake() {
+      awakeUntil = performance.now() + 900;
+      if (!rafId && analyser) rafId = requestAnimationFrame(drawFrame);
+    }
+
+    sizeCanvas();
+    window.addEventListener('resize', sizeCanvas);
+
+    // ── chips ──
+    function select(pack, chip) {
+      current = pack;
+      Array.prototype.forEach.call(chipsEl.children, function (c) { c.classList.remove('is-active'); });
+      if (chip) chip.classList.add('is-active');
+      statusEl.textContent = pack.label + ' 선택됨 — 이제 아무 키나 타이핑해보세요.';
+    }
+
+    packs.forEach(function (pack) {
+      var chip = document.createElement('button');
+      chip.className = 'chip';
+      chip.type = 'button';
+      chip.innerHTML = '<b></b><span></span>';
+      chip.querySelector('b').textContent = pack.onom;
+      chip.querySelector('span').textContent = pack.label;
+      chip.addEventListener('click', function () {
+        select(pack, chip);
+        playOnce(pack);
+      });
+      chipsEl.appendChild(chip);
+    });
+
+    // 무음 is a real pack in the app, so it's selectable here too — picking it
+    // just means keystrokes produce nothing.
+    var silent = document.createElement('button');
+    silent.className = 'chip';
+    silent.type = 'button';
+    silent.innerHTML = '<b>무음</b><span>집중할 때</span>';
+    silent.addEventListener('click', function () {
+      current = null;
+      Array.prototype.forEach.call(chipsEl.children, function (c) { c.classList.remove('is-active'); });
+      silent.classList.add('is-active');
+      statusEl.textContent = '무음 선택됨 — 타이핑해도 소리가 나지 않아요.';
+    });
+    chipsEl.appendChild(silent);
+
+    // Typing anywhere on the page plays the selected pack — the same thing
+    // the installed app does system-wide.
+    document.addEventListener('keydown', function (e) {
+      if (e.repeat || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (!current) return;
+      playOnce(current);
+    });
+  }());
+</script>
+
+<script>
+  // Always resolves to whatever release is actually tagged "latest" on GitHub,
+  // so this page never needs a manual edit when a new version ships. Every
+  // download button and meta line on the page is driven from this one call.
+  (function () {
+    function setMeta(text) {
+      Array.prototype.forEach.call(document.querySelectorAll('[data-dl-meta]'), function (el) {
+        el.textContent = text;
+      });
+    }
+
+    fetch('https://api.github.com/repos/tj-jiub/keyboard-sound-simulator/releases/latest')
+      .then(function (res) {
+        if (!res.ok) throw new Error('release lookup failed');
+        return res.json();
+      })
+      .then(function (release) {
+        var setupAsset = release.assets.find(function (a) { return /setup.*\.exe$/i.test(a.name); });
+        if (!setupAsset) {
+          setMeta('Windows 10/11 · 최신 릴리스로 이동합니다.');
+          return;
+        }
+        Array.prototype.forEach.call(document.querySelectorAll('[data-dl]'), function (el) {
+          el.href = setupAsset.browser_download_url;
+        });
+        setMeta('Windows 10/11 · ' + release.tag_name + ' · ' + (setupAsset.size / 1e6).toFixed(0) + 'MB');
+      })
+      .catch(function () {
+        setMeta('Windows 10/11 · 최신 릴리스로 이동합니다.');
+      });
+  }());
+</script>
+
+</body>
+</html>
