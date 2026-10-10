@@ -216,7 +216,11 @@
     min-height: 100vh; min-height: 100svh;
     display: flex; align-items: center;
   }
-  .copy { max-width: min(520px, 40vw); }
+  /* hero-inner stacks above the board layers and spans the whole hero, so it
+     was swallowing the pointer before it reached the cards (no hover, no
+     spotlight). Let it pass through; only the copy itself is interactive. */
+  .hero-inner { pointer-events: none; }
+  .copy { max-width: min(520px, 40vw); pointer-events: auto; }
   h1 {
     margin: 0 0 clamp(26px, 3.2vw, 42px);
     font-size: var(--fs-h1); font-weight: 700;
