@@ -4,26 +4,42 @@ import { PERFUMES, PERFUMES_BY_ID } from './data/perfumes';
 import { DEMO_FEEDBACK_SEED, DEMO_STOCK, DEMO_STOCK_UPDATED_AT, DEMO_STORE } from './data/mockStore';
 import { findCandidates } from './lib/mockSimilarity';
 import { createFeedbackStore } from './lib/feedbackStore';
-import { StoreHeader } from './components/StoreHeader';
-import { SearchBox } from './components/SearchBox';
-import { SelectedPerfume } from './components/SelectedPerfume';
-import { CandidateList } from './components/CandidateList';
+import { TopBar } from './components/TopBar';
+import { ShelfWall, type ShelfEntry } from './components/ShelfWall';
+import { ShelfIndex } from './components/ShelfIndex';
+import { FocusView } from './components/FocusView';
 import { StockUploader } from './components/StockUploader';
 import { AppFooter } from './components/AppFooter';
 
 const KNOWN_IDS = new Set(PERFUMES.map((p) => p.id));
 
+function formatUpdatedAt(iso: string): string {
+  const d = new Date(iso);
+  return `${d.getMonth() + 1}월 ${d.getDate()}일 마감 재고`;
+}
+
 export default function App() {
   const [base, setBase] = useState<Perfume | null>(null);
   const [stock, setStock] = useState<StockItem[]>(DEMO_STOCK);
   const [stockUpdatedAt, setStockUpdatedAt] = useState(DEMO_STOCK_UPDATED_AT);
+  const [focus, setFocus] = useState<{ id: string; rect: DOMRect | null } | null>(null);
+  const [staffOpen, setStaffOpen] = useState(false);
   const feedback = useMemo(() => createFeedbackStore(DEMO_STORE.id, DEMO_FEEDBACK_SEED), []);
   const [, setFeedbackVersion] = useState(0);
+
+  const entries: ShelfEntry[] = useMemo(
+    () => stock.flatMap((s) => {
+      const perfume = PERFUMES_BY_ID.get(s.perfumeId);
+      return perfume ? [{ perfume, stock: s }] : [];
+    }),
+    [stock],
+  );
 
   const candidates = useMemo(
     () => (base ? findCandidates(base, stock, PERFUMES_BY_ID) : []),
     [base, stock],
   );
+  const ranks = useMemo(() => new Map(candidates.map((c, i) => [c.perfume.id, i + 1])), [candidates]);
 
   const onVote = (toId: string, v: Verdict) => {
     if (base && feedback.vote(base.id, toId, v)) setFeedbackVersion((n) => n + 1);
@@ -34,21 +50,59 @@ export default function App() {
     setStockUpdatedAt(new Date().toISOString());
   };
 
+  const focused = focus ? entries.find((e) => e.perfume.id === focus.id) : undefined;
+  const focusedCandidate = focused ? candidates.find((c) => c.perfume.id === focused.perfume.id) ?? null : null;
+
   return (
     <div className="app">
-      <StoreHeader store={DEMO_STORE} stockUpdatedAt={stockUpdatedAt} />
-      <main>
+      <TopBar store={DEMO_STORE} perfumes={PERFUMES} onSelect={setBase} onStaff={() => setStaffOpen((o) => !o)} />
+
+      {staffOpen && (
+        <StockUploader knownIds={KNOWN_IDS} onApply={onStockApply} onClose={() => setStaffOpen(false)} />
+      )}
+
+      <div className="caption" aria-live="polite">
         {base ? (
           <>
-            <SelectedPerfume perfume={base} onClear={() => setBase(null)} />
-            <CandidateList base={base} candidates={candidates} feedback={feedback} onVote={onVote} />
+            <p>
+              <strong>{base.name}</strong>와 비슷한 후보 {candidates.length}개
+              <span className="caption-sub">번호 순서대로 맡아보세요. 누르면 자세히 볼 수 있어요.</span>
+            </p>
+            <button type="button" className="pill" onClick={() => setBase(null)}>전체 보기</button>
           </>
         ) : (
-          <SearchBox perfumes={PERFUMES} onSelect={setBase} />
+          <p>
+            지금 이 매장 진열대
+            <span className="caption-sub">{formatUpdatedAt(stockUpdatedAt)} · 당일 품절은 직원에게 확인해 주세요</span>
+          </p>
         )}
-        <StockUploader knownIds={KNOWN_IDS} onApply={onStockApply} />
+      </div>
+
+      <main>
+        {base && candidates.length === 0 && (
+          <p className="empty" role="status">이 매장 재고에는 비교할 향수가 없어요. 직원에게 문의해 주세요.</p>
+        )}
+        <ShelfWall entries={entries} ranks={ranks} onOpen={(id, rect) => setFocus({ id, rect })} />
       </main>
+
+      <ShelfIndex entries={entries} ranks={ranks} onOpen={(id, rect) => setFocus({ id, rect })} />
       <AppFooter />
+
+      {focused && (
+        <FocusView
+          key={focused.perfume.id}
+          perfume={focused.perfume}
+          stock={focused.stock}
+          originRect={focus?.rect ?? null}
+          base={base}
+          candidate={focusedCandidate}
+          rank={ranks.get(focused.perfume.id)}
+          feedback={base && focusedCandidate ? feedback.summary(base.id, focused.perfume.id) : null}
+          voted={base ? feedback.hasVoted(base.id, focused.perfume.id) : false}
+          onVote={(v) => onVote(focused.perfume.id, v)}
+          onClose={() => setFocus(null)}
+        />
+      )}
     </div>
   );
 }
