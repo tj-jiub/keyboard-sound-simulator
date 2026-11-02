@@ -131,6 +131,10 @@ function vPro(){
 function vSettings(){
  return `<h1>설정</h1>
  <div class="card row" data-act="tab:pro" style="cursor:pointer"><b class="sp">구독 관리</b><span class="mut">${S.pro?'PRO 이용 중':'무료'} ›</span></div>
+ <div class="card"><b>🧩 실제 차단 켜기 (사파리)</b>
+ <p class="mut" style="margin:6px 0">1. App Store에서 무료 앱 <b>Userscripts</b> 설치 → 설정 &gt; Safari &gt; 확장 프로그램에서 켜기, 모든 웹사이트 허용<br>2. 아래 버튼으로 스크립트를 열고 Userscripts 안내에 따라 설치<br>3. 사파리에서 instagram.com / youtube.com 사용 (네이티브 앱은 삭제 권장)<br>4. 페이지 오른쪽 아래 ✂ 버튼으로 항목별 켜고 끄기</p>
+ <a class="btn" style="text-decoration:none;text-align:center" href="scrollcut.user.js">스크립트 열기</a>
+ <p class="mut" style="margin-top:8px">사이트 화면 구조가 바뀌면 일부가 안 막힐 수 있어요.</p></div>
  <div class="card"><b>iOS 앱으로 전환하려면</b><p class="mut">이 웹앱은 화면과 설정 흐름을 구현한 버전이에요. 브라우저는 다른 앱(인스타·유튜브)을 실제로 차단할 수 없어, 진짜 차단은 iOS의 스크린타임(Family Controls) API를 쓰는 네이티브 앱이 필요합니다.</p></div>
  <button class="btn ghost" data-act="reset">모든 데이터 초기화</button>`}
 
