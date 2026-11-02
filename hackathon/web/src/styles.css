@@ -12,7 +12,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --bg: #1a1714;
     --surface: #24201c;
     --text: #f1ebe4;
@@ -23,6 +23,18 @@
     --shared: #4a382a;
     color-scheme: dark;
   }
+}
+
+:root[data-theme='dark'] {
+  --bg: #1a1714;
+  --surface: #24201c;
+  --text: #f1ebe4;
+  --muted: #a99d92;
+  --line: #3a332d;
+  --accent: #d9a47c;
+  --accent-soft: #3a2d23;
+  --shared: #4a382a;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
