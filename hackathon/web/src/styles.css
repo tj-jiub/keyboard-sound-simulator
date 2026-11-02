@@ -1,0 +1,154 @@
+:root {
+  --bg: #f7f3ee;
+  --surface: #fffdfa;
+  --text: #2a2420;
+  --muted: #7a6f66;
+  --line: #e6ddd3;
+  --accent: #8a5a3b;
+  --accent-soft: #f1e4d8;
+  --shared: #e9d7c4;
+  --radius: 14px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1714;
+    --surface: #24201c;
+    --text: #f1ebe4;
+    --muted: #a99d92;
+    --line: #3a332d;
+    --accent: #d9a47c;
+    --accent-soft: #3a2d23;
+    --shared: #4a382a;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app { max-width: 480px; margin: 0 auto; padding: 24px 16px 40px; }
+main { display: flex; flex-direction: column; gap: 20px; }
+
+h1, h2, h3, p { margin: 0; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; color: var(--muted); }
+.muted { color: var(--muted); font-size: 13px; }
+
+.store-header { margin-bottom: 24px; }
+.store-header h1 { font-size: 24px; margin-top: 2px; }
+.stock-notice { margin-top: 6px; font-size: 12px; color: var(--muted); }
+
+/* 검색 */
+.search { position: relative; }
+.search-label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 18px; }
+.search-input {
+  width: 100%; padding: 14px 16px; font-size: 16px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); color: var(--text);
+}
+.search-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.search-results {
+  list-style: none; margin: 6px 0 0; padding: 4px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.search-results li {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 10px 12px; border-radius: 10px; cursor: pointer;
+}
+.search-results li.active { background: var(--accent-soft); }
+.result-name { font-weight: 600; }
+.result-brand { color: var(--muted); font-size: 13px; text-align: right; }
+.search-empty { margin-top: 8px; color: var(--muted); font-size: 14px; }
+
+/* 기준 향수 */
+.selected {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+  padding: 16px; border-radius: var(--radius); background: var(--accent-soft);
+}
+.selected-name { font-size: 18px; font-weight: 700; margin-top: 2px; }
+.selected-brand { font-weight: 400; font-size: 13px; color: var(--muted); }
+.selected-notes { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* 버튼 */
+button { font: inherit; cursor: pointer; }
+.ghost-button {
+  flex-shrink: 0; padding: 8px 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text); font-size: 13px;
+}
+.choice {
+  flex: 1; padding: 10px; border-radius: 10px;
+  border: 1px solid var(--accent); background: transparent; color: var(--accent); font-weight: 600;
+}
+.choice:active { background: var(--accent-soft); }
+
+/* 후보 카드 */
+.list-title { font-size: 18px; margin-bottom: 12px; }
+.cards { display: flex; flex-direction: column; gap: 12px; }
+.card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 16px; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.card-top { display: flex; align-items: center; gap: 12px; }
+.rank {
+  display: grid; place-items: center; width: 28px; height: 28px; flex-shrink: 0;
+  border-radius: 50%; background: var(--accent); color: var(--surface); font-weight: 700; font-size: 14px;
+}
+.card-title { flex: 1; min-width: 0; }
+.card-brand { font-size: 12px; color: var(--muted); }
+.card-title h3 { font-size: 17px; overflow-wrap: anywhere; }
+.shelf {
+  display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
+  padding: 4px 10px; border-radius: 10px; border: 1px solid var(--line);
+  font-weight: 700; font-size: 16px;
+}
+.shelf-label { font-size: 10px; font-weight: 400; color: var(--muted); }
+
+.meter { display: flex; align-items: center; gap: 10px; }
+.meter-track { flex: 1; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.meter-fill { height: 100%; background: var(--accent); }
+.meter-value { font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+.difference { font-size: 14px; }
+.shared { font-size: 13px; }
+
+.card-details summary { font-size: 13px; color: var(--accent); cursor: pointer; }
+.card-details[open] summary { margin-bottom: 8px; }
+.desc { margin-top: 8px; }
+.pyramid { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.pyramid-row { display: grid; grid-template-columns: 44px 1fr; gap: 8px; }
+.pyramid dt { font-size: 12px; color: var(--muted); padding-top: 2px; }
+.pyramid dd { margin: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.note { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); }
+.note-shared { background: var(--shared); border-color: transparent; }
+
+.card-bottom { display: flex; justify-content: flex-end; }
+.badge { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--line); color: var(--muted); }
+.badge-ai { background: var(--accent-soft); color: var(--accent); }
+
+.feedback { border-top: 1px dashed var(--line); padding-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.feedback .ghost-button { align-self: flex-start; }
+.feedback-summary { font-size: 13px; color: var(--muted); }
+.feedback-choices { display: flex; gap: 8px; }
+.feedback-thanks { font-size: 13px; color: var(--accent); }
+
+.empty { padding: 16px; text-align: center; color: var(--muted); }
+
+/* 직원용 */
+.staff { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.staff summary { cursor: pointer; }
+.staff[open] { display: flex; flex-direction: column; gap: 8px; }
+.staff input[type='file'] { max-width: 100%; }
+.errors { margin: 0; padding-left: 18px; color: #b3412b; }
+
+.footer { margin-top: 32px; font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+.footer a { color: inherit; }

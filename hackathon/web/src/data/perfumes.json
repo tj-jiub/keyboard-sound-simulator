@@ -1,0 +1,8073 @@
+[
+ {
+  "id": "ysl-libre",
+  "brand": "Yves Saint Laurent",
+  "brandId": "ysl",
+  "name": "Libre",
+  "brandAliasesKo": [
+   "입생로랑",
+   "이브생로랑",
+   "YSL",
+   "생로랑"
+  ],
+  "aliasesKo": [
+   "리브르",
+   "입생로랑 리브르"
+  ],
+  "notes": {
+   "top": [
+    "Mandarin",
+    "Neroli",
+    "Lavender"
+   ],
+   "heart": [
+    "Orange Blossom",
+    "Jasmine Sambac"
+   ],
+   "base": [
+    "Musk",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Mandarin",
+   "Neroli",
+   "Lavender",
+   "Orange Blossom",
+   "Jasmine Sambac",
+   "Musk",
+   "Vanilla"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy",
+   "fresh",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Mandarin and neroli brighten a creamy bloom of orange blossom and jasmine sambac, settling into a quiet base of musk and vanilla.",
+  "popularityRank": 2,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/libre-yves-saint-laurent"
+ },
+ {
+  "id": "guerlain-shalimar",
+  "brand": "Guerlain",
+  "brandId": "guerlain",
+  "name": "Shalimar",
+  "brandAliasesKo": [
+   "겔랑"
+  ],
+  "aliasesKo": [
+   "샬리마",
+   "샬리마르",
+   "겔랑 샬리마"
+  ],
+  "notes": {
+   "top": [
+    "Floral notes",
+    "Bergamot"
+   ],
+   "heart": [
+    "Iris",
+    "Jasmine",
+    "Rose"
+   ],
+   "base": [
+    "Vanilla",
+    "Opoponax",
+    "Tonka Bean"
+   ]
+  },
+  "allNotes": [
+   "Floral notes",
+   "Bergamot",
+   "Iris",
+   "Jasmine",
+   "Rose",
+   "Vanilla",
+   "Opoponax",
+   "Tonka Bean"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "sweet",
+   "warm",
+   "powdery"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Floral notes and a flash of bergamot sit above iris, jasmine and rose, giving way to a dense, sweet base of vanilla, tonka bean and opoponax.",
+  "popularityRank": 3,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/shalimar-eau-de-parfum-guerlain"
+ },
+ {
+  "id": "tom-ford-oud-wood",
+  "brand": "Tom Ford",
+  "brandId": "tom-ford",
+  "name": "Oud Wood",
+  "brandAliasesKo": [
+   "톰포드",
+   "톰 포드"
+  ],
+  "aliasesKo": [
+   "우드 우드",
+   "오드 우드",
+   "우드우드",
+   "톰포드 오드우드"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Cardamom",
+   "Pink Pepper",
+   "Patchouli",
+   "Amber",
+   "Oud",
+   "Tonka Bean"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "warm",
+   "spicy",
+   "sweet",
+   "earthy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Smooth woods and spice: cardamom and pink pepper open into patchouli, amber and oud, warmed by tonka bean.",
+  "popularityRank": 4,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/oud-wood-tom-ford"
+ },
+ {
+  "id": "creed-aventus",
+  "brand": "Creed",
+  "brandId": "creed",
+  "name": "Aventus",
+  "brandAliasesKo": [
+   "크리드"
+  ],
+  "aliasesKo": [
+   "어벤투스",
+   "크리드 어벤투스"
+  ],
+  "notes": {
+   "top": [
+    "Lemon",
+    "Pink Pepper",
+    "Apple",
+    "Bergamot",
+    "Blackcurrant"
+   ],
+   "heart": [
+    "Pineapple",
+    "Jasmine",
+    "Patchouli"
+   ],
+   "base": [
+    "Birch",
+    "Ambroxan",
+    "Cedarwood",
+    "Oakmoss",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Lemon",
+   "Pink Pepper",
+   "Apple",
+   "Bergamot",
+   "Blackcurrant",
+   "Pineapple",
+   "Jasmine",
+   "Patchouli",
+   "Birch",
+   "Ambroxan",
+   "Cedarwood",
+   "Oakmoss",
+   "Musk"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "earthy",
+   "citrusy",
+   "floral"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Sparkling lemon and blackcurrant open onto pineapple and jasmine, while birch and oakmoss give the base a smoky, earthy edge.",
+  "popularityRank": 5,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/aventus-creed"
+ },
+ {
+  "id": "mfk-baccarat-rouge-540",
+  "brand": "Maison Francis Kurkdjian",
+  "brandId": "mfk",
+  "name": "Baccarat Rouge 540",
+  "brandAliasesKo": [
+   "메종 프란시스 커정",
+   "메종 프랑시스 커정",
+   "프란시스 커정",
+   "MFK",
+   "메종프란시스커정"
+  ],
+  "aliasesKo": [
+   "바카라 루즈 540",
+   "바카라루즈540",
+   "바카라 루쥬 540",
+   "BR540",
+   "바카라"
+  ],
+  "notes": {
+   "top": [
+    "Jasmine",
+    "Saffron"
+   ],
+   "heart": [
+    "Cedarwood"
+   ],
+   "base": [
+    "Ambergris"
+   ]
+  },
+  "allNotes": [
+   "Jasmine",
+   "Saffron",
+   "Cedarwood",
+   "Ambergris"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "warm",
+   "floral",
+   "spicy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Jasmine and saffron open airy and golden, held together by cedarwood and an ambergris accord.",
+  "popularityRank": 6,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/baccarat-rouge-540-maison-francis-kurkdjian"
+ },
+ {
+  "id": "le-labo-santal-33",
+  "brand": "Le Labo",
+  "brandId": "le-labo",
+  "name": "Santal 33",
+  "brandAliasesKo": [
+   "르라보",
+   "르 라보"
+  ],
+  "aliasesKo": [
+   "상탈 33",
+   "산탈 33",
+   "상탈33",
+   "르라보 상탈"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Cardamom",
+   "Iris",
+   "Violet",
+   "Ambroxan",
+   "Sandalwood",
+   "Papyrus",
+   "Cedarwood"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "powdery",
+   "warm",
+   "spicy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Australian sandalwood and cedarwood are spiced with cardamom and powdered by iris and violet, with papyrus giving a dry edge.",
+  "popularityRank": 7,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/santal-33-le-labo"
+ },
+ {
+  "id": "byredo-gypsy-water",
+  "brand": "Byredo",
+  "brandId": "byredo",
+  "name": "Gypsy Water",
+  "brandAliasesKo": [
+   "바이레도",
+   "바이레도"
+  ],
+  "aliasesKo": [
+   "집시 워터",
+   "집시워터",
+   "바이레도 집시워터"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Juniper",
+    "Lemon",
+    "Pepper"
+   ],
+   "heart": [
+    "Incense",
+    "Iris",
+    "Pine Needle"
+   ],
+   "base": [
+    "Amber",
+    "Sandalwood",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Juniper",
+   "Lemon",
+   "Pepper",
+   "Incense",
+   "Iris",
+   "Pine Needle",
+   "Amber",
+   "Sandalwood",
+   "Vanilla"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "warm",
+   "fresh",
+   "citrusy",
+   "green"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Woody and aromatic: bergamot, juniper, lemon and pepper, then incense, orris and pine needle over amber, sandalwood and vanilla.",
+  "popularityRank": 8,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/gypsy-water-byredo"
+ },
+ {
+  "id": "parfums-de-marly-layton",
+  "brand": "Parfums de Marly",
+  "brandId": "parfums-de-marly",
+  "name": "Layton",
+  "brandAliasesKo": [
+   "퍼퓸 드 말리",
+   "파르팡 드 말리",
+   "파르팡드말리",
+   "드말리"
+  ],
+  "aliasesKo": [
+   "레이튼",
+   "레이턴",
+   "드말리 레이튼"
+  ],
+  "notes": {
+   "top": [
+    "Apple",
+    "Bergamot",
+    "Cardamom"
+   ],
+   "heart": [
+    "Lavender",
+    "Violet",
+    "Geranium"
+   ],
+   "base": [
+    "Patchouli",
+    "Vanilla",
+    "Guaiac Wood",
+    "Praline"
+   ]
+  },
+  "allNotes": [
+   "Apple",
+   "Bergamot",
+   "Cardamom",
+   "Lavender",
+   "Violet",
+   "Geranium",
+   "Patchouli",
+   "Vanilla",
+   "Guaiac Wood",
+   "Praline"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "sweet",
+   "warm",
+   "fresh",
+   "herbal"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "An apple-and-lavender blend: bergamot and cardamom up top, violet and geranium in the middle, patchouli, vanilla and praline below.",
+  "popularityRank": 9,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/layton-parfums-de-marly"
+ },
+ {
+  "id": "dior-jadore",
+  "brand": "Dior",
+  "brandId": "dior",
+  "name": "J'adore",
+  "brandAliasesKo": [
+   "디올",
+   "크리스찬 디올",
+   "크리스챤 디올"
+  ],
+  "aliasesKo": [
+   "쟈도르",
+   "자도르",
+   "디올 쟈도르"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Ylang-Ylang",
+   "Rose",
+   "Jasmine"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Ylang ylang, Damascus rose and jasmine form a rounded, creamy floral bouquet with a smooth finish.",
+  "popularityRank": 11,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/jadore-dior"
+ },
+ {
+  "id": "initio-oud-for-greatness",
+  "brand": "Initio Parfums Prives",
+  "brandId": "initio",
+  "name": "Oud for Greatness",
+  "brandAliasesKo": [
+   "이니시오",
+   "인시오",
+   "이니시오 퍼퓸 프리베"
+  ],
+  "aliasesKo": [
+   "오드 포 그레이트니스",
+   "우드 포 그레이트니스",
+   "오드포그레이트니스"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Oud",
+   "Oud",
+   "Lavender",
+   "Saffron",
+   "Patchouli",
+   "Musk",
+   "Nutmeg"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "resinous",
+   "warm",
+   "rich"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A dark, spiced oud: agarwood oil and oud with lavender, saffron, nutmeg and patchouli, softened by musk.",
+  "popularityRank": 12,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/initio-parfums-prives-oud-for-greatness"
+ },
+ {
+  "id": "kilian-angels-share",
+  "brand": "Kilian Paris",
+  "brandId": "kilian",
+  "name": "Angels' Share",
+  "brandAliasesKo": [
+   "킬리안",
+   "킬리안 파리",
+   "바이 킬리안"
+  ],
+  "aliasesKo": [
+   "엔젤스 쉐어",
+   "엔젤스쉐어",
+   "앤젤스 셰어",
+   "엔젤 쉐어"
+  ],
+  "notes": {
+   "top": [
+    "Cognac"
+   ],
+   "heart": [
+    "Oakwood",
+    "Cinnamon"
+   ],
+   "base": [
+    "Tonka Bean",
+    "Sandalwood",
+    "Praline"
+   ]
+  },
+  "allNotes": [
+   "Cognac",
+   "Oakwood",
+   "Cinnamon",
+   "Tonka Bean",
+   "Sandalwood",
+   "Praline"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "warm",
+   "woody",
+   "spicy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Cognac and oak give a boozy opening, followed by cinnamon and a sweet, nutty base of tonka bean, sandalwood and praline.",
+  "popularityRank": 13,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/angels-share-by-kilian"
+ },
+ {
+  "id": "ysl-black-opium",
+  "brand": "Yves Saint Laurent",
+  "brandId": "ysl",
+  "name": "Black Opium",
+  "brandAliasesKo": [
+   "입생로랑",
+   "이브생로랑",
+   "YSL",
+   "생로랑"
+  ],
+  "aliasesKo": [
+   "블랙 오피움",
+   "블랙오피움",
+   "입생로랑 블랙오피움"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Coffee",
+   "White Flowers",
+   "Vanilla"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "warm",
+   "floral",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Coffee and white flowers are drawn together by a soft, sweet vanilla.",
+  "popularityRank": 14,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/black-opium-yves-saint-laurent"
+ },
+ {
+  "id": "guerlain-mitsouko",
+  "brand": "Guerlain",
+  "brandId": "guerlain",
+  "name": "Mitsouko",
+  "brandAliasesKo": [
+   "겔랑"
+  ],
+  "aliasesKo": [
+   "미쓰코",
+   "미츠코",
+   "미쑤코"
+  ],
+  "notes": {
+   "top": [
+    "Citrus",
+    "Jasmine",
+    "Bergamot",
+    "Rose"
+   ],
+   "heart": [
+    "Lilac",
+    "Peach",
+    "Jasmine",
+    "Ylang-Ylang",
+    "Rose"
+   ],
+   "base": [
+    "Spice",
+    "Amber",
+    "Cinnamon",
+    "Vetiver",
+    "Oakmoss"
+   ]
+  },
+  "allNotes": [
+   "Citrus",
+   "Jasmine",
+   "Bergamot",
+   "Rose",
+   "Lilac",
+   "Peach",
+   "Jasmine",
+   "Ylang-Ylang",
+   "Rose",
+   "Spice",
+   "Amber",
+   "Cinnamon",
+   "Vetiver",
+   "Oakmoss"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "creamy",
+   "citrusy",
+   "spicy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Citrus and jasmine turn to peach, ylang-ylang and rose, then spices, amber and cinnamon settle over vetiver and mossy oakmoss.",
+  "popularityRank": 16,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/guerlain-mitsouko"
+ },
+ {
+  "id": "frederic-malle-portrait-of-a-lady",
+  "brand": "Frédéric Malle",
+  "brandId": "frederic-malle",
+  "name": "Portrait of a Lady",
+  "brandAliasesKo": [
+   "프레데릭 말",
+   "프레데릭말",
+   "프레드릭 말"
+  ],
+  "aliasesKo": [
+   "포트레이트 오브 어 레이디",
+   "포트레이트오브어레이디",
+   "포레디"
+  ],
+  "notes": {
+   "top": [
+    "Rose"
+   ],
+   "heart": [
+    "Blackcurrant",
+    "Raspberry",
+    "Clove"
+   ],
+   "base": [
+    "Patchouli",
+    "Sandalwood",
+    "Frankincense"
+   ]
+  },
+  "allNotes": [
+   "Rose",
+   "Blackcurrant",
+   "Raspberry",
+   "Clove",
+   "Patchouli",
+   "Sandalwood",
+   "Frankincense"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "spicy",
+   "warm",
+   "floral"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A lavish rose enriched with blackcurrant, raspberry and clove, then deepened by patchouli and sandalwood.",
+  "popularityRank": 17,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/portrait-of-a-lady-frederic-malle"
+ },
+ {
+  "id": "tom-ford-tobacco-vanille",
+  "brand": "Tom Ford",
+  "brandId": "tom-ford",
+  "name": "Tobacco Vanille",
+  "brandAliasesKo": [
+   "톰포드",
+   "톰 포드"
+  ],
+  "aliasesKo": [
+   "토바코 바닐",
+   "토바코 바닐라",
+   "토바코바닐"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Tobacco",
+   "Ginger",
+   "Spice",
+   "Tonka Bean",
+   "Chocolate",
+   "Fruit"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "warm",
+   "spicy",
+   "sweet",
+   "fruity"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Rich and sweet: tobacco leaf and ginger with spice, tonka and cocoa, plus a dried-fruit accord.",
+  "popularityRank": 18,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/tobacco-vanille-tom-ford"
+ },
+ {
+  "id": "creed-silver-mountain-water",
+  "brand": "Creed",
+  "brandId": "creed",
+  "name": "Silver Mountain Water",
+  "brandAliasesKo": [
+   "크리드"
+  ],
+  "aliasesKo": [
+   "실버 마운틴 워터",
+   "실버마운틴워터",
+   "SMW"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Mandarin",
+    "Neroli"
+   ],
+   "heart": [
+    "Sea Notes",
+    "Tea",
+    "Blackcurrant"
+   ],
+   "base": [
+    "Sandalwood",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Mandarin",
+   "Neroli",
+   "Sea Notes",
+   "Tea",
+   "Blackcurrant",
+   "Sandalwood",
+   "Musk"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "fresh",
+   "citrusy",
+   "fruity",
+   "green"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "Neroli and mandarin sparkle above cool green tea and blackcurrant bud, with a sea-air freshness and a smooth finish of sandalwood and musk.",
+  "popularityRank": 19,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/silver-mountain-water-creed"
+ },
+ {
+  "id": "jo-malone-english-pear-and-freesia",
+  "brand": "Jo Malone London",
+  "brandId": "jo-malone",
+  "name": "English Pear & Freesia",
+  "brandAliasesKo": [
+   "조말론",
+   "조 말론",
+   "조말론런던"
+  ],
+  "aliasesKo": [
+   "잉글리시 페어 앤 프리지아",
+   "잉글리쉬 페어 앤 프리지아",
+   "잉페프",
+   "페어 프리지아",
+   "배 프리지아"
+  ],
+  "notes": {
+   "top": [
+    "Pear"
+   ],
+   "heart": [
+    "Freesia"
+   ],
+   "base": [
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Pear",
+   "Freesia",
+   "Patchouli"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "fruity",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Ripe pear leads to a delicate freesia heart, grounded by patchouli. Light, juicy and quietly earthy.",
+  "popularityRank": 21,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/jo-malone-english-pear-and-freesia"
+ },
+ {
+  "id": "mfk-aqua-universalis",
+  "brand": "Maison Francis Kurkdjian",
+  "brandId": "mfk",
+  "name": "Aqua Universalis",
+  "brandAliasesKo": [
+   "메종 프란시스 커정",
+   "메종 프랑시스 커정",
+   "프란시스 커정",
+   "MFK",
+   "메종프란시스커정"
+  ],
+  "aliasesKo": [
+   "아쿠아 유니버살리스",
+   "아쿠아 유니버셜리스"
+  ],
+  "notes": {
+   "top": [
+    "Lemon",
+    "Bergamot"
+   ],
+   "heart": [
+    "Floral notes"
+   ],
+   "base": [
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Lemon",
+   "Bergamot",
+   "Floral notes",
+   "Musk"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "floral",
+   "fresh",
+   "musky"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "Lemon and bergamot are bright and clean, set against a soft floral heart. A veil of musk makes the whole composition feel fresh and airy.",
+  "popularityRank": 22,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/mfk-aqua-universalis"
+ },
+ {
+  "id": "le-labo-another-13",
+  "brand": "Le Labo",
+  "brandId": "le-labo",
+  "name": "Another 13",
+  "brandAliasesKo": [
+   "르라보",
+   "르 라보"
+  ],
+  "aliasesKo": [
+   "어나더 13",
+   "어나더13",
+   "어나더 써틴"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Ambroxan",
+   "Jasmine",
+   "Oakmoss",
+   "Ambrette"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "earthy",
+   "amber",
+   "musky"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Ambroxan and ambrette seeds create a skin-like glow, with jasmine and moss adding an earthy, floral edge.",
+  "popularityRank": 24,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/another-13-le-labo"
+ },
+ {
+  "id": "armani-acqua-di-gio",
+  "brand": "Giorgio Armani",
+  "brandId": "armani",
+  "name": "Acqua di Giò",
+  "brandAliasesKo": [
+   "조르지오 아르마니",
+   "조르조 아르마니",
+   "아르마니"
+  ],
+  "aliasesKo": [
+   "아쿠아 디 지오",
+   "아쿠아디지오",
+   "아쿠아 디 쥬오",
+   "아쿠아디지오 옴므"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Sea Notes",
+   "Mandarin",
+   "Sage"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "fresh",
+   "citrusy",
+   "herbal",
+   "salty"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "Marine freshness meets green mandarin and a leaf of sage, keeping the whole composition bright, herbal and lightly salted.",
+  "popularityRank": 25,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/acqua-di-gio-giorgio-armani"
+ },
+ {
+  "id": "byredo-bal-dafrique",
+  "brand": "Byredo",
+  "brandId": "byredo",
+  "name": "Bal d'Afrique",
+  "brandAliasesKo": [
+   "바이레도",
+   "바이레도"
+  ],
+  "aliasesKo": [
+   "발다프리크",
+   "발 다프리크",
+   "발다프리끄"
+  ],
+  "notes": {
+   "top": [
+    "Buchu",
+    "African Marigold",
+    "Bergamot",
+    "Blackcurrant"
+   ],
+   "heart": [
+    "Cyclamen",
+    "Jasmine",
+    "Violet"
+   ],
+   "base": [
+    "Tonka Bean",
+    "Cedarwood",
+    "Musk",
+    "Vetiver"
+   ]
+  },
+  "allNotes": [
+   "Buchu",
+   "African Marigold",
+   "Bergamot",
+   "Blackcurrant",
+   "Cyclamen",
+   "Jasmine",
+   "Violet",
+   "Tonka Bean",
+   "Cedarwood",
+   "Musk",
+   "Vetiver"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "powdery",
+   "fresh",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Fresh and floral-woody: buchu, marigold, bergamot and blackcurrant, then cyclamen, jasmine and violet, over tonka, cedarwood, musks and vetiver.",
+  "popularityRank": 26,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/bal-dafrique-byredo"
+ },
+ {
+  "id": "parfums-de-marly-delina",
+  "brand": "Parfums de Marly",
+  "brandId": "parfums-de-marly",
+  "name": "Delina",
+  "brandAliasesKo": [
+   "퍼퓸 드 말리",
+   "파르팡 드 말리",
+   "파르팡드말리",
+   "드말리"
+  ],
+  "aliasesKo": [
+   "델리나",
+   "델리나 드말리"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Lychee",
+    "Rhubarb"
+   ],
+   "heart": [
+    "Rose",
+    "Nutmeg"
+   ],
+   "base": [
+    "Cashmeran",
+    "Musk",
+    "Vetiver"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Lychee",
+   "Rhubarb",
+   "Rose",
+   "Nutmeg",
+   "Cashmeran",
+   "Musk",
+   "Vetiver"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "floral",
+   "spicy",
+   "fresh",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A rosy, fruity-floral built on lychee and rhubarb over damascena rose, resting on soft musks, cashmeran and vetiver.",
+  "popularityRank": 27,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/delina-parfums-de-marly"
+ },
+ {
+  "id": "prada-paradoxe",
+  "brand": "Prada",
+  "brandId": "prada",
+  "name": "Paradoxe",
+  "brandAliasesKo": [
+   "프라다"
+  ],
+  "aliasesKo": [
+   "파라독스",
+   "프라다 파라독스",
+   "패러독스"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Neroli",
+   "Amber",
+   "Musk"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "amber",
+   "musky",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Neroli bud adds a green floral lift above a smooth, glowing mix of white amber and white musk.",
+  "popularityRank": 28,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/prada-paradoxe-prada"
+ },
+ {
+  "id": "initio-side-effect",
+  "brand": "Initio Parfums Prives",
+  "brandId": "initio",
+  "name": "Side Effect",
+  "brandAliasesKo": [
+   "이니시오",
+   "인시오",
+   "이니시오 퍼퓸 프리베"
+  ],
+  "aliasesKo": [
+   "사이드 이펙트",
+   "사이드이펙트"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Cinnamon",
+   "Rum",
+   "Tobacco",
+   "Saffron",
+   "Sandalwood",
+   "Hedione"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "warm",
+   "floral",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A warm, boozy spice blend of cinnamon, rum, tobacco and saffron on sandalwood, with hedione adding a smooth, airy touch.",
+  "popularityRank": 32,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/side-effect-initio-parfums-prives"
+ },
+ {
+  "id": "kilian-love-dont-be-shy",
+  "brand": "Kilian Paris",
+  "brandId": "kilian",
+  "name": "Love, Don't Be Shy",
+  "brandAliasesKo": [
+   "킬리안",
+   "킬리안 파리",
+   "바이 킬리안"
+  ],
+  "aliasesKo": [
+   "러브 돈 비 샤이",
+   "러브돈비샤이",
+   "러브 돈트 비 샤이"
+  ],
+  "notes": {
+   "top": [
+    "Neroli"
+   ],
+   "heart": [
+    "Rose",
+    "Honeysuckle"
+   ],
+   "base": [
+    "Marshmallow",
+    "Labdanum"
+   ]
+  },
+  "allNotes": [
+   "Neroli",
+   "Rose",
+   "Honeysuckle",
+   "Marshmallow",
+   "Labdanum"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy",
+   "warm",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Neroli opens gently before rose and honeysuckle, leaving a sweet, warm trail of marshmallow and labdanum. Soft, creamy and floral.",
+  "popularityRank": 34,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/love-dont-be-shy-by-kilian"
+ },
+ {
+  "id": "amouage-reflection-man",
+  "brand": "Amouage",
+  "brandId": "amouage",
+  "name": "Reflection Man",
+  "brandAliasesKo": [
+   "아므아지",
+   "아무아쥬",
+   "아모아쥬"
+  ],
+  "aliasesKo": [
+   "리플렉션 맨",
+   "리플렉션 우먼 맨",
+   "리플렉션"
+  ],
+  "notes": {
+   "top": [
+    "Rosemary",
+    "Red Pepper",
+    "Petitgrain"
+   ],
+   "heart": [
+    "Neroli",
+    "Iris",
+    "Jasmine",
+    "Ylang-Ylang"
+   ],
+   "base": [
+    "Vetiver",
+    "Patchouli",
+    "Sandalwood",
+    "Cedarwood"
+   ]
+  },
+  "allNotes": [
+   "Rosemary",
+   "Red Pepper",
+   "Petitgrain",
+   "Neroli",
+   "Iris",
+   "Jasmine",
+   "Ylang-Ylang",
+   "Vetiver",
+   "Patchouli",
+   "Sandalwood",
+   "Cedarwood"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy",
+   "woody",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "An elegant, herbal-floral classic: rosemary and petitgrain open to neroli, iris and jasmine, resting on vetiver, patchouli and sandalwood.",
+  "popularityRank": 37,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/reflection-man-amouage"
+ },
+ {
+  "id": "guerlain-lheure-bleue",
+  "brand": "Guerlain",
+  "brandId": "guerlain",
+  "name": "L'Heure Bleue",
+  "brandAliasesKo": [
+   "겔랑"
+  ],
+  "aliasesKo": [
+   "뢰르 블루",
+   "뢰르블루",
+   "뢰르 블뢰"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Sea Notes",
+   "Iris",
+   "Vanilla"
+  ],
+  "family": "Powder Veil",
+  "character": [
+   "powdery",
+   "sweet",
+   "salty",
+   "fresh"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "An airy ozonic note leads into powdery iris and soft vanilla, giving a hushed, dusky character.",
+  "popularityRank": 38,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/lheure-bleue-guerlain"
+ },
+ {
+  "id": "mugler-angel",
+  "brand": "Mugler",
+  "brandId": "mugler",
+  "name": "Angel",
+  "brandAliasesKo": [
+   "뮈글러",
+   "뮤글러",
+   "티에리 뮈글러"
+  ],
+  "aliasesKo": [
+   "엔젤",
+   "뮈글러 엔젤",
+   "엔젤 뮈글러"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Bergamot",
+   "Praline",
+   "Patchouli"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "sweet",
+   "earthy",
+   "fresh"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Sweet praline and earthy patchouli sit under a bright flash of bergamot, giving a gourmand scent with a surprisingly fresh lift.",
+  "popularityRank": 39,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/angel-mugler"
+ },
+ {
+  "id": "frederic-malle-musc-ravageur",
+  "brand": "Frédéric Malle",
+  "brandId": "frederic-malle",
+  "name": "Musc Ravageur",
+  "brandAliasesKo": [
+   "프레데릭 말",
+   "프레데릭말",
+   "프레드릭 말"
+  ],
+  "aliasesKo": [
+   "머스크 라바저",
+   "뮈스크 라바쥬르",
+   "머스크라바저"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Mandarin",
+    "Lavender"
+   ],
+   "heart": [
+    "Amber",
+    "Vanilla",
+    "Musk"
+   ],
+   "base": [
+    "Sandalwood",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Mandarin",
+   "Lavender",
+   "Amber",
+   "Vanilla",
+   "Musk",
+   "Sandalwood",
+   "Musk"
+  ],
+  "family": "Skin Musk",
+  "character": [
+   "musky",
+   "citrusy",
+   "fresh",
+   "warm"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A sensual, floral-free amber: bergamot, mandarin and lavender at the start, then a warm, musky heart of amber and vanilla that rests on sandalwood.",
+  "popularityRank": 40,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/musc-ravageur-frederic-malle"
+ },
+ {
+  "id": "tom-ford-black-orchid",
+  "brand": "Tom Ford",
+  "brandId": "tom-ford",
+  "name": "Black Orchid",
+  "brandAliasesKo": [
+   "톰포드",
+   "톰 포드"
+  ],
+  "aliasesKo": [
+   "블랙 오키드",
+   "블랙오키드",
+   "블랙 오치드"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Mushroom",
+   "Ylang-Ylang",
+   "Orchid",
+   "Plum",
+   "Rum",
+   "Patchouli"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "floral",
+   "earthy",
+   "fruity",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A dark, truffled floral: black truffle and ylang ylang with orchid and plum, deepened by rum and patchouli.",
+  "popularityRank": 41,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/black-orchid-tom-ford"
+ },
+ {
+  "id": "viktor-rolf-flowerbomb",
+  "brand": "Viktor&Rolf",
+  "brandId": "viktor-rolf",
+  "name": "Flowerbomb",
+  "brandAliasesKo": [
+   "빅터앤롤프",
+   "빅터 앤 롤프",
+   "빅터롤프",
+   "빅토르 앤 롤프"
+  ],
+  "aliasesKo": [
+   "플라워밤",
+   "플라워 밤",
+   "빅터앤롤프 플라워밤"
+  ],
+  "notes": {
+   "top": [
+    "Peony"
+   ],
+   "heart": [
+    "Rose"
+   ],
+   "base": [
+    "Freesia",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Peony",
+   "Rose",
+   "Freesia",
+   "Vanilla"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "sweet",
+   "warm"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A floral bouquet that opens with peony, moves to centifolia rose and settles on freesia and vanilla. Soft, sweet and ambery.",
+  "popularityRank": 42,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/viktor-rolf-flowerbomb"
+ },
+ {
+  "id": "creed-green-irish-tweed",
+  "brand": "Creed",
+  "brandId": "creed",
+  "name": "Green Irish Tweed",
+  "brandAliasesKo": [
+   "크리드"
+  ],
+  "aliasesKo": [
+   "그린 아이리시 트위드",
+   "그린아이리시트위드",
+   "GIT"
+  ],
+  "notes": {
+   "top": [
+    "Lemon",
+    "Verbena",
+    "Mint",
+    "Bergamot",
+    "Galbanum"
+   ],
+   "heart": [
+    "Lavender",
+    "Violet",
+    "Geranium"
+   ],
+   "base": [
+    "Sandalwood",
+    "Ambroxan",
+    "Cedarwood",
+    "Oakmoss"
+   ]
+  },
+  "allNotes": [
+   "Lemon",
+   "Verbena",
+   "Mint",
+   "Bergamot",
+   "Galbanum",
+   "Lavender",
+   "Violet",
+   "Geranium",
+   "Sandalwood",
+   "Ambroxan",
+   "Cedarwood",
+   "Oakmoss"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "fresh",
+   "herbal",
+   "citrusy",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Lemon, verbena and galbanum give a cool green opening, with lavender and violet in the middle. Sandalwood and cedarwood settle into a fresh, mossy woodiness.",
+  "popularityRank": 44,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/green-irish-tweed-creed"
+ },
+ {
+  "id": "jo-malone-wood-sage-and-sea-salt",
+  "brand": "Jo Malone London",
+  "brandId": "jo-malone",
+  "name": "Wood Sage & Sea Salt",
+  "brandAliasesKo": [
+   "조말론",
+   "조 말론",
+   "조말론런던"
+  ],
+  "aliasesKo": [
+   "우드 세이지 앤 씨솔트",
+   "우드세이지앤씨솔트",
+   "우세씨",
+   "우드세이지"
+  ],
+  "notes": {
+   "top": [
+    "Ambrette"
+   ],
+   "heart": [
+    "Salt"
+   ],
+   "base": [
+    "Sage"
+   ]
+  },
+  "allNotes": [
+   "Ambrette",
+   "Salt",
+   "Sage"
+  ],
+  "family": "Salt & Mineral",
+  "character": [
+   "fresh",
+   "salty",
+   "herbal",
+   "musky"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "Ambrette, salt and sage create a breezy, mineral calm. Herbal and musky, with the feel of a cool coastal walk.",
+  "popularityRank": 46,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/jo-malone-wood-sage-and-sea-salt"
+ },
+ {
+  "id": "mfk-grand-soir",
+  "brand": "Maison Francis Kurkdjian",
+  "brandId": "mfk",
+  "name": "Grand Soir",
+  "brandAliasesKo": [
+   "메종 프란시스 커정",
+   "메종 프랑시스 커정",
+   "프란시스 커정",
+   "MFK",
+   "메종프란시스커정"
+  ],
+  "aliasesKo": [
+   "그랑 수아",
+   "그랑수아",
+   "그랜드 수아"
+  ],
+  "notes": {
+   "top": [
+    "Labdanum"
+   ],
+   "heart": [
+    "Benzoin"
+   ],
+   "base": [
+    "Vanilla",
+    "Amber"
+   ]
+  },
+  "allNotes": [
+   "Labdanum",
+   "Benzoin",
+   "Vanilla",
+   "Amber"
+  ],
+  "family": "Amber & Resin",
+  "character": [
+   "warm",
+   "resinous",
+   "sweet",
+   "amber"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Deep and glowing, an amber built from cistus labdanum, benzoin and vanilla, resinous and sweet.",
+  "popularityRank": 47,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/grand-soir-maison-francis-kurkdjian"
+ },
+ {
+  "id": "hermes-twilly-dhermes",
+  "brand": "Hermès",
+  "brandId": "hermes",
+  "name": "Twilly d'Hermès",
+  "brandAliasesKo": [
+   "에르메스"
+  ],
+  "aliasesKo": [
+   "트윌리 데르메스",
+   "트윌리",
+   "트윌리 에르메스"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Ginger",
+   "Tuberose",
+   "Sandalwood"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "spicy",
+   "woody",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Spicy ginger brightens a creamy tuberose heart, while sandalwood gives the whole a smooth, woody finish.",
+  "popularityRank": 49,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/twilly-dhermes-hermes"
+ },
+ {
+  "id": "byredo-mojave-ghost",
+  "brand": "Byredo",
+  "brandId": "byredo",
+  "name": "Mojave Ghost",
+  "brandAliasesKo": [
+   "바이레도",
+   "바이레도"
+  ],
+  "aliasesKo": [
+   "모하비 고스트",
+   "모하비고스트",
+   "모하비 고스트"
+  ],
+  "notes": {
+   "top": [
+    "Ambrette",
+    "Naseberry"
+   ],
+   "heart": [
+    "Magnolia",
+    "Sandalwood",
+    "Violet"
+   ],
+   "base": [
+    "Cedarwood",
+    "Musk",
+    "Vetiver"
+   ]
+  },
+  "allNotes": [
+   "Ambrette",
+   "Naseberry",
+   "Magnolia",
+   "Sandalwood",
+   "Violet",
+   "Cedarwood",
+   "Musk",
+   "Vetiver"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "musky",
+   "floral",
+   "powdery"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Soft and musky: ambrette and naseberry open to magnolia, sandalwood and violet, finishing on cedarwood, musks and vetiver.",
+  "popularityRank": 53,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/mojave-ghost-byredo"
+ },
+ {
+  "id": "kayali-vanilla-28",
+  "brand": "Kayali",
+  "brandId": "kayali",
+  "name": "Vanilla 28",
+  "brandAliasesKo": [
+   "카야리",
+   "카얄리"
+  ],
+  "aliasesKo": [
+   "바닐라 28",
+   "바닐라28",
+   "카야리 바닐라"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Vanilla",
+   "Tonka Bean",
+   "Amberwood",
+   "Musk",
+   "Brown Sugar"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "warm",
+   "amber",
+   "musky"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Vanilla orchid and brown sugar lead a deep, sweet blend with tonka absolute, amber woods and a soft layer of musk.",
+  "popularityRank": 54,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/vanilla-28-kayali"
+ },
+ {
+  "id": "maison-margiela-replica-by-the-fireplace",
+  "brand": "Maison Margiela Fragrances",
+  "brandId": "maison-margiela",
+  "name": "Replica By the Fireplace",
+  "brandAliasesKo": [
+   "메종 마르지엘라",
+   "메종마르지엘라",
+   "마르지엘라",
+   "마르지엘라 레플리카"
+  ],
+  "aliasesKo": [
+   "바이 더 파이어플레이스",
+   "바이더파이어플레이스",
+   "레플리카 파이어플레이스",
+   "파이어플레이스",
+   "벽난로"
+  ],
+  "notes": {
+   "top": [
+    "Pink Pepper",
+    "Orange Blossom",
+    "Clove"
+   ],
+   "heart": [
+    "Chestnut",
+    "Guaiac Wood",
+    "Cade"
+   ],
+   "base": [
+    "Vanilla",
+    "Balsam of Peru",
+    "Cashmeran"
+   ]
+  },
+  "allNotes": [
+   "Pink Pepper",
+   "Orange Blossom",
+   "Clove",
+   "Chestnut",
+   "Guaiac Wood",
+   "Cade",
+   "Vanilla",
+   "Balsam of Peru",
+   "Cashmeran"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "warm",
+   "sweet",
+   "woody",
+   "spicy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "A cosy, smoky winter scent. Pink pepper, orange flower and clove lead to chestnut, guaiac wood and cade, ending on vanilla, Peru balsam and cashmeran. Warm and sweet.",
+  "popularityRank": 55,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/maison-margiela-replica-by-the-fireplace"
+ },
+ {
+  "id": "parfums-de-marly-pegasus",
+  "brand": "Parfums de Marly",
+  "brandId": "parfums-de-marly",
+  "name": "Pegasus",
+  "brandAliasesKo": [
+   "퍼퓸 드 말리",
+   "파르팡 드 말리",
+   "파르팡드말리",
+   "드말리"
+  ],
+  "aliasesKo": [
+   "페가수스",
+   "페가서스",
+   "드말리 페가수스"
+  ],
+  "notes": {
+   "top": [
+    "Anise",
+    "Bergamot",
+    "Almond"
+   ],
+   "heart": [
+    "Cypress",
+    "Violet Leaf",
+    "Orange Blossom"
+   ],
+   "base": [
+    "Ambroxan",
+    "Vanilla",
+    "Sandalwood"
+   ]
+  },
+  "allNotes": [
+   "Anise",
+   "Bergamot",
+   "Almond",
+   "Cypress",
+   "Violet Leaf",
+   "Orange Blossom",
+   "Ambroxan",
+   "Vanilla",
+   "Sandalwood"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "green",
+   "fresh",
+   "warm",
+   "sweet"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Soft and almondy: anise, bergamot and almond open to cypress, violet leaves and orange blossom, drying down to vanilla, sandalwood and ambrox.",
+  "popularityRank": 56,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/pegasus-by-parfums-de-marly"
+ },
+ {
+  "id": "prada-lhomme-prada",
+  "brand": "Prada",
+  "brandId": "prada",
+  "name": "L'Homme Prada",
+  "brandAliasesKo": [
+   "프라다"
+  ],
+  "aliasesKo": [
+   "롬므 프라다",
+   "프라다 롬므",
+   "엘롬 프라다"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Iris",
+   "Neroli",
+   "Geranium"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "powdery",
+   "creamy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Powdery iris and neroli lend a creamy, floral softness, touched by the green freshness of geranium.",
+  "popularityRank": 57,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/prada-lhomme-prada"
+ },
+ {
+  "id": "montale-arabians-tonka",
+  "brand": "Montale",
+  "brandId": "montale",
+  "name": "Arabians Tonka",
+  "brandAliasesKo": [
+   "몽탈",
+   "몬탈레"
+  ],
+  "aliasesKo": [
+   "아라비안 통카",
+   "아라비안스 통카",
+   "몽탈 통카"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Saffron"
+   ],
+   "heart": [
+    "Rose",
+    "Oud"
+   ],
+   "base": [
+    "Amber",
+    "Oakmoss",
+    "Tonka Bean",
+    "Leather",
+    "Brown Sugar",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Saffron",
+   "Rose",
+   "Oud",
+   "Amber",
+   "Oakmoss",
+   "Tonka Bean",
+   "Leather",
+   "Brown Sugar",
+   "Musk"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "warm",
+   "sweet",
+   "floral",
+   "resinous"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Saffron and bergamot lead into rose and oud, settling on amber, tonka bean, leather and brown sugar. A sweet, smoky and warm oriental built on a soft musk base.",
+  "popularityRank": 58,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/arabians-tonka-montale"
+ },
+ {
+  "id": "versace-dylan-blue",
+  "brand": "Versace",
+  "brandId": "versace",
+  "name": "Dylan Blue",
+  "brandAliasesKo": [
+   "베르사체"
+  ],
+  "aliasesKo": [
+   "딜런 블루",
+   "딜런블루",
+   "베르사체 딜런블루"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Grapefruit",
+    "Fig",
+    "Aquatic Accord"
+   ],
+   "heart": [
+    "Violet Leaf",
+    "Pepper",
+    "Papyrus",
+    "Ambroxan",
+    "Patchouli"
+   ],
+   "base": [
+    "Musk",
+    "Tonka Bean",
+    "Saffron",
+    "Incense"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Grapefruit",
+   "Fig",
+   "Aquatic Accord",
+   "Violet Leaf",
+   "Pepper",
+   "Papyrus",
+   "Ambroxan",
+   "Patchouli",
+   "Musk",
+   "Tonka Bean",
+   "Saffron",
+   "Incense"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "warm",
+   "fresh",
+   "spicy",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Bergamot, grapefruit and fig meet an aquatic accord, with pepper and violet leaf in the middle. Patchouli, musk, tonka bean and incense give a warm, spiced base.",
+  "popularityRank": 59,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/versace-dylan-blue"
+ },
+ {
+  "id": "initio-atomic-rose",
+  "brand": "Initio Parfums Prives",
+  "brandId": "initio",
+  "name": "Atomic Rose",
+  "brandAliasesKo": [
+   "이니시오",
+   "인시오",
+   "이니시오 퍼퓸 프리베"
+  ],
+  "aliasesKo": [
+   "아토믹 로즈",
+   "아토믹로즈"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Bergamot",
+   "Turkish Rose",
+   "Rose",
+   "Jasmine",
+   "Vanilla",
+   "Hedione"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "creamy",
+   "citrusy",
+   "sweet"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A rich rose-and-vanilla scent: bergamot brightens Turkish and Bulgarian rose with jasmine, and hedione adds a luminous, airy shimmer.",
+  "popularityRank": 62,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/atomic-rose-initio-parfums-prives"
+ },
+ {
+  "id": "mancera-cedrat-boise",
+  "brand": "Mancera",
+  "brandId": "mancera",
+  "name": "Cedrat Boise",
+  "brandAliasesKo": [
+   "만세라",
+   "맨세라"
+  ],
+  "aliasesKo": [
+   "세드라 부아제",
+   "세드라 보아제",
+   "시드랫 부아즈"
+  ],
+  "notes": {
+   "top": [
+    "Citrus",
+    "Blackcurrant",
+    "Cold spices"
+   ],
+   "heart": [
+    "Jasmine",
+    "Patchouli"
+   ],
+   "base": [
+    "Woody notes",
+    "Leather",
+    "Oakmoss",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Citrus",
+   "Blackcurrant",
+   "Cold spices",
+   "Jasmine",
+   "Patchouli",
+   "Woody notes",
+   "Leather",
+   "Oakmoss",
+   "Vanilla"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "earthy",
+   "floral",
+   "warm",
+   "citrusy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A fresh citrus-woody scent built on citrus and blackcurrant with cold spices, aquatic jasmine and patchouli leaves, drying down to leather, oakmoss and vanilla.",
+  "popularityRank": 63,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/cedrat-boise-mancera"
+ },
+ {
+  "id": "valentino-donna-born-in-roma",
+  "brand": "Valentino",
+  "brandId": "valentino",
+  "name": "Donna Born in Roma",
+  "brandAliasesKo": [
+   "발렌티노"
+  ],
+  "aliasesKo": [
+   "돈나 본 인 로마",
+   "본 인 로마",
+   "발렌티노 돈나"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Jasmine Sambac",
+   "Cashmeran",
+   "Vanilla"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "sweet",
+   "woody",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Jasmine sambac and vanilla are rounded by cashmeran, giving a sweet, creamy floral with a smooth woody backdrop.",
+  "popularityRank": 64,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/valentino-donna-born-in-roma-valentino"
+ },
+ {
+  "id": "kilian-good-girl-gone-bad",
+  "brand": "Kilian Paris",
+  "brandId": "kilian",
+  "name": "Good Girl Gone Bad",
+  "brandAliasesKo": [
+   "킬리안",
+   "킬리안 파리",
+   "바이 킬리안"
+  ],
+  "aliasesKo": [
+   "굿 걸 곤 배드",
+   "굿걸곤배드",
+   "굿걸곤밷"
+  ],
+  "notes": {
+   "top": [
+    "Orange Blossom",
+    "Rose"
+   ],
+   "heart": [
+    "Osmanthus",
+    "Tuberose"
+   ],
+   "base": [
+    "Daffodil"
+   ]
+  },
+  "allNotes": [
+   "Orange Blossom",
+   "Rose",
+   "Osmanthus",
+   "Tuberose",
+   "Daffodil"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "creamy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A creamy floral built on orange blossom, rose, osmanthus and tuberose, with daffodil giving the base a soft, green finish.",
+  "popularityRank": 65,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/good-girl-gone-bad-by-kilian"
+ },
+ {
+  "id": "lancome-idole",
+  "brand": "Lancôme",
+  "brandId": "lancome",
+  "name": "Idôle",
+  "brandAliasesKo": [
+   "랑콤"
+  ],
+  "aliasesKo": [
+   "이돌",
+   "이돌 랑콤",
+   "아이돌 랑콤"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Pear",
+    "Pink Pepper"
+   ],
+   "heart": [
+    "Rose",
+    "Jasmine"
+   ],
+   "base": [
+    "Musk",
+    "Vanilla",
+    "Patchouli",
+    "Cedarwood"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Pear",
+   "Pink Pepper",
+   "Rose",
+   "Jasmine",
+   "Musk",
+   "Vanilla",
+   "Patchouli",
+   "Cedarwood"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "floral",
+   "warm",
+   "citrusy",
+   "fruity"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Bergamot, juicy pear and pink peppercorn open onto rose and jasmine, ending in white musk, vanilla, patchouli and cedarwood.",
+  "popularityRank": 66,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/idole-lancome"
+ },
+ {
+  "id": "nishane-hacivat",
+  "brand": "Nishane",
+  "brandId": "nishane",
+  "name": "Hacivat",
+  "brandAliasesKo": [
+   "니샤네",
+   "니샤네"
+  ],
+  "aliasesKo": [
+   "하지바트",
+   "하치바트",
+   "니샤네 하지바트"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Pineapple",
+    "Grapefruit"
+   ],
+   "heart": [
+    "Jasmine",
+    "Patchouli",
+    "Cedarwood"
+   ],
+   "base": [
+    "Clearwood",
+    "Oakmoss",
+    "Dry timberwood"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Pineapple",
+   "Grapefruit",
+   "Jasmine",
+   "Patchouli",
+   "Cedarwood",
+   "Clearwood",
+   "Oakmoss",
+   "Dry timberwood"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "earthy",
+   "citrusy",
+   "floral"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A citrus-chypre scent: bergamot, pineapple and grapefruit give a juicy opening, jasmine, patchouli and cedarwood form the heart, and clearwood, oakmoss and dry timberwood anchor it.",
+  "popularityRank": 67,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/hacivat-nishane"
+ },
+ {
+  "id": "ysl-la-nuit-de-lhomme",
+  "brand": "Yves Saint Laurent",
+  "brandId": "ysl",
+  "name": "La Nuit de L'Homme",
+  "brandAliasesKo": [
+   "입생로랑",
+   "이브생로랑",
+   "YSL",
+   "생로랑"
+  ],
+  "aliasesKo": [
+   "라 뉘 드 롬",
+   "라뉘드롬",
+   "라 뉘 드 롬므"
+  ],
+  "notes": {
+   "top": [
+    "Pepper",
+    "Anise",
+    "Bergamot"
+   ],
+   "heart": [
+    "Lavender",
+    "Labdanum"
+   ],
+   "base": [
+    "Vanilla",
+    "Patchouli",
+    "Vetiver"
+   ]
+  },
+  "allNotes": [
+   "Pepper",
+   "Anise",
+   "Bergamot",
+   "Lavender",
+   "Labdanum",
+   "Vanilla",
+   "Patchouli",
+   "Vetiver"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "warm",
+   "spicy",
+   "earthy",
+   "fresh"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Anise, black pepper and bergamot lead to lavender and labdanum, finishing on vanilla, patchouli and vetiver.",
+  "popularityRank": 68,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/la-nuit-de-lhomme-yves-saint-laurent"
+ },
+ {
+  "id": "guerlain-jicky",
+  "brand": "Guerlain",
+  "brandId": "guerlain",
+  "name": "Jicky",
+  "brandAliasesKo": [
+   "겔랑"
+  ],
+  "aliasesKo": [
+   "지키",
+   "지키 겔랑"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Lavender",
+    "Rosemary"
+   ],
+   "heart": [
+    "Fern"
+   ],
+   "base": [
+    "Wood",
+    "Tonka Bean",
+    "Vanilla",
+    "Opoponax"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Lavender",
+   "Rosemary",
+   "Fern",
+   "Wood",
+   "Tonka Bean",
+   "Vanilla",
+   "Opoponax"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "fresh",
+   "herbal",
+   "sweet",
+   "warm"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Fresh herbs open the scent, with bergamot, lavender and rosemary, and over time tonka bean, vanilla and opoponax add a sweet, warm depth.",
+  "popularityRank": 70,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/guerlain-jicky"
+ },
+ {
+  "id": "mugler-alien",
+  "brand": "Mugler",
+  "brandId": "mugler",
+  "name": "Alien",
+  "brandAliasesKo": [
+   "뮈글러",
+   "뮤글러",
+   "티에리 뮈글러"
+  ],
+  "aliasesKo": [
+   "에일리언",
+   "뮈글러 에일리언"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Jasmine Sambac",
+   "Cashmeran",
+   "Amber"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "woody",
+   "amber",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Jasmine sambac turns creamy and radiant here, resting on a woody cashmeran core and a soft amber glow that lingers close to the skin.",
+  "popularityRank": 71,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/alien-mugler"
+ },
+ {
+  "id": "tiziana-terenzi-kirke",
+  "brand": "Tiziana Terenzi",
+  "brandId": "tiziana-terenzi",
+  "name": "Kirke",
+  "brandAliasesKo": [
+   "티지아나 테렌치",
+   "티치아나 테렌치",
+   "티지아나테렌치"
+  ],
+  "aliasesKo": [
+   "키르케",
+   "커크",
+   "티지아나 키르케"
+  ],
+  "notes": {
+   "top": [
+    "Passion fruit",
+    "Peach",
+    "Raspberry",
+    "Blackcurrant",
+    "Pear",
+    "Sand"
+   ],
+   "heart": [
+    "Lily of the Valley"
+   ],
+   "base": [
+    "Heliotrope",
+    "Sandalwood",
+    "Vanilla",
+    "Patchouli",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Passion fruit",
+   "Peach",
+   "Raspberry",
+   "Blackcurrant",
+   "Pear",
+   "Sand",
+   "Lily of the Valley",
+   "Heliotrope",
+   "Sandalwood",
+   "Vanilla",
+   "Patchouli",
+   "Musk"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "earthy",
+   "floral",
+   "powdery"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A sweet, fruity scent: passion fruit, peach, raspberry, blackcurrant and pear over lily of the valley, resting on heliotrope, sandalwood, vanilla, patchouli and musk.",
+  "popularityRank": 72,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/kirke-tiziana-terenzi"
+ },
+ {
+  "id": "frederic-malle-carnal-flower",
+  "brand": "Frédéric Malle",
+  "brandId": "frederic-malle",
+  "name": "Carnal Flower",
+  "brandAliasesKo": [
+   "프레데릭 말",
+   "프레데릭말",
+   "프레드릭 말"
+  ],
+  "aliasesKo": [
+   "카날 플라워",
+   "카널 플라워",
+   "카날플라워"
+  ],
+  "notes": {
+   "top": [
+    "Melon",
+    "Bergamot"
+   ],
+   "heart": [
+    "Tuberose",
+    "Jasmine"
+   ],
+   "base": [
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Melon",
+   "Bergamot",
+   "Tuberose",
+   "Jasmine",
+   "Musk"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy",
+   "citrusy",
+   "fruity"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Melon and bergamot freshen a heavy, creamy heart of tuberose and jasmine, finished with a soft layer of musk.",
+  "popularityRank": 73,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/carnal-flower-frederic-malle"
+ },
+ {
+  "id": "lattafa-khamrah",
+  "brand": "Lattafa",
+  "brandId": "lattafa",
+  "name": "Khamrah",
+  "brandAliasesKo": [
+   "라타파",
+   "라따파"
+  ],
+  "aliasesKo": [
+   "캄라",
+   "카므라",
+   "라타파 캄라",
+   "khamrah"
+  ],
+  "notes": {
+   "top": [
+    "Cinnamon",
+    "Nutmeg",
+    "Bergamot"
+   ],
+   "heart": [
+    "Dates",
+    "Praline",
+    "Tuberose",
+    "Mahonial"
+   ],
+   "base": [
+    "Vanilla",
+    "Tonka Bean",
+    "Amberwood",
+    "Myrrh",
+    "Benzoin",
+    "Akigalawood"
+   ]
+  },
+  "allNotes": [
+   "Cinnamon",
+   "Nutmeg",
+   "Bergamot",
+   "Dates",
+   "Praline",
+   "Tuberose",
+   "Mahonial",
+   "Vanilla",
+   "Tonka Bean",
+   "Amberwood",
+   "Myrrh",
+   "Benzoin",
+   "Akigalawood"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "warm",
+   "sweet",
+   "woody",
+   "spicy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A dessert-like spiced gourmand: cinnamon, nutmeg and bergamot lead into dates, praline and tuberose, then a long vanilla, tonka, myrrh and benzoin base.",
+  "popularityRank": 74,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/khamrah-lattafa"
+ },
+ {
+  "id": "tom-ford-lost-cherry",
+  "brand": "Tom Ford",
+  "brandId": "tom-ford",
+  "name": "Lost Cherry",
+  "brandAliasesKo": [
+   "톰포드",
+   "톰 포드"
+  ],
+  "aliasesKo": [
+   "로스트 체리",
+   "로스트체리"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Cherry",
+   "Almond",
+   "Griotte Syrup",
+   "Rose",
+   "Balsam of Peru",
+   "Tonka Bean"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "sweet",
+   "warm",
+   "floral"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A boozy cherry gourmand: black cherry and cherry syrup with bitter almond, rose, balsam and roasted tonka.",
+  "popularityRank": 75,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/lost-cherry-tom-ford"
+ },
+ {
+  "id": "armaf-club-de-nuit-intense-man",
+  "brand": "Armaf",
+  "brandId": "armaf",
+  "name": "Club de Nuit Intense Man",
+  "brandAliasesKo": [
+   "아르마프",
+   "아르마프"
+  ],
+  "aliasesKo": [
+   "클럽 드 뉘 인텐스",
+   "클럽드뉘 인텐스 맨",
+   "클럽드뉘",
+   "CDNIM"
+  ],
+  "notes": {
+   "top": [
+    "Apple",
+    "Bergamot",
+    "Blackcurrant",
+    "Pineapple",
+    "Lemon"
+   ],
+   "heart": [
+    "Rose",
+    "Birch",
+    "Jasmine"
+   ],
+   "base": [
+    "Musk",
+    "Ambergris",
+    "Patchouli",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Apple",
+   "Bergamot",
+   "Blackcurrant",
+   "Pineapple",
+   "Lemon",
+   "Rose",
+   "Birch",
+   "Jasmine",
+   "Musk",
+   "Ambergris",
+   "Patchouli",
+   "Vanilla"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "floral",
+   "citrusy",
+   "smoky"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A fresh fruity opening of apple, bergamot and blackcurrant leads to rose, birch and jasmine, with a smoky-musky base of ambergris and patchouli.",
+  "popularityRank": 77,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/club-de-nuit-intense-man-armaf"
+ },
+ {
+  "id": "carolina-herrera-212-vip",
+  "brand": "Carolina Herrera",
+  "brandId": "carolina-herrera",
+  "name": "212 VIP",
+  "brandAliasesKo": [
+   "캐롤라이나 헤레라",
+   "카롤리나 에레라",
+   "캐롤리나 헤레라"
+  ],
+  "aliasesKo": [
+   "212 VIP",
+   "212 브이아이피",
+   "212 비아이피"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Passion fruit"
+   ],
+   "heart": [
+    "Gardenia",
+    "Rum"
+   ],
+   "base": [
+    "Benzoin",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Passion fruit",
+   "Gardenia",
+   "Rum",
+   "Benzoin",
+   "Musk"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "warm",
+   "sweet",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Passion fruit and bergamot sparkle over gardenia and a boozy hint of rum, leaving benzoin and musk to warm the base.",
+  "popularityRank": 78,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/carolina-herrera-212-vip"
+ },
+ {
+  "id": "creed-viking",
+  "brand": "Creed",
+  "brandId": "creed",
+  "name": "Viking",
+  "brandAliasesKo": [
+   "크리드"
+  ],
+  "aliasesKo": [
+   "바이킹",
+   "크리드 바이킹"
+  ],
+  "notes": {
+   "top": [
+    "Pink Pepper",
+    "Bergamot",
+    "Lemon"
+   ],
+   "heart": [
+    "Rose",
+    "Mint"
+   ],
+   "base": [
+    "Sandalwood",
+    "Vetiver",
+    "Patchouli",
+    "Lavandin"
+   ]
+  },
+  "allNotes": [
+   "Pink Pepper",
+   "Bergamot",
+   "Lemon",
+   "Rose",
+   "Mint",
+   "Sandalwood",
+   "Vetiver",
+   "Patchouli",
+   "Lavandin"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "fresh",
+   "herbal",
+   "citrusy",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Pink pepper, bergamot and lemon open sharply, then rose and spicy mint lead toward a deep base of sandalwood, vetiver, patchouli and lavandin.",
+  "popularityRank": 79,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/viking-creed"
+ },
+ {
+  "id": "afnan-9pm",
+  "brand": "Afnan",
+  "brandId": "afnan",
+  "name": "9 PM Night Out",
+  "brandAliasesKo": [
+   "아프난"
+  ],
+  "aliasesKo": [
+   "9PM",
+   "나인피엠",
+   "9 PM",
+   "9pm 아프난"
+  ],
+  "notes": {
+   "top": [
+    "Dragon fruit",
+    "Bergamot",
+    "Cognac",
+    "Lavender",
+    "Apple"
+   ],
+   "heart": [
+    "Cardamom",
+    "Mahonial",
+    "Suede",
+    "Toffee",
+    "Cedarwood"
+   ],
+   "base": [
+    "Tonka Bean",
+    "Akigalawood",
+    "Ambrofix",
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Dragon fruit",
+   "Bergamot",
+   "Cognac",
+   "Lavender",
+   "Apple",
+   "Cardamom",
+   "Mahonial",
+   "Suede",
+   "Toffee",
+   "Cedarwood",
+   "Tonka Bean",
+   "Akigalawood",
+   "Ambrofix",
+   "Patchouli"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "warm",
+   "sweet",
+   "fruity"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A sweet, warm evening scent: dragon fruit, bergamot and cognac up front, cardamom, suede and toffee in the middle, then tonka, patchouli and woody-amber materials at the finish.",
+  "popularityRank": 81,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/afnan-9pm"
+ },
+ {
+  "id": "jo-malone-peony-and-blush-suede",
+  "brand": "Jo Malone London",
+  "brandId": "jo-malone",
+  "name": "Peony & Blush Suede",
+  "brandAliasesKo": [
+   "조말론",
+   "조 말론",
+   "조말론런던"
+  ],
+  "aliasesKo": [
+   "피오니 앤 블러쉬 스웨이드",
+   "피오니 블러쉬 스웨이드",
+   "피오니"
+  ],
+  "notes": {
+   "top": [
+    "Apple"
+   ],
+   "heart": [
+    "Peony"
+   ],
+   "base": [
+    "Suede"
+   ]
+  },
+  "allNotes": [
+   "Apple",
+   "Peony",
+   "Suede"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "fruity",
+   "smoky",
+   "leathery"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Crisp apple and soft peony sit over a suede base. Fruity and floral, with a faint, smooth, soft-edged finish.",
+  "popularityRank": 82,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/jo-malone-peony-and-blush-suede"
+ },
+ {
+  "id": "mfk-oud-satin-mood",
+  "brand": "Maison Francis Kurkdjian",
+  "brandId": "mfk",
+  "name": "Oud Satin Mood",
+  "brandAliasesKo": [
+   "메종 프란시스 커정",
+   "메종 프랑시스 커정",
+   "프란시스 커정",
+   "MFK",
+   "메종프란시스커정"
+  ],
+  "aliasesKo": [
+   "우드 사틴 무드",
+   "오드 사틴 무드",
+   "우드사틴무드"
+  ],
+  "notes": {
+   "top": [
+    "Violet"
+   ],
+   "heart": [
+    "Rose",
+    "Rose"
+   ],
+   "base": [
+    "Oud",
+    "Benzoin",
+    "Vanilla",
+    "Amber"
+   ]
+  },
+  "allNotes": [
+   "Violet",
+   "Rose",
+   "Rose",
+   "Oud",
+   "Benzoin",
+   "Vanilla",
+   "Amber"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "resinous",
+   "warm",
+   "powdery"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Violet and two kinds of rose open a velvety floral that settles on natural oud, benzoin, vanilla and amber.",
+  "popularityRank": 83,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/oud-satin-mood-by-maison-francis-kurkdjian"
+ },
+ {
+  "id": "givenchy-gentleman",
+  "brand": "Givenchy",
+  "brandId": "givenchy",
+  "name": "Gentleman",
+  "brandAliasesKo": [
+   "지방시"
+  ],
+  "aliasesKo": [
+   "젠틀맨 지방시",
+   "지방시 젠틀맨"
+  ],
+  "notes": {
+   "top": [
+    "Pepper",
+    "Lavender"
+   ],
+   "heart": [
+    "Iris",
+    "Balsam of Peru"
+   ],
+   "base": [
+    "Patchouli",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Pepper",
+   "Lavender",
+   "Iris",
+   "Balsam of Peru",
+   "Patchouli",
+   "Vanilla"
+  ],
+  "family": "Powder Veil",
+  "character": [
+   "warm",
+   "powdery",
+   "resinous",
+   "herbal"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Pepper and lavender open into powdery iris and resinous balsam of Peru, with patchouli and vanilla keeping the base warm.",
+  "popularityRank": 85,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/givenchy-gentleman"
+ },
+ {
+  "id": "hermes-un-jardin-sur-le-nil",
+  "brand": "Hermès",
+  "brandId": "hermes",
+  "name": "Un Jardin sur le Nil",
+  "brandAliasesKo": [
+   "에르메스"
+  ],
+  "aliasesKo": [
+   "나일 정원",
+   "운 자르댕 쉬르 르 닐",
+   "나일강의 정원",
+   "정원 시리즈 나일"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Mango",
+   "Lotus",
+   "Incense",
+   "Sycamore wood"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "floral",
+   "woody",
+   "resinous"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Green mango and lotus blossom bring a juicy, watery brightness, softened by smoky incense and sycamore wood.",
+  "popularityRank": 86,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/un-jardin-sur-le-nil-hermes"
+ },
+ {
+  "id": "armani-armani-code",
+  "brand": "Giorgio Armani",
+  "brandId": "armani",
+  "name": "Armani Code",
+  "brandAliasesKo": [
+   "조르지오 아르마니",
+   "조르조 아르마니",
+   "아르마니"
+  ],
+  "aliasesKo": [
+   "아르마니 코드",
+   "알마니 코드"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Mandarin",
+   "Bergamot",
+   "Tarragon"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "fresh",
+   "herbal"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "Clean citrus from mandarin and bergamot meets a herbal edge of tarragon, keeping the mood cool and composed.",
+  "popularityRank": 89,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/armani-code-giorgio-armani"
+ },
+ {
+  "id": "byredo-blanche",
+  "brand": "Byredo",
+  "brandId": "byredo",
+  "name": "Blanche",
+  "brandAliasesKo": [
+   "바이레도",
+   "바이레도"
+  ],
+  "aliasesKo": [
+   "블랑쉬",
+   "블랑슈",
+   "바이레도 블랑쉬"
+  ],
+  "notes": {
+   "top": [
+    "Aldehydes",
+    "Rose"
+   ],
+   "heart": [
+    "Peony",
+    "Violet"
+   ],
+   "base": [
+    "Musk",
+    "Sandalwood"
+   ]
+  },
+  "allNotes": [
+   "Aldehydes",
+   "Rose",
+   "Peony",
+   "Violet",
+   "Musk",
+   "Sandalwood"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "powdery",
+   "woody",
+   "musky"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A clean, soft floral: aldehydes and rose open to peony and violet, with musks and sandalwood underneath.",
+  "popularityRank": 90,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/blanche-byredo"
+ },
+ {
+  "id": "chloe-nomade",
+  "brand": "Chloé",
+  "brandId": "chloe",
+  "name": "Nomade",
+  "brandAliasesKo": [
+   "끌로에",
+   "클로에"
+  ],
+  "aliasesKo": [
+   "노마드",
+   "끌로에 노마드"
+  ],
+  "notes": {
+   "top": [
+    "Plum"
+   ],
+   "heart": [
+    "Freesia"
+   ],
+   "base": [
+    "Oakmoss"
+   ]
+  },
+  "allNotes": [
+   "Plum",
+   "Freesia",
+   "Oakmoss"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "fruity",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A gentle fruit and flower composition: plum, freesia and a mossy, earthy base of oakmoss.",
+  "popularityRank": 91,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/nomade-chloe"
+ },
+ {
+  "id": "gucci-bloom",
+  "brand": "Gucci",
+  "brandId": "gucci",
+  "name": "Bloom",
+  "brandAliasesKo": [
+   "구찌"
+  ],
+  "aliasesKo": [
+   "블룸",
+   "구찌 블룸"
+  ],
+  "notes": {
+   "top": [
+    "Rangoon creeper"
+   ],
+   "heart": [
+    "Tuberose"
+   ],
+   "base": [
+    "Jasmine"
+   ]
+  },
+  "allNotes": [
+   "Rangoon creeper",
+   "Tuberose",
+   "Jasmine"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Creamy and floral throughout, built around Rangoon creeper, tuberose and jasmine in a slow, rounded progression.",
+  "popularityRank": 93,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/gucci-bloom-gucci"
+ },
+ {
+  "id": "parfums-de-marly-herod",
+  "brand": "Parfums de Marly",
+  "brandId": "parfums-de-marly",
+  "name": "Herod",
+  "brandAliasesKo": [
+   "퍼퓸 드 말리",
+   "파르팡 드 말리",
+   "파르팡드말리",
+   "드말리"
+  ],
+  "aliasesKo": [
+   "헤로드",
+   "해럿",
+   "드말리 헤로드"
+  ],
+  "notes": {
+   "top": [
+    "Cinnamon",
+    "Pepper"
+   ],
+   "heart": [
+    "Tobacco",
+    "Incense",
+    "Labdanum",
+    "Osmanthus"
+   ],
+   "base": [
+    "Vanilla",
+    "Musk",
+    "Cedarwood"
+   ]
+  },
+  "allNotes": [
+   "Cinnamon",
+   "Pepper",
+   "Tobacco",
+   "Incense",
+   "Labdanum",
+   "Osmanthus",
+   "Vanilla",
+   "Musk",
+   "Cedarwood"
+  ],
+  "family": "Amber & Resin",
+  "character": [
+   "warm",
+   "resinous",
+   "spicy",
+   "floral"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A smooth tobacco gourmand: cinnamon and pepper meet tobacco leaf, incense and osmanthus, softened by vanilla, musks and cedarwood.",
+  "popularityRank": 95,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/herod-parfums-de-marly"
+ },
+ {
+  "id": "prada-luna-rossa-carbon",
+  "brand": "Prada",
+  "brandId": "prada",
+  "name": "Luna Rossa Carbon",
+  "brandAliasesKo": [
+   "프라다"
+  ],
+  "aliasesKo": [
+   "루나 로사 카본",
+   "루나로사 카본"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Lavender",
+   "Liquorice",
+   "Cypress"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "fresh",
+   "green",
+   "herbal",
+   "sweet"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Lavender and cypress keep it cool and green, with liquorice adding a faint, sweet edge.",
+  "popularityRank": 96,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/luna-rossa-carbon-prada"
+ },
+ {
+  "id": "montale-intense-cafe",
+  "brand": "Montale",
+  "brandId": "montale",
+  "name": "Intense Cafe",
+  "brandAliasesKo": [
+   "몽탈",
+   "몬탈레"
+  ],
+  "aliasesKo": [
+   "인텐스 카페",
+   "인텐스카페",
+   "몽탈 인텐스 카페"
+  ],
+  "notes": {
+   "top": [
+    "Floral notes"
+   ],
+   "heart": [
+    "Rose",
+    "Coffee"
+   ],
+   "base": [
+    "Amber",
+    "Vanilla",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Floral notes",
+   "Rose",
+   "Coffee",
+   "Amber",
+   "Vanilla",
+   "Musk"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "sweet",
+   "warm",
+   "amber"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Rose and coffee form the heart of this warm gourmand, framed by a floral opening. Amber, vanilla and white musk give it a creamy, roasted-sweet base.",
+  "popularityRank": 98,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/intense-cafe-montale"
+ },
+ {
+  "id": "initio-absolute-aphrodisiac",
+  "brand": "Initio Parfums Prives",
+  "brandId": "initio",
+  "name": "Absolute Aphrodisiac",
+  "brandAliasesKo": [
+   "이니시오",
+   "인시오",
+   "이니시오 퍼퓸 프리베"
+  ],
+  "aliasesKo": [
+   "앱솔루트 아프로디지악",
+   "압솔루트 아프로디지악"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "White Flowers",
+   "Amber",
+   "Vanilla",
+   "Musk",
+   "Castoreum"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "warm",
+   "floral",
+   "sweet",
+   "smoky"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A warm, animalic floral: white flowers over amber, vanilla and musk, with a castoreum edge that adds a leathery, skin-like depth.",
+  "popularityRank": 103,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/absolute-aphrodisiac-initio-parfums-prives"
+ },
+ {
+  "id": "valentino-uomo-born-in-roma-intense",
+  "brand": "Valentino",
+  "brandId": "valentino",
+  "name": "Uomo Born in Roma Intense",
+  "brandAliasesKo": [
+   "발렌티노"
+  ],
+  "aliasesKo": [
+   "우오모 본 인 로마 인텐스",
+   "본 인 로마 우오모",
+   "우오모 인텐스"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Vanilla",
+   "Lavandin",
+   "Vetiver"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "herbal",
+   "sweet",
+   "earthy",
+   "fresh"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Vanilla is sharpened by lavandin and anchored in earthy vetiver, sweet yet herbal and dry.",
+  "popularityRank": 105,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/valentino-uomo-born-in-roma-intense-valentino"
+ },
+ {
+  "id": "burberry-her",
+  "brand": "Burberry",
+  "brandId": "burberry",
+  "name": "Her",
+  "brandAliasesKo": [
+   "버버리"
+  ],
+  "aliasesKo": [
+   "허 버버리",
+   "버버리 허",
+   "버버리 허"
+  ],
+  "notes": {
+   "top": [
+    "Blackcurrant",
+    "Blueberry",
+    "Raspberry"
+   ],
+   "heart": [
+    "Jasmine",
+    "Violet"
+   ],
+   "base": [
+    "White Woods",
+    "Musk",
+    "Amber"
+   ]
+  },
+  "allNotes": [
+   "Blackcurrant",
+   "Blueberry",
+   "Raspberry",
+   "Jasmine",
+   "Violet",
+   "White Woods",
+   "Musk",
+   "Amber"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "floral",
+   "powdery",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Dark berries of blackcurrant, blueberry and raspberry lead into violet and jasmine, then dry to powdery white woods, musk and amber.",
+  "popularityRank": 106,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/burberry-her-burberry"
+ },
+ {
+  "id": "nishane-ani",
+  "brand": "Nishane",
+  "brandId": "nishane",
+  "name": "Ani",
+  "brandAliasesKo": [
+   "니샤네",
+   "니샤네"
+  ],
+  "aliasesKo": [
+   "아니",
+   "니샤네 아니",
+   "아니 니샤네"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Green leaves",
+    "Blue ginger",
+    "Pink Pepper"
+   ],
+   "heart": [
+    "Blackcurrant",
+    "Turkish Rose",
+    "Cardamom"
+   ],
+   "base": [
+    "Patchouli",
+    "Cedarwood",
+    "Vanilla",
+    "Benzoin",
+    "Ambergris",
+    "Musk",
+    "Sandalwood"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Green leaves",
+   "Blue ginger",
+   "Pink Pepper",
+   "Blackcurrant",
+   "Turkish Rose",
+   "Cardamom",
+   "Patchouli",
+   "Cedarwood",
+   "Vanilla",
+   "Benzoin",
+   "Ambergris",
+   "Musk",
+   "Sandalwood"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "warm",
+   "spicy",
+   "woody",
+   "fruity"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Bergamot, blue ginger and pink pepper open into blackcurrant, Turkish rose and cardamom. A vanilla-led base of benzoin, ambergris, patchouli and sandalwood makes it warm, spicy and creamy.",
+  "popularityRank": 109,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/ani-nishane"
+ },
+ {
+  "id": "ysl-mon-paris",
+  "brand": "Yves Saint Laurent",
+  "brandId": "ysl",
+  "name": "Mon Paris",
+  "brandAliasesKo": [
+   "입생로랑",
+   "이브생로랑",
+   "YSL",
+   "생로랑"
+  ],
+  "aliasesKo": [
+   "몽 파리",
+   "몽파리",
+   "입생로랑 몽파리"
+  ],
+  "notes": {
+   "top": [
+    "Strawberry",
+    "Raspberry",
+    "Pear",
+    "Bergamot",
+    "Orange"
+   ],
+   "heart": [
+    "Datura flower",
+    "Peony",
+    "Orange Blossom",
+    "Jasmine Sambac"
+   ],
+   "base": [
+    "Patchouli",
+    "Musk",
+    "Ambroxan",
+    "Cedarwood",
+    "Oakmoss",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Strawberry",
+   "Raspberry",
+   "Pear",
+   "Bergamot",
+   "Orange",
+   "Datura flower",
+   "Peony",
+   "Orange Blossom",
+   "Jasmine Sambac",
+   "Patchouli",
+   "Musk",
+   "Ambroxan",
+   "Cedarwood",
+   "Oakmoss",
+   "Vanilla"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "fruity",
+   "creamy",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Juicy strawberry and pear lead into peony and orange blossom, then dry down to soft musk, patchouli and vanilla. Fruity, floral and creamy.",
+  "popularityRank": 110,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/mon-paris-yves-saint-laurent"
+ },
+ {
+  "id": "frederic-malle-lipstick-rose",
+  "brand": "Frédéric Malle",
+  "brandId": "frederic-malle",
+  "name": "Lipstick Rose",
+  "brandAliasesKo": [
+   "프레데릭 말",
+   "프레데릭말",
+   "프레드릭 말"
+  ],
+  "aliasesKo": [
+   "립스틱 로즈",
+   "립스틱로즈"
+  ],
+  "notes": {
+   "top": [
+    "Grapefruit",
+    "Violet"
+   ],
+   "heart": [
+    "Rose",
+    "Iris",
+    "Raspberry"
+   ],
+   "base": [
+    "Vanilla",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Grapefruit",
+   "Violet",
+   "Rose",
+   "Iris",
+   "Raspberry",
+   "Vanilla",
+   "Musk"
+  ],
+  "family": "Powder Veil",
+  "character": [
+   "powdery",
+   "fruity",
+   "floral",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Rose and iris in a powdery veil, with grapefruit and violet on top and raspberry adding a little fruit. Vanilla and musk soften the finish.",
+  "popularityRank": 117,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/frederic-malle-lipstick-rose"
+ },
+ {
+  "id": "lattafa-yara",
+  "brand": "Lattafa",
+  "brandId": "lattafa",
+  "name": "Yara",
+  "brandAliasesKo": [
+   "라타파",
+   "라따파"
+  ],
+  "aliasesKo": [
+   "야라",
+   "라타파 야라",
+   "야라 핑크"
+  ],
+  "notes": {
+   "top": [
+    "Orchid",
+    "Heliotrope",
+    "Mandarin"
+   ],
+   "heart": [
+    "Gourmand accord",
+    "Tropical fruits"
+   ],
+   "base": [
+    "Vanilla",
+    "Musk",
+    "Sandalwood"
+   ]
+  },
+  "allNotes": [
+   "Orchid",
+   "Heliotrope",
+   "Mandarin",
+   "Gourmand accord",
+   "Tropical fruits",
+   "Vanilla",
+   "Musk",
+   "Sandalwood"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "fruity",
+   "warm",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Soft, sweet and fruity-floral: orchid, heliotrope and tangerine up top, a creamy gourmand and tropical fruit heart, then vanilla, musk and sandalwood.",
+  "popularityRank": 118,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/yara-lattafa"
+ },
+ {
+  "id": "tom-ford-soleil-blanc",
+  "brand": "Tom Ford",
+  "brandId": "tom-ford",
+  "name": "Soleil Blanc",
+  "brandAliasesKo": [
+   "톰포드",
+   "톰 포드"
+  ],
+  "aliasesKo": [
+   "솔레이 블랑",
+   "솔레이블랑",
+   "솔레이 블랑크"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Bergamot",
+   "Cardamom",
+   "Pistachio",
+   "Ylang-Ylang",
+   "Benzoin",
+   "Coco de Mer"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "warm",
+   "sweet",
+   "citrusy",
+   "floral"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A creamy, sun-warmed floral: bergamot and cardamom with pistachio, ylang ylang and benzoin, rounded by a coconut-like accord.",
+  "popularityRank": 119,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/soleil-blanc-tom-ford"
+ },
+ {
+  "id": "viktor-rolf-bonbon",
+  "brand": "Viktor&Rolf",
+  "brandId": "viktor-rolf",
+  "name": "Bonbon",
+  "brandAliasesKo": [
+   "빅터앤롤프",
+   "빅터 앤 롤프",
+   "빅터롤프",
+   "빅토르 앤 롤프"
+  ],
+  "aliasesKo": [
+   "봉봉",
+   "빅터앤롤프 봉봉"
+  ],
+  "notes": {
+   "top": [
+    "Mandarin"
+   ],
+   "heart": [
+    "Orange Blossom"
+   ],
+   "base": [
+    "Caramel"
+   ]
+  },
+  "allNotes": [
+   "Mandarin",
+   "Orange Blossom",
+   "Caramel"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "citrusy",
+   "sweet",
+   "creamy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A sweet gourmand fragrance: mandarin at the top, orange blossom in the middle and a soft caramel base. Fruity and creamy, with a candy-like character.",
+  "popularityRank": 120,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/viktor-rolf-bonbon"
+ },
+ {
+  "id": "diptyque-tam-dao",
+  "brand": "Diptyque",
+  "brandId": "diptyque",
+  "name": "Tam Dao",
+  "brandAliasesKo": [
+   "딥티크",
+   "딥디크"
+  ],
+  "aliasesKo": [
+   "탐다오",
+   "탐 다오",
+   "딥티크 탐다오"
+  ],
+  "notes": {
+   "top": [
+    "Rose",
+    "Myrtle",
+    "Cypress"
+   ],
+   "heart": [
+    "Sandalwood",
+    "Cedarwood"
+   ],
+   "base": [
+    "Spice",
+    "Amber",
+    "Musk",
+    "Rosewood"
+   ]
+  },
+  "allNotes": [
+   "Rose",
+   "Myrtle",
+   "Cypress",
+   "Sandalwood",
+   "Cedarwood",
+   "Spice",
+   "Amber",
+   "Musk",
+   "Rosewood"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "fresh",
+   "warm",
+   "green"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Rose, myrtle and cypress open green and fresh before creamy sandalwood and cedar, with rosewood, amber and white musk adding a gentle warmth.",
+  "popularityRank": 124,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/tam-dao-diptyque"
+ },
+ {
+  "id": "mfk-gentle-fluidity-gold",
+  "brand": "Maison Francis Kurkdjian",
+  "brandId": "mfk",
+  "name": "Gentle Fluidity Gold",
+  "brandAliasesKo": [
+   "메종 프란시스 커정",
+   "메종 프랑시스 커정",
+   "프란시스 커정",
+   "MFK",
+   "메종프란시스커정"
+  ],
+  "aliasesKo": [
+   "젠틀 플루이디티 골드",
+   "젠틀플루이디티 골드",
+   "젠플 골드"
+  ],
+  "notes": {
+   "top": [
+    "Juniper"
+   ],
+   "heart": [
+    "Nutmeg",
+    "Coriander"
+   ],
+   "base": [
+    "Musk",
+    "Amberwood",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Juniper",
+   "Nutmeg",
+   "Coriander",
+   "Musk",
+   "Amberwood",
+   "Vanilla"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "warm",
+   "herbal",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Juniper berries and nutmeg open dry and spicy, then coriander turns to a warm base of vanilla, musk and ambery woods.",
+  "popularityRank": 129,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/gentle-fluidity-gold-maison-francis-kurkdjian"
+ },
+ {
+  "id": "givenchy-linterdit",
+  "brand": "Givenchy",
+  "brandId": "givenchy",
+  "name": "L'Interdit",
+  "brandAliasesKo": [
+   "지방시"
+  ],
+  "aliasesKo": [
+   "랑떼르디",
+   "랭떼르디",
+   "랭테르디",
+   "지방시 랑떼르디"
+  ],
+  "notes": {
+   "top": [
+    "Orange Blossom"
+   ],
+   "heart": [
+    "Jasmine",
+    "Tuberose"
+   ],
+   "base": [
+    "Vetiver",
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Orange Blossom",
+   "Jasmine",
+   "Tuberose",
+   "Vetiver",
+   "Patchouli"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy",
+   "earthy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Orange blossom opens into creamy jasmine and tuberose, while vetiver and patchouli give the white flowers an earthy, shadowed edge. Rich, smooth and slightly dark.",
+  "popularityRank": 131,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/linterdit-eau-de-parfum-givenchy"
+ },
+ {
+  "id": "hermes-eau-des-merveilles",
+  "brand": "Hermès",
+  "brandId": "hermes",
+  "name": "Eau des Merveilles",
+  "brandAliasesKo": [
+   "에르메스"
+  ],
+  "aliasesKo": [
+   "오 데 메르베이",
+   "오데메르베이",
+   "에르메스 메르베이"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Elemi",
+   "Benzoin",
+   "Bitter orange"
+  ],
+  "family": "Amber & Resin",
+  "character": [
+   "resinous",
+   "warm",
+   "citrusy",
+   "fresh"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Elemi and bitter orange give a bright, slightly salty start, and benzoin brings a warm, resinous sweetness.",
+  "popularityRank": 132,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/eau-des-merveilles-hermes"
+ },
+ {
+  "id": "jean-paul-gaultier-scandal",
+  "brand": "Jean Paul Gaultier",
+  "brandId": "jean-paul-gaultier",
+  "name": "Scandal",
+  "brandAliasesKo": [
+   "장 폴 고티에",
+   "장폴고티에",
+   "고티에",
+   "JPG"
+  ],
+  "aliasesKo": [
+   "스캔들",
+   "고티에 스캔들",
+   "장폴고티에 스캔들"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Honey",
+   "Gardenia",
+   "Blood Orange",
+   "Patchouli"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "floral",
+   "sweet",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Honey and gardenia lend a rich, sweet floral tone, brightened by blood orange and grounded by an earthy patchouli.",
+  "popularityRank": 133,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/scandal-jean-paul-gaultier"
+ },
+ {
+  "id": "le-labo-the-noir-29",
+  "brand": "Le Labo",
+  "brandId": "le-labo",
+  "name": "Thé Noir 29",
+  "brandAliasesKo": [
+   "르라보",
+   "르 라보"
+  ],
+  "aliasesKo": [
+   "떼 누아 29",
+   "테 누아 29",
+   "떼누아29",
+   "티 누아 29"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Tea",
+   "Bergamot",
+   "Fig",
+   "Bay",
+   "Cedarwood",
+   "Vetiver",
+   "Musk"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "fresh",
+   "citrusy",
+   "fruity",
+   "green"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Fig and bay leaves add a green, fruity thread to black tea and bergamot, with cedarwood, vetiver and musk beneath.",
+  "popularityRank": 134,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/the-noir-29-by-le-labo"
+ },
+ {
+  "id": "byredo-rose-of-no-mans-land",
+  "brand": "Byredo",
+  "brandId": "byredo",
+  "name": "Rose of No Man's Land",
+  "brandAliasesKo": [
+   "바이레도",
+   "바이레도"
+  ],
+  "aliasesKo": [
+   "로즈 오브 노맨즈랜드",
+   "로즈오브노맨즈랜드",
+   "노맨즈랜드"
+  ],
+  "notes": {
+   "top": [
+    "Pink Pepper",
+    "Rose"
+   ],
+   "heart": [
+    "Raspberry Blossom",
+    "Turkish Rose"
+   ],
+   "base": [
+    "Amber",
+    "Papyrus"
+   ]
+  },
+  "allNotes": [
+   "Pink Pepper",
+   "Rose",
+   "Raspberry Blossom",
+   "Turkish Rose",
+   "Amber",
+   "Papyrus"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "warm",
+   "spicy",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A dry, spicy rose: pink pepper and Turkish rose with raspberry blossom, settling into amber and papyrus.",
+  "popularityRank": 138,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/rose-of-no-mans-land-byredo"
+ },
+ {
+  "id": "gucci-guilty",
+  "brand": "Gucci",
+  "brandId": "gucci",
+  "name": "Guilty",
+  "brandAliasesKo": [
+   "구찌"
+  ],
+  "aliasesKo": [
+   "길티",
+   "구찌 길티"
+  ],
+  "notes": {
+   "top": [
+    "Mandora",
+    "Pink Pepper"
+   ],
+   "heart": [
+    "Lilac"
+   ],
+   "base": [
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Mandora",
+   "Pink Pepper",
+   "Lilac",
+   "Patchouli"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "citrusy",
+   "spicy",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Mandora and pink pepper start bright and spiced, a lilac heart follows, and an earthy base of patchouli closes the scent.",
+  "popularityRank": 142,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/gucci-guilty-gucci"
+ },
+ {
+  "id": "maison-margiela-replica-lazy-sunday-morning",
+  "brand": "Maison Margiela Fragrances",
+  "brandId": "maison-margiela",
+  "name": "Replica Lazy Sunday Morning",
+  "brandAliasesKo": [
+   "메종 마르지엘라",
+   "메종마르지엘라",
+   "마르지엘라",
+   "마르지엘라 레플리카"
+  ],
+  "aliasesKo": [
+   "레이지 선데이 모닝",
+   "레이지선데이모닝",
+   "게으른 일요일 아침",
+   "레이지 선데이"
+  ],
+  "notes": {
+   "top": [
+    "Pear",
+    "Lily of the Valley",
+    "Aldehydes"
+   ],
+   "heart": [
+    "Iris",
+    "Rose",
+    "Orange Blossom"
+   ],
+   "base": [
+    "Patchouli",
+    "Ambrette",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Pear",
+   "Lily of the Valley",
+   "Aldehydes",
+   "Iris",
+   "Rose",
+   "Orange Blossom",
+   "Patchouli",
+   "Ambrette",
+   "Musk"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "powdery",
+   "musky",
+   "clean"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A soft linen-fresh floral. Pear, lily of the valley and aldehydes open, iris, rose and orange flower follow, and patchouli, ambrette seeds and white musks keep it clean and quiet.",
+  "popularityRank": 143,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/maison-margiela-replica-lazy-sunday-morning"
+ },
+ {
+  "id": "parfums-de-marly-galloway",
+  "brand": "Parfums de Marly",
+  "brandId": "parfums-de-marly",
+  "name": "Galloway",
+  "brandAliasesKo": [
+   "퍼퓸 드 말리",
+   "파르팡 드 말리",
+   "파르팡드말리",
+   "드말리"
+  ],
+  "aliasesKo": [
+   "갤러웨이",
+   "갤로웨이",
+   "드말리 갤러웨이"
+  ],
+  "notes": {
+   "top": [
+    "Lemon",
+    "Pepper",
+    "Elemi"
+   ],
+   "heart": [
+    "Cardamom",
+    "Iris"
+   ],
+   "base": [
+    "Musk",
+    "Ambroxan",
+    "Cypriol"
+   ]
+  },
+  "allNotes": [
+   "Lemon",
+   "Pepper",
+   "Elemi",
+   "Cardamom",
+   "Iris",
+   "Musk",
+   "Ambroxan",
+   "Cypriol"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "warm",
+   "spicy",
+   "powdery",
+   "citrusy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Fresh and peppery: lemon and elemi lead into cardamom and iris, then dry down to clean musks, ambrox and smoky cypriol.",
+  "popularityRank": 144,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/galloway-parfums-de-marly"
+ },
+ {
+  "id": "prada-luna-rossa-ocean",
+  "brand": "Prada",
+  "brandId": "prada",
+  "name": "Luna Rossa Ocean",
+  "brandAliasesKo": [
+   "프라다"
+  ],
+  "aliasesKo": [
+   "루나 로사 오션",
+   "루나로사 오션"
+  ],
+  "notes": {
+   "top": [
+    "Grapefruit"
+   ],
+   "heart": [
+    "Incense"
+   ],
+   "base": [
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Grapefruit",
+   "Incense",
+   "Vanilla"
+  ],
+  "family": "Amber & Resin",
+  "character": [
+   "warm",
+   "resinous",
+   "citrusy",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Grapefruit brings a sharp citrus lift, then incense and vanilla follow in a warm, resinous and slightly sweet drydown.",
+  "popularityRank": 145,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/luna-rossa-ocean-prada"
+ },
+ {
+  "id": "bvlgari-aqva-pour-homme",
+  "brand": "Bvlgari",
+  "brandId": "bvlgari",
+  "name": "Aqva Pour Homme",
+  "brandAliasesKo": [
+   "불가리",
+   "블가리"
+  ],
+  "aliasesKo": [
+   "아쿠아 뿌르 옴므",
+   "아쿠아 푸르 옴므",
+   "불가리 아쿠아"
+  ],
+  "notes": {
+   "top": [
+    "Mandarin"
+   ],
+   "heart": [
+    "Santolina"
+   ],
+   "base": [
+    "Clary Sage"
+   ]
+  },
+  "allNotes": [
+   "Mandarin",
+   "Santolina",
+   "Clary Sage"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "herbal",
+   "fresh",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "Mandarin brings a bright citrus lift to a green, herbal heart of santolina, finishing on clary sage.",
+  "popularityRank": 146,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/bvlgari-aqva-pour-homme"
+ },
+ {
+  "id": "hugo-boss-boss-bottled",
+  "brand": "Hugo Boss",
+  "brandId": "hugo-boss",
+  "name": "Boss Bottled",
+  "brandAliasesKo": [
+   "휴고보스",
+   "휴고 보스",
+   "보스"
+  ],
+  "aliasesKo": [
+   "보스 보틀드",
+   "보스 바틀드",
+   "휴고보스 보틀드"
+  ],
+  "notes": {
+   "top": [
+    "Apple",
+    "Bergamot",
+    "Pepper"
+   ],
+   "heart": [
+    "Cinnamon",
+    "Nutmeg",
+    "Cardamom"
+   ],
+   "base": [
+    "Vetiver",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Apple",
+   "Bergamot",
+   "Pepper",
+   "Cinnamon",
+   "Nutmeg",
+   "Cardamom",
+   "Vetiver",
+   "Musk"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "warm",
+   "citrusy",
+   "fruity"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Apple, bergamot and pepper meet cinnamon, nutmeg and cardamom, a warm, spiced progression that rests on vetiver and musk.",
+  "popularityRank": 147,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/boss-bottled-hugo-boss"
+ },
+ {
+  "id": "montale-black-aoud",
+  "brand": "Montale",
+  "brandId": "montale",
+  "name": "Black Aoud",
+  "brandAliasesKo": [
+   "몽탈",
+   "몬탈레"
+  ],
+  "aliasesKo": [
+   "블랙 아우드",
+   "블랙 오드",
+   "블랙아우드"
+  ],
+  "notes": {
+   "top": [
+    "Lemon",
+    "Mandarin",
+    "Oud",
+    "Saffron"
+   ],
+   "heart": [
+    "Rose",
+    "Patchouli"
+   ],
+   "base": [
+    "Leather",
+    "Guaiac Wood",
+    "Sandalwood",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Lemon",
+   "Mandarin",
+   "Oud",
+   "Saffron",
+   "Rose",
+   "Patchouli",
+   "Leather",
+   "Guaiac Wood",
+   "Sandalwood",
+   "Musk"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "citrusy",
+   "woody",
+   "floral",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A dark oud perfume lifted by lemon, mandarin and saffron, with rose and patchouli at the centre and leather, guaiac wood and sandalwood underneath. Smoky, spicy and bold.",
+  "popularityRank": 148,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/black-aoud-montale"
+ },
+ {
+  "id": "versace-pour-homme",
+  "brand": "Versace",
+  "brandId": "versace",
+  "name": "Pour Homme",
+  "brandAliasesKo": [
+   "베르사체"
+  ],
+  "aliasesKo": [
+   "베르사체 푸르 옴므",
+   "베르사체 뿌르 옴므"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Lemon",
+    "Petitgrain",
+    "Neroli"
+   ],
+   "heart": [
+    "Geranium",
+    "Clary Sage",
+    "Hyacinth",
+    "Cedarwood"
+   ],
+   "base": [
+    "Amber",
+    "Tonka Bean",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Lemon",
+   "Petitgrain",
+   "Neroli",
+   "Geranium",
+   "Clary Sage",
+   "Hyacinth",
+   "Cedarwood",
+   "Amber",
+   "Tonka Bean",
+   "Musk"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "floral",
+   "citrusy",
+   "fresh",
+   "herbal"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Citron, bergamot and neroli open bright, followed by geranium, clary sage and blue hyacinth, then cedar wood, mineral amber, tonka beans and musk.",
+  "popularityRank": 149,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/versace-pour-homme"
+ },
+ {
+  "id": "dior-poison",
+  "brand": "Dior",
+  "brandId": "dior",
+  "name": "Poison",
+  "brandAliasesKo": [
+   "디올",
+   "크리스찬 디올",
+   "크리스챤 디올"
+  ],
+  "aliasesKo": [
+   "프와종",
+   "푸아종",
+   "포이즌",
+   "디올 푸아종"
+  ],
+  "notes": {
+   "top": [
+    "Coriander"
+   ],
+   "heart": [
+    "Tuberose"
+   ],
+   "base": [
+    "Opoponax"
+   ]
+  },
+  "allNotes": [
+   "Coriander",
+   "Tuberose",
+   "Opoponax"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "warm",
+   "spicy",
+   "resinous"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Coriander flickers at the start, then a heavy tuberose heart sinks into a warm, resinous trail of opoponax.",
+  "popularityRank": 152,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/dior-poison"
+ },
+ {
+  "id": "initio-rehab",
+  "brand": "Initio Parfums Prives",
+  "brandId": "initio",
+  "name": "Rehab",
+  "brandAliasesKo": [
+   "이니시오",
+   "인시오",
+   "이니시오 퍼퓸 프리베"
+  ],
+  "aliasesKo": [
+   "리햅",
+   "이니시오 리햅",
+   "리햅"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Bergamot",
+   "Lavender",
+   "Cedarwood",
+   "Patchouli",
+   "Sandalwood",
+   "Hedione",
+   "Musk"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "fresh",
+   "citrusy",
+   "herbal"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A fresh, clean aromatic woody: bergamot and lavender over cedarwood, patchouli and sandalwood, finished with hedione and musk.",
+  "popularityRank": 153,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/rehab-initio-parfums-prives"
+ },
+ {
+  "id": "mancera-red-tobacco",
+  "brand": "Mancera",
+  "brandId": "mancera",
+  "name": "Red Tobacco",
+  "brandAliasesKo": [
+   "만세라",
+   "맨세라"
+  ],
+  "aliasesKo": [
+   "레드 토바코",
+   "레드토바코",
+   "만세라 레드 토바코"
+  ],
+  "notes": {
+   "top": [
+    "Saffron",
+    "Cinnamon",
+    "Incense",
+    "Nutmeg",
+    "Peach",
+    "Apple",
+    "Oud"
+   ],
+   "heart": [
+    "Patchouli",
+    "Jasmine"
+   ],
+   "base": [
+    "Tobacco",
+    "Amber",
+    "Woody notes",
+    "Vetiver",
+    "Vanilla",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Saffron",
+   "Cinnamon",
+   "Incense",
+   "Nutmeg",
+   "Peach",
+   "Apple",
+   "Oud",
+   "Patchouli",
+   "Jasmine",
+   "Tobacco",
+   "Amber",
+   "Woody notes",
+   "Vetiver",
+   "Vanilla",
+   "Musk"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "warm",
+   "spicy",
+   "earthy",
+   "fruity"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A heavy, spicy tobacco scent: saffron, cinnamon, incense, nutmeg, peach, apple and oud open, with patchouli and jasmine beneath tobacco, amber, vetiver, vanilla and musk.",
+  "popularityRank": 154,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/red-tobacco-mancera"
+ },
+ {
+  "id": "montblanc-explorer",
+  "brand": "Montblanc",
+  "brandId": "montblanc",
+  "name": "Explorer",
+  "brandAliasesKo": [
+   "몽블랑"
+  ],
+  "aliasesKo": [
+   "익스플로러",
+   "몽블랑 익스플로러"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Pomarose",
+    "Sage"
+   ],
+   "heart": [
+    "Vetiver",
+    "Leather",
+    "Sandalwood"
+   ],
+   "base": [
+    "Patchouli",
+    "Ambrofix",
+    "Akigalawood"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Pomarose",
+   "Sage",
+   "Vetiver",
+   "Leather",
+   "Sandalwood",
+   "Patchouli",
+   "Ambrofix",
+   "Akigalawood"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "earthy",
+   "smoky",
+   "fresh"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A woody, leathery men's fragrance that opens with bergamot, pomarose and sage, moves through vetiver and leather, and settles into patchouli and ambery woods.",
+  "popularityRank": 155,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/explorer-montblanc"
+ },
+ {
+  "id": "valentino-voce-viva",
+  "brand": "Valentino",
+  "brandId": "valentino",
+  "name": "Voce Viva",
+  "brandAliasesKo": [
+   "발렌티노"
+  ],
+  "aliasesKo": [
+   "보체 비바",
+   "보체비바",
+   "보체 비바 발렌티노"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Bergamot",
+   "Orange Blossom",
+   "Crystal Moss",
+   "Vanilla"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "floral",
+   "sweet",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Bergamot and orange blossom rise over vanilla, with crystal moss adding a cool, earthy edge to the sweetness.",
+  "popularityRank": 156,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/voce-viva-valentino"
+ },
+ {
+  "id": "nishane-fan-your-flames",
+  "brand": "Nishane",
+  "brandId": "nishane",
+  "name": "Fan Your Flames",
+  "brandAliasesKo": [
+   "니샤네",
+   "니샤네"
+  ],
+  "aliasesKo": [
+   "팬 유어 플레임즈",
+   "팬유어플레임즈"
+  ],
+  "notes": {
+   "top": [
+    "Coconut",
+    "Rum"
+   ],
+   "heart": [
+    "Tobacco",
+    "Tonka Bean"
+   ],
+   "base": [
+    "Oakmoss",
+    "Cedarwood"
+   ]
+  },
+  "allNotes": [
+   "Coconut",
+   "Rum",
+   "Tobacco",
+   "Tonka Bean",
+   "Oakmoss",
+   "Cedarwood"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "warm",
+   "smoky",
+   "woody"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Coconut and rum open a short but rich pyramid, moving to tobacco and tonka bean before oakmoss and Chinese cedarwood. Boozy, sweet and smoky.",
+  "popularityRank": 161,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/fan-your-flames-nishane"
+ },
+ {
+  "id": "amouage-gold-man",
+  "brand": "Amouage",
+  "brandId": "amouage",
+  "name": "Gold Man",
+  "brandAliasesKo": [
+   "아므아지",
+   "아무아쥬",
+   "아모아쥬"
+  ],
+  "aliasesKo": [
+   "골드 맨",
+   "골드맨",
+   "아므아지 골드"
+  ],
+  "notes": {
+   "top": [
+    "Rose",
+    "Lily of the Valley",
+    "Frankincense"
+   ],
+   "heart": [
+    "Jasmine",
+    "Iris",
+    "Myrrh"
+   ],
+   "base": [
+    "Ambergris",
+    "Civet",
+    "Musk",
+    "Cedarwood",
+    "Sandalwood",
+    "Oakmoss",
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Rose",
+   "Lily of the Valley",
+   "Frankincense",
+   "Jasmine",
+   "Iris",
+   "Myrrh",
+   "Ambergris",
+   "Civet",
+   "Musk",
+   "Cedarwood",
+   "Sandalwood",
+   "Oakmoss",
+   "Patchouli"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "floral",
+   "resinous",
+   "warm",
+   "woody"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A classic rose-and-lily opening with jasmine, orris and myrrh in the heart, over an animalic, mossy base of ambergris, civet, sandalwood and patchouli.",
+  "popularityRank": 163,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/amouage-gold-man"
+ },
+ {
+  "id": "ralph-lauren-polo-blue",
+  "brand": "Ralph Lauren",
+  "brandId": "ralph-lauren",
+  "name": "Polo Blue",
+  "brandAliasesKo": [
+   "랄프로렌",
+   "랄프 로렌"
+  ],
+  "aliasesKo": [
+   "폴로 블루",
+   "폴로블루",
+   "랄프로렌 폴로블루"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Sea Notes",
+    "Cardamom"
+   ],
+   "heart": [
+    "Iris",
+    "Basil Verbena",
+    "Clary Sage"
+   ],
+   "base": [
+    "Vetiver",
+    "Wood",
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Sea Notes",
+   "Cardamom",
+   "Iris",
+   "Basil Verbena",
+   "Clary Sage",
+   "Vetiver",
+   "Wood",
+   "Patchouli"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "herbal",
+   "fresh",
+   "earthy",
+   "powdery"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Bergamot, sea notes and cardamom feel airy and fresh, with iris and basil verbena in the middle and earthy vetiver and patchouli below.",
+  "popularityRank": 167,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/ralph-lauren-polo-blue"
+ },
+ {
+  "id": "tiziana-terenzi-orion",
+  "brand": "Tiziana Terenzi",
+  "brandId": "tiziana-terenzi",
+  "name": "Orion",
+  "brandAliasesKo": [
+   "티지아나 테렌치",
+   "티치아나 테렌치",
+   "티지아나테렌치"
+  ],
+  "aliasesKo": [
+   "오리온",
+   "티지아나 오리온"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Red currant",
+    "Apple",
+    "Pineapple",
+    "Fresh wind"
+   ],
+   "heart": [
+    "Spicy notes",
+    "Patchouli",
+    "Birch",
+    "Jasmine",
+    "Thyme"
+   ],
+   "base": [
+    "Incense",
+    "Amber",
+    "Oud",
+    "Musk",
+    "Cedarwood"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Red currant",
+   "Apple",
+   "Pineapple",
+   "Fresh wind",
+   "Spicy notes",
+   "Patchouli",
+   "Birch",
+   "Jasmine",
+   "Thyme",
+   "Incense",
+   "Amber",
+   "Oud",
+   "Musk",
+   "Cedarwood"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "warm",
+   "fresh",
+   "resinous"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A fresh fruity opening of bergamot, red currant, apple and pineapple leads into spice, birch and jasmine, then incense, amber, oud, musk and cedar.",
+  "popularityRank": 168,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/orion-tiziana-terenzi"
+ },
+ {
+  "id": "frederic-malle-dans-tes-bras",
+  "brand": "Frédéric Malle",
+  "brandId": "frederic-malle",
+  "name": "Dans tes Bras",
+  "brandAliasesKo": [
+   "프레데릭 말",
+   "프레데릭말",
+   "프레드릭 말"
+  ],
+  "aliasesKo": [
+   "당 떼 브라",
+   "당떼브라",
+   "당 테 브라"
+  ],
+  "notes": {
+   "top": [
+    "Violet"
+   ],
+   "heart": [
+    "Cashmeran",
+    "Heliotrope"
+   ],
+   "base": [
+    "Sandalwood",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Violet",
+   "Cashmeran",
+   "Heliotrope",
+   "Sandalwood",
+   "Musk"
+  ],
+  "family": "Powder Veil",
+  "character": [
+   "powdery",
+   "woody",
+   "musky",
+   "clean"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Violet drifts into a smooth, powdery heart of heliotrope and cashmeran, resting on sandalwood and clean white musk.",
+  "popularityRank": 170,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/frederic-malle-dans-tes-bras"
+ },
+ {
+  "id": "lattafa-asad",
+  "brand": "Lattafa",
+  "brandId": "lattafa",
+  "name": "Asad",
+  "brandAliasesKo": [
+   "라타파",
+   "라따파"
+  ],
+  "aliasesKo": [
+   "아사드",
+   "라타파 아사드",
+   "asad"
+  ],
+  "notes": {
+   "top": [
+    "Pepper",
+    "Tobacco",
+    "Pineapple"
+   ],
+   "heart": [
+    "Patchouli",
+    "Coffee",
+    "Iris"
+   ],
+   "base": [
+    "Vanilla",
+    "Amber",
+    "Dry Wood",
+    "Benzoin",
+    "Labdanum"
+   ]
+  },
+  "allNotes": [
+   "Pepper",
+   "Tobacco",
+   "Pineapple",
+   "Patchouli",
+   "Coffee",
+   "Iris",
+   "Vanilla",
+   "Amber",
+   "Dry Wood",
+   "Benzoin",
+   "Labdanum"
+  ],
+  "family": "Amber & Resin",
+  "character": [
+   "warm",
+   "sweet",
+   "resinous",
+   "powdery"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A dark, warm amber for men: black pepper, pineapple and tobacco on top, patchouli, coffee and iris in the middle, and vanilla, benzoin and labdanum below.",
+  "popularityRank": 171,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/asad-lattafa"
+ },
+ {
+  "id": "tom-ford-neroli-portofino",
+  "brand": "Tom Ford",
+  "brandId": "tom-ford",
+  "name": "Neroli Portofino",
+  "brandAliasesKo": [
+   "톰포드",
+   "톰 포드"
+  ],
+  "aliasesKo": [
+   "네롤리 포르토피노",
+   "네롤리포르토피노",
+   "네롤리 포토피노",
+   "네포"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Mandarin",
+    "Lemon",
+    "Lavender",
+    "Myrtle",
+    "Rosemary",
+    "Bitter orange"
+   ],
+   "heart": [
+    "Orange Blossom",
+    "Jasmine",
+    "Neroli",
+    "Pittosporum"
+   ],
+   "base": [
+    "Amber",
+    "Ambrette",
+    "Angelica"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Mandarin",
+   "Lemon",
+   "Lavender",
+   "Myrtle",
+   "Rosemary",
+   "Bitter orange",
+   "Orange Blossom",
+   "Jasmine",
+   "Neroli",
+   "Pittosporum",
+   "Amber",
+   "Ambrette",
+   "Angelica"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "fresh",
+   "citrusy",
+   "creamy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Citrus, lavender and herbs form a bright coastal opening. Orange blossom, jasmine and neroli follow, ending in soft amber and ambrette. Creamy, floral and fresh.",
+  "popularityRank": 173,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/neroli-portofino-tom-ford"
+ },
+ {
+  "id": "armaf-club-de-nuit-milestone",
+  "brand": "Armaf",
+  "brandId": "armaf",
+  "name": "Club de Nuit Milestone",
+  "brandAliasesKo": [
+   "아르마프",
+   "아르마프"
+  ],
+  "aliasesKo": [
+   "클럽 드 뉘 마일스톤",
+   "클럽드뉘 마일스톤"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Red fruits",
+    "Sea Notes"
+   ],
+   "heart": [
+    "Violet",
+    "Sandalwood",
+    "White Woods"
+   ],
+   "base": [
+    "Vetiver",
+    "Musk",
+    "Ambroxan"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Red fruits",
+   "Sea Notes",
+   "Violet",
+   "Sandalwood",
+   "White Woods",
+   "Vetiver",
+   "Musk",
+   "Ambroxan"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "powdery",
+   "fresh",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A fresh, marine-leaning scent for men: bergamot, red fruits and sea tones, then violet and sandalwood, ending on vetiver, musk and ambroxan.",
+  "popularityRank": 175,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/club-de-nuit-milestone-armaf"
+ },
+ {
+  "id": "carolina-herrera-ch",
+  "brand": "Carolina Herrera",
+  "brandId": "carolina-herrera",
+  "name": "CH",
+  "brandAliasesKo": [
+   "캐롤라이나 헤레라",
+   "카롤리나 에레라",
+   "캐롤리나 헤레라"
+  ],
+  "aliasesKo": [
+   "CH",
+   "시에이치",
+   "캐롤리나 헤레라 CH"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Grapefruit"
+   ],
+   "heart": [
+    "Rose",
+    "Jasmine Sambac"
+   ],
+   "base": [
+    "Patchouli",
+    "Praline"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Grapefruit",
+   "Rose",
+   "Jasmine Sambac",
+   "Patchouli",
+   "Praline"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "floral",
+   "citrusy",
+   "fresh",
+   "sweet"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Bergamot and grapefruit brighten a heart of rose and jasmine sambac. Patchouli and praline underneath add a gentle, sweet depth to the flowers.",
+  "popularityRank": 176,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/carolina-herrera-ch"
+ },
+ {
+  "id": "creed-himalaya",
+  "brand": "Creed",
+  "brandId": "creed",
+  "name": "Himalaya",
+  "brandAliasesKo": [
+   "크리드"
+  ],
+  "aliasesKo": [
+   "히말라야",
+   "크리드 히말라야"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Grapefruit",
+    "Lemon"
+   ],
+   "heart": [
+    "Sandalwood"
+   ],
+   "base": [
+    "Ambergris",
+    "Musk",
+    "Cedarwood"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Grapefruit",
+   "Lemon",
+   "Sandalwood",
+   "Ambergris",
+   "Musk",
+   "Cedarwood"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "woody",
+   "fresh",
+   "amber"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Sandalwood, ambergris, cedarwood and musk warm a start of bergamot, grapefruit and lemon.",
+  "popularityRank": 177,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/himalaya-creed"
+ },
+ {
+  "id": "issey-miyake-leau-dissey-pour-homme",
+  "brand": "Issey Miyake",
+  "brandId": "issey-miyake",
+  "name": "L'Eau d'Issey Pour Homme",
+  "brandAliasesKo": [
+   "이세이 미야케",
+   "이세이미야케"
+  ],
+  "aliasesKo": [
+   "로 디세이 푸르 옴므",
+   "로디세이",
+   "이세이미야케 로디세이",
+   "오 디세이"
+  ],
+  "notes": {
+   "top": [
+    "Yuzu"
+   ],
+   "heart": [
+    "Cinnamon",
+    "Nutmeg"
+   ],
+   "base": [
+    "Sandalwood"
+   ]
+  },
+  "allNotes": [
+   "Yuzu",
+   "Cinnamon",
+   "Nutmeg",
+   "Sandalwood"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "warm",
+   "citrusy",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Yuzu sparkles first, then cinnamon and nutmeg add warmth before a quiet base of sandalwood.",
+  "popularityRank": 179,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/leau-dissey-pour-homme-issey-miyake"
+ },
+ {
+  "id": "afnan-9pm-elixir",
+  "brand": "Afnan",
+  "brandId": "afnan",
+  "name": "9 PM Elixir",
+  "brandAliasesKo": [
+   "아프난"
+  ],
+  "aliasesKo": [
+   "9PM 엘릭서",
+   "나인피엠 엘릭서",
+   "9pm elixir"
+  ],
+  "notes": {
+   "top": [
+    "Nutmeg",
+    "Elemi",
+    "Cardamom"
+   ],
+   "heart": [
+    "Pimento",
+    "Lavandin",
+    "Leather"
+   ],
+   "base": [
+    "Labdanum",
+    "Labdanum",
+    "Patchouli",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Nutmeg",
+   "Elemi",
+   "Cardamom",
+   "Pimento",
+   "Lavandin",
+   "Leather",
+   "Labdanum",
+   "Labdanum",
+   "Patchouli",
+   "Vanilla"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "warm",
+   "spicy",
+   "resinous",
+   "herbal"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Nutmeg and cardamom warm the opening before lavandin and leather take over, closing in a resinous, softly sweet base of labdanum, patchouli and vanilla.",
+  "popularityRank": 181,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/afnan-9pm-elixir"
+ },
+ {
+  "id": "kenzo-kenzo-homme",
+  "brand": "Kenzo",
+  "brandId": "kenzo",
+  "name": "Kenzo Homme",
+  "brandAliasesKo": [
+   "겐조"
+  ],
+  "aliasesKo": [
+   "겐조 옴므",
+   "겐조옴므"
+  ],
+  "notes": {
+   "top": [
+    "Sea Notes"
+   ],
+   "heart": [
+    "Leather"
+   ],
+   "base": [
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Sea Notes",
+   "Leather",
+   "Patchouli"
+  ],
+  "family": "Smoke & Leather",
+  "character": [
+   "smoky",
+   "earthy",
+   "salty",
+   "leathery"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A marine accord drifts over smoky leather and patchouli, creating a salty, earthy contrast.",
+  "popularityRank": 183,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/kenzo-kenzo-homme"
+ },
+ {
+  "id": "mfk-gentle-fluidity-silver",
+  "brand": "Maison Francis Kurkdjian",
+  "brandId": "mfk",
+  "name": "Gentle Fluidity Silver",
+  "brandAliasesKo": [
+   "메종 프란시스 커정",
+   "메종 프랑시스 커정",
+   "프란시스 커정",
+   "MFK",
+   "메종프란시스커정"
+  ],
+  "aliasesKo": [
+   "젠틀 플루이디티 실버",
+   "젠틀플루이디티 실버",
+   "젠플 실버"
+  ],
+  "notes": {
+   "top": [
+    "Juniper"
+   ],
+   "heart": [
+    "Nutmeg",
+    "Coriander"
+   ],
+   "base": [
+    "Musk",
+    "Amberwood",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Juniper",
+   "Nutmeg",
+   "Coriander",
+   "Musk",
+   "Amberwood",
+   "Vanilla"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "warm",
+   "herbal",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Juniper and coriander give a crisp, aromatic start, while nutmeg and a soft vanilla musk bring a rounded, woody warmth.",
+  "popularityRank": 184,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/gentle-fluidity-silver-maison-francis-kurkdjian"
+ },
+ {
+  "id": "moschino-toy-boy",
+  "brand": "Moschino",
+  "brandId": "moschino",
+  "name": "Toy Boy",
+  "brandAliasesKo": [
+   "모스키노"
+  ],
+  "aliasesKo": [
+   "토이 보이",
+   "토이보이",
+   "모스키노 토이보이"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Pink Pepper",
+    "Elemi",
+    "Nutmeg",
+    "Green pear",
+    "Clove"
+   ],
+   "heart": [
+    "Rose",
+    "Flax flower",
+    "Cashmeran",
+    "Magnolia"
+   ],
+   "base": [
+    "Vetiver",
+    "Ambermax",
+    "Sylkolide"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Pink Pepper",
+   "Elemi",
+   "Nutmeg",
+   "Green pear",
+   "Clove",
+   "Rose",
+   "Flax flower",
+   "Cashmeran",
+   "Magnolia",
+   "Vetiver",
+   "Ambermax",
+   "Sylkolide"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "spicy",
+   "warm",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A spicy-floral scent with bergamot, pink berries, elemi and nutmeg on top, rose, flax flower and magnolia in the heart, and a dry vetiver and ambery base.",
+  "popularityRank": 185,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/toy-boy-moschino"
+ },
+ {
+  "id": "rabanne-olympea",
+  "brand": "Rabanne",
+  "brandId": "rabanne",
+  "name": "Olympéa",
+  "brandAliasesKo": [
+   "라바네",
+   "파코라반",
+   "파코 라반"
+  ],
+  "aliasesKo": [
+   "올림피아",
+   "올림페아",
+   "파코라반 올림피아"
+  ],
+  "notes": {
+   "top": [
+    "Mandarin",
+    "Ginger lily",
+    "Jasmine"
+   ],
+   "heart": [
+    "Salty vanilla"
+   ],
+   "base": [
+    "Cashmere Wood",
+    "Ambergris"
+   ]
+  },
+  "allNotes": [
+   "Mandarin",
+   "Ginger lily",
+   "Jasmine",
+   "Salty vanilla",
+   "Cashmere Wood",
+   "Ambergris"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "warm",
+   "sweet",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Green mandarin, ginger lily and jasmine over a salty vanilla, with cashmere wood and ambergris giving a smooth, skin-warm base.",
+  "popularityRank": 186,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/olympea-parfum-rabanne"
+ },
+ {
+  "id": "nina-ricci-lair-du-temps",
+  "brand": "Nina Ricci",
+  "brandId": "nina-ricci",
+  "name": "L'Air du Temps",
+  "brandAliasesKo": [
+   "니나리치",
+   "니나 리치"
+  ],
+  "aliasesKo": [
+   "레르 뒤 땅",
+   "레르뒤땅",
+   "니나리치 레르뒤땅"
+  ],
+  "notes": {
+   "top": [
+    "Carnation",
+    "Gardenia"
+   ],
+   "heart": [
+    "Rose",
+    "Jasmine"
+   ],
+   "base": [
+    "Sandalwood",
+    "Iris"
+   ]
+  },
+  "allNotes": [
+   "Carnation",
+   "Gardenia",
+   "Rose",
+   "Jasmine",
+   "Sandalwood",
+   "Iris"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "creamy",
+   "powdery",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Carnation and gardenia open creamy and spiced, with rose and jasmine at the heart. Sandalwood and iris end powdery and woody.",
+  "popularityRank": 192,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/nina-ricci-lair-du-temps"
+ },
+ {
+  "id": "byredo-super-cedar",
+  "brand": "Byredo",
+  "brandId": "byredo",
+  "name": "Super Cedar",
+  "brandAliasesKo": [
+   "바이레도",
+   "바이레도"
+  ],
+  "aliasesKo": [
+   "슈퍼 시더",
+   "슈퍼시더",
+   "바이레도 슈퍼시더"
+  ],
+  "notes": {
+   "top": [
+    "Rose"
+   ],
+   "heart": [
+    "Cedarwood"
+   ],
+   "base": [
+    "Musk",
+    "Vetiver"
+   ]
+  },
+  "allNotes": [
+   "Rose",
+   "Cedarwood",
+   "Musk",
+   "Vetiver"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "floral",
+   "earthy",
+   "musky"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Rose petals open softly before a long stretch of cedarwood, which fades into silky musk and earthy Haitian vetiver.",
+  "popularityRank": 195,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/byredo-super-cedar"
+ },
+ {
+  "id": "kayali-utopia-vanilla-coco-21",
+  "brand": "Kayali",
+  "brandId": "kayali",
+  "name": "Utopia Vanilla Coco 21",
+  "brandAliasesKo": [
+   "카야리",
+   "카얄리"
+  ],
+  "aliasesKo": [
+   "유토피아 바닐라 코코 21",
+   "유토피아 바닐라코코",
+   "카야리 코코 21"
+  ],
+  "notes": {
+   "top": [
+    "Honeysuckle",
+    "Pear blossom",
+    "Lemon",
+    "Coconut"
+   ],
+   "heart": [
+    "Jasmine",
+    "Gardenia",
+    "Tuberose",
+    "Ambrette"
+   ],
+   "base": [
+    "Sandalwood",
+    "Patchouli",
+    "Vanilla",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Honeysuckle",
+   "Pear blossom",
+   "Lemon",
+   "Coconut",
+   "Jasmine",
+   "Gardenia",
+   "Tuberose",
+   "Ambrette",
+   "Sandalwood",
+   "Patchouli",
+   "Vanilla",
+   "Musk"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy",
+   "musky",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Honeysuckle, pear blossom, lemon and coconut open into jasmine, gardenia and tuberose, drying to sandalwood, Bourbon vanilla, patchouli and soft musks.",
+  "popularityRank": 197,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/kayali-utopia-vanilla-coco-21"
+ },
+ {
+  "id": "roberto-cavalli-paradiso",
+  "brand": "Roberto Cavalli",
+  "brandId": "roberto-cavalli",
+  "name": "Paradiso",
+  "brandAliasesKo": [
+   "로베르토 까발리",
+   "로베르토 카발리"
+  ],
+  "aliasesKo": [
+   "파라디소",
+   "로베르토 카발리 파라디소"
+  ],
+  "notes": {
+   "top": [
+    "Citrus",
+    "Mandarin",
+    "Bergamot"
+   ],
+   "heart": [
+    "Jasmine"
+   ],
+   "base": [
+    "Pine",
+    "Cypress",
+    "Laurel Leaf"
+   ]
+  },
+  "allNotes": [
+   "Citrus",
+   "Mandarin",
+   "Bergamot",
+   "Jasmine",
+   "Pine",
+   "Cypress",
+   "Laurel Leaf"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "fresh",
+   "citrusy",
+   "green",
+   "floral"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "Citrus, mandarin and bergamot are bright, with jasmine at the heart. Pine, cypress and laurel leaf give a green, resinous base.",
+  "popularityRank": 198,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/roberto-cavalli-paradiso"
+ },
+ {
+  "id": "davidoff-cool-water-woman",
+  "brand": "Davidoff",
+  "brandId": "davidoff",
+  "name": "Cool Water Woman",
+  "brandAliasesKo": [
+   "다비도프",
+   "데이비도프"
+  ],
+  "aliasesKo": [
+   "쿨 워터 우먼",
+   "쿨워터 우먼",
+   "쿨워터"
+  ],
+  "notes": {
+   "top": [
+    "Pineapple",
+    "Lemon",
+    "Lily",
+    "Lotus",
+    "Melon",
+    "Blackcurrant",
+    "Calone"
+   ],
+   "heart": [
+    "Jasmine",
+    "Lily of the Valley",
+    "Rose",
+    "Water Lily",
+    "Hawthorn",
+    "Honey",
+    "Lotus"
+   ],
+   "base": [
+    "Raspberry",
+    "Musk",
+    "Sandalwood",
+    "Violet",
+    "Blackberry",
+    "Vetiver",
+    "Peach",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Pineapple",
+   "Lemon",
+   "Lily",
+   "Lotus",
+   "Melon",
+   "Blackcurrant",
+   "Calone",
+   "Jasmine",
+   "Lily of the Valley",
+   "Rose",
+   "Water Lily",
+   "Hawthorn",
+   "Honey",
+   "Lotus",
+   "Raspberry",
+   "Musk",
+   "Sandalwood",
+   "Violet",
+   "Blackberry",
+   "Vetiver",
+   "Peach",
+   "Vanilla"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "fruity",
+   "sweet",
+   "creamy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Pineapple, lemon, melon and blackcurrant are watery and juicy, with lily and jasmine in the heart. Musk, sandalwood, peach and vanilla soften the base.",
+  "popularityRank": 199,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/davidoff-cool-water-woman"
+ },
+ {
+  "id": "gucci-flora-gorgeous-gardenia",
+  "brand": "Gucci",
+  "brandId": "gucci",
+  "name": "Flora Gorgeous Gardenia",
+  "brandAliasesKo": [
+   "구찌"
+  ],
+  "aliasesKo": [
+   "플로라 고저스 가드니아",
+   "플로라 가드니아",
+   "고저스 가드니아"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Pear",
+   "Gardenia",
+   "Brown Sugar"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "floral",
+   "sweet",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Juicy pear sits on creamy white gardenia, with brown sugar adding a sweet, soft glow.",
+  "popularityRank": 200,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/flora-gorgeous-gardenia-gucci"
+ },
+ {
+  "id": "maison-margiela-replica-beach-walk",
+  "brand": "Maison Margiela Fragrances",
+  "brandId": "maison-margiela",
+  "name": "Replica Beach Walk",
+  "brandAliasesKo": [
+   "메종 마르지엘라",
+   "메종마르지엘라",
+   "마르지엘라",
+   "마르지엘라 레플리카"
+  ],
+  "aliasesKo": [
+   "비치 워크",
+   "비치워크",
+   "레플리카 비치워크"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Pink Pepper",
+    "Lemon"
+   ],
+   "heart": [
+    "Ylang-Ylang",
+    "Transluzone",
+    "Heliotrope",
+    "Coconut"
+   ],
+   "base": [
+    "Cedarwood",
+    "Musk",
+    "Benzoin"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Pink Pepper",
+   "Lemon",
+   "Ylang-Ylang",
+   "Transluzone",
+   "Heliotrope",
+   "Coconut",
+   "Cedarwood",
+   "Musk",
+   "Benzoin"
+  ],
+  "family": "Skin Musk",
+  "character": [
+   "musky",
+   "warm",
+   "citrusy",
+   "floral"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A sunny beach scent: bergamot, pink pepper and lemon, then ylang ylang, heliotrope and coconut milk, over cedarwood, white musks and benzoin. Fresh, creamy and sun-warmed.",
+  "popularityRank": 201,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/maison-margiela-replica-beach-walk"
+ },
+ {
+  "id": "parfums-de-marly-percival",
+  "brand": "Parfums de Marly",
+  "brandId": "parfums-de-marly",
+  "name": "Percival",
+  "brandAliasesKo": [
+   "퍼퓸 드 말리",
+   "파르팡 드 말리",
+   "파르팡드말리",
+   "드말리"
+  ],
+  "aliasesKo": [
+   "퍼시벌",
+   "퍼시발",
+   "드말리 퍼시벌"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Mandarin",
+    "Pink Pepper"
+   ],
+   "heart": [
+    "Lavender",
+    "Iris",
+    "Cardamom"
+   ],
+   "base": [
+    "Fir Balsam",
+    "Tonka Bean",
+    "Ambroxan",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Mandarin",
+   "Pink Pepper",
+   "Lavender",
+   "Iris",
+   "Cardamom",
+   "Fir Balsam",
+   "Tonka Bean",
+   "Ambroxan",
+   "Musk"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "warm",
+   "fresh",
+   "spicy",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Fresh and aromatic: bergamot, mandarin and pink peppercorn lead to lavender, iris and cardamom over fir balsam, tonka and white musks.",
+  "popularityRank": 202,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/percival-parfums-de-marly"
+ },
+ {
+  "id": "salvatore-ferragamo-signorina",
+  "brand": "Salvatore Ferragamo",
+  "brandId": "salvatore-ferragamo",
+  "name": "Signorina",
+  "brandAliasesKo": [
+   "살바토레 페라가모",
+   "페라가모"
+  ],
+  "aliasesKo": [
+   "시뇨리나",
+   "페라가모 시뇨리나"
+  ],
+  "notes": {
+   "top": [
+    "Rose",
+    "Pink Pepper",
+    "Blackcurrant"
+   ],
+   "heart": [
+    "Jasmine",
+    "Peony",
+    "Rose"
+   ],
+   "base": [
+    "Patchouli",
+    "Musk",
+    "Panna cotta"
+   ]
+  },
+  "allNotes": [
+   "Rose",
+   "Pink Pepper",
+   "Blackcurrant",
+   "Jasmine",
+   "Peony",
+   "Rose",
+   "Patchouli",
+   "Musk",
+   "Panna cotta"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "warm",
+   "fruity",
+   "spicy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Rose and pink pepper meet blackcurrant buds, then jasmine and peony melt into patchouli, musk and a creamy pannacotta accord.",
+  "popularityRank": 204,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/signorina-salvatore-ferragamo"
+ },
+ {
+  "id": "hugo-boss-hugo-man",
+  "brand": "Hugo Boss",
+  "brandId": "hugo-boss",
+  "name": "HUGO Man",
+  "brandAliasesKo": [
+   "휴고보스",
+   "휴고 보스",
+   "보스"
+  ],
+  "aliasesKo": [
+   "휴고 맨",
+   "휴고보스 휴고맨",
+   "휴고맨"
+  ],
+  "notes": {
+   "top": [
+    "Lavender",
+    "Apple",
+    "Mint",
+    "Grapefruit",
+    "Basil"
+   ],
+   "heart": [
+    "Geranium",
+    "Jasmine",
+    "Carnation",
+    "Sage"
+   ],
+   "base": [
+    "Cedarwood",
+    "Fir Balsam",
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Lavender",
+   "Apple",
+   "Mint",
+   "Grapefruit",
+   "Basil",
+   "Geranium",
+   "Jasmine",
+   "Carnation",
+   "Sage",
+   "Cedarwood",
+   "Fir Balsam",
+   "Patchouli"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "herbal",
+   "floral",
+   "fresh",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Lavender, apple, mint and grapefruit make a crisp, green opening. Geranium, jasmine and sage follow, with cedarwood, fir balsam and patchouli beneath.",
+  "popularityRank": 206,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/hugo-man-hugo-boss"
+ },
+ {
+  "id": "montale-red-aoud",
+  "brand": "Montale",
+  "brandId": "montale",
+  "name": "Red Aoud",
+  "brandAliasesKo": [
+   "몽탈",
+   "몬탈레"
+  ],
+  "aliasesKo": [
+   "레드 아우드",
+   "레드 오드",
+   "몽탈 레드아우드"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Lemon",
+    "Orange",
+    "Lavender"
+   ],
+   "heart": [
+    "Rose",
+    "Violet",
+    "Patchouli"
+   ],
+   "base": [
+    "Vanilla",
+    "Toffee",
+    "Tonka Bean",
+    "Oud",
+    "Musk",
+    "Amber"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Lemon",
+   "Orange",
+   "Lavender",
+   "Rose",
+   "Violet",
+   "Patchouli",
+   "Vanilla",
+   "Toffee",
+   "Tonka Bean",
+   "Oud",
+   "Musk",
+   "Amber"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "sweet",
+   "fresh",
+   "warm"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Citrus and lavender open onto rose, violet and patchouli. The base turns sweet and deep, with vanilla, toffee, tonka, oud, musk and amber, for a rich, warm finish.",
+  "popularityRank": 207,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/montale-red-aoud"
+ },
+ {
+  "id": "trussardi-riflesso",
+  "brand": "Trussardi",
+  "brandId": "trussardi",
+  "name": "Riflesso",
+  "brandAliasesKo": [
+   "트루사르디",
+   "트루사디"
+  ],
+  "aliasesKo": [
+   "리플레소",
+   "리플레쏘",
+   "트루사르디 리플레소"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Grapefruit",
+    "Apple"
+   ],
+   "heart": [
+    "Geranium",
+    "Violet Leaf",
+    "Lavender"
+   ],
+   "base": [
+    "Leather",
+    "Vetiver",
+    "Tonka Bean"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Grapefruit",
+   "Apple",
+   "Geranium",
+   "Violet Leaf",
+   "Lavender",
+   "Leather",
+   "Vetiver",
+   "Tonka Bean"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "fresh",
+   "citrusy",
+   "green",
+   "herbal"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Crisp green apple, pink grapefruit and bergamot lead to geranium, violet leaves and lavender, then tonka bean and vetiver join a note of Italian leather.",
+  "popularityRank": 208,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/trussardi-riflesso"
+ },
+ {
+  "id": "versace-crystal-noir",
+  "brand": "Versace",
+  "brandId": "versace",
+  "name": "Crystal Noir",
+  "brandAliasesKo": [
+   "베르사체"
+  ],
+  "aliasesKo": [
+   "크리스탈 누아",
+   "크리스탈누아",
+   "크리스탈 느와"
+  ],
+  "notes": {
+   "top": [
+    "Mandarin",
+    "Pink Pepper",
+    "Blackcurrant"
+   ],
+   "heart": [
+    "Tuberose",
+    "Lily of the Valley",
+    "Caramel"
+   ],
+   "base": [
+    "Sandalwood",
+    "Amber",
+    "Vanilla",
+    "Orchid"
+   ]
+  },
+  "allNotes": [
+   "Mandarin",
+   "Pink Pepper",
+   "Blackcurrant",
+   "Tuberose",
+   "Lily of the Valley",
+   "Caramel",
+   "Sandalwood",
+   "Amber",
+   "Vanilla",
+   "Orchid"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "warm",
+   "sweet",
+   "citrusy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Mandarin, pink pepper and blackcurrant lead to tuberose, lily of the valley and caramel. Sandalwood, amber, vanilla and orchid keep it sweet and warm.",
+  "popularityRank": 209,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/crystal-noir-parfum-versace"
+ },
+ {
+  "id": "dior-hypnotic-poison",
+  "brand": "Dior",
+  "brandId": "dior",
+  "name": "Hypnotic Poison",
+  "brandAliasesKo": [
+   "디올",
+   "크리스찬 디올",
+   "크리스챤 디올"
+  ],
+  "aliasesKo": [
+   "히프노틱 푸아종",
+   "히프노틱 포이즌",
+   "히프노틱푸아종"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Almond",
+   "Jasmine Sambac",
+   "Vanilla"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "warm",
+   "floral",
+   "creamy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Bitter almond and sambac jasmine wrap around a creamy vanilla, producing a sweet, warm and slightly nutty bloom.",
+  "popularityRank": 212,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/hypnotic-poison-dior"
+ },
+ {
+  "id": "elie-saab-le-parfum",
+  "brand": "Elie Saab",
+  "brandId": "elie-saab",
+  "name": "Le Parfum",
+  "brandAliasesKo": [
+   "엘리 사브",
+   "엘리사브"
+  ],
+  "aliasesKo": [
+   "르 퍼퓸 엘리 사브",
+   "엘리사브 르 퍼퓸"
+  ],
+  "notes": {
+   "top": [
+    "Orange Blossom"
+   ],
+   "heart": [
+    "Jasmine",
+    "Patchouli"
+   ],
+   "base": [
+    "Cedarwood",
+    "Honey"
+   ]
+  },
+  "allNotes": [
+   "Orange Blossom",
+   "Jasmine",
+   "Patchouli",
+   "Cedarwood",
+   "Honey"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "floral",
+   "creamy",
+   "earthy",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Orange blossom opens bright over jasmine and patchouli. Cedarwood and honey give a sweet, earthy warmth.",
+  "popularityRank": 213,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/elie-saab-le-parfum"
+ },
+ {
+  "id": "initio-paragon",
+  "brand": "Initio Parfums Prives",
+  "brandId": "initio",
+  "name": "Paragon",
+  "brandAliasesKo": [
+   "이니시오",
+   "인시오",
+   "이니시오 퍼퓸 프리베"
+  ],
+  "aliasesKo": [
+   "파라곤",
+   "이니시오 파라곤"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Bergamot",
+   "Sage",
+   "Lavender",
+   "Palo Santo",
+   "Pepper",
+   "Sandalwood",
+   "Oud"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "herbal",
+   "woody",
+   "fresh",
+   "citrusy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "A smoky, aromatic woody scent: bergamot, white sage and lavender over palo santo, black pepper, sandalwood and agarwood.",
+  "popularityRank": 214,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/paragon-initio-parfums-prives"
+ },
+ {
+  "id": "burberry-weekend",
+  "brand": "Burberry",
+  "brandId": "burberry",
+  "name": "Weekend",
+  "brandAliasesKo": [
+   "버버리"
+  ],
+  "aliasesKo": [
+   "위켄드",
+   "위크엔드",
+   "버버리 위켄드"
+  ],
+  "notes": {
+   "top": [
+    "Mignonette",
+    "Mandarin",
+    "Sage"
+   ],
+   "heart": [
+    "Hyacinth",
+    "Iris",
+    "Iris",
+    "Rosehip",
+    "Peach Blossom",
+    "Nectarine"
+   ],
+   "base": [
+    "Cedarwood",
+    "Musk",
+    "Sandalwood"
+   ]
+  },
+  "allNotes": [
+   "Mignonette",
+   "Mandarin",
+   "Sage",
+   "Hyacinth",
+   "Iris",
+   "Iris",
+   "Rosehip",
+   "Peach Blossom",
+   "Nectarine",
+   "Cedarwood",
+   "Musk",
+   "Sandalwood"
+  ],
+  "family": "Petal Garden",
+  "character": [
+   "floral",
+   "fruity",
+   "powdery",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Mignonette, mandarin and sage open green, then hyacinth, iris, peach blossom and nectarine. Cedarwood, musk and sandalwood add a soft, powdery base.",
+  "popularityRank": 218,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/burberry-weekend"
+ },
+ {
+  "id": "kilian-moonlight-in-heaven",
+  "brand": "Kilian Paris",
+  "brandId": "kilian",
+  "name": "Moonlight in Heaven",
+  "brandAliasesKo": [
+   "킬리안",
+   "킬리안 파리",
+   "바이 킬리안"
+  ],
+  "aliasesKo": [
+   "문라이트 인 헤븐",
+   "문라이트인헤븐"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Grapefruit",
+   "Mango",
+   "Tonka Bean"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "fruity",
+   "sweet",
+   "fresh"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Grapefruit and mango give a fruity, sunlit start, supported by the roasted sweetness of tonka beans.",
+  "popularityRank": 220,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/moonlight-in-heaven-by-kilian"
+ },
+ {
+  "id": "lancome-o-de-lancome",
+  "brand": "Lancôme",
+  "brandId": "lancome",
+  "name": "Ô de Lancôme",
+  "brandAliasesKo": [
+   "랑콤"
+  ],
+  "aliasesKo": [
+   "오 드 랑콤",
+   "오드랑콤"
+  ],
+  "notes": {
+   "top": [
+    "Lemon",
+    "Mandarin",
+    "Bergamot",
+    "Honeysuckle"
+   ],
+   "heart": [
+    "Basil",
+    "Rosemary",
+    "Coriander",
+    "Jasmine"
+   ],
+   "base": [
+    "Oakmoss",
+    "Sandalwood",
+    "Vetiver"
+   ]
+  },
+  "allNotes": [
+   "Lemon",
+   "Mandarin",
+   "Bergamot",
+   "Honeysuckle",
+   "Basil",
+   "Rosemary",
+   "Coriander",
+   "Jasmine",
+   "Oakmoss",
+   "Sandalwood",
+   "Vetiver"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "fresh",
+   "citrusy",
+   "herbal",
+   "floral"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Lemon, mandarin and bergamot sparkle with honeysuckle, then basil, rosemary and jasmine. Oakmoss, sandalwood and vetiver close it fresh and herbal.",
+  "popularityRank": 222,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/o-de-lancome-lancome"
+ },
+ {
+  "id": "nishane-wulong-cha",
+  "brand": "Nishane",
+  "brandId": "nishane",
+  "name": "Wūlóng Chá",
+  "brandAliasesKo": [
+   "니샤네",
+   "니샤네"
+  ],
+  "aliasesKo": [
+   "우롱차",
+   "울롱차",
+   "니샤네 우롱차",
+   "wulong cha"
+  ],
+  "notes": {
+   "top": [
+    "Bergamot",
+    "Orange",
+    "Litsea",
+    "Mandarin"
+   ],
+   "heart": [
+    "Oolong tea",
+    "Nutmeg"
+   ],
+   "base": [
+    "Musk",
+    "Fig"
+   ]
+  },
+  "allNotes": [
+   "Bergamot",
+   "Orange",
+   "Litsea",
+   "Mandarin",
+   "Oolong tea",
+   "Nutmeg",
+   "Musk",
+   "Fig"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "citrusy",
+   "fresh",
+   "green",
+   "spicy"
+  ],
+  "seasons": [
+   "spring",
+   "summer"
+  ],
+  "description": "A tea-centred fresh scent. Bergamot, orange, litsea and mandarin open, oolong tea and nutmeg form the heart, and musk with fig finishes it softly.",
+  "popularityRank": 223,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/wulong-cha-nishane"
+ },
+ {
+  "id": "amouage-honour-man",
+  "brand": "Amouage",
+  "brandId": "amouage",
+  "name": "Honour Man",
+  "brandAliasesKo": [
+   "아므아지",
+   "아무아쥬",
+   "아모아쥬"
+  ],
+  "aliasesKo": [
+   "아너 맨",
+   "오너 맨",
+   "아므아지 아너 맨"
+  ],
+  "notes": {
+   "top": [
+    "Pink Pepper",
+    "Pepper"
+   ],
+   "heart": [
+    "Geranium",
+    "Nutmeg",
+    "Elemi"
+   ],
+   "base": [
+    "Patchouli",
+    "Frankincense",
+    "Cedarwood",
+    "Vetiver",
+    "Tonka Bean",
+    "Musk"
+   ]
+  },
+  "allNotes": [
+   "Pink Pepper",
+   "Pepper",
+   "Geranium",
+   "Nutmeg",
+   "Elemi",
+   "Patchouli",
+   "Frankincense",
+   "Cedarwood",
+   "Vetiver",
+   "Tonka Bean",
+   "Musk"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "warm",
+   "spicy",
+   "resinous",
+   "earthy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "A peppery, aromatic woody scent: two peppers and nutmeg give it bite, geranium and elemi add a green lift, and patchouli, vetiver, cedar and tonka settle it down.",
+  "popularityRank": 225,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/amouage-honour-man"
+ },
+ {
+  "id": "dolce-gabbana-k-by-dolce-and-gabbana",
+  "brand": "Dolce&Gabbana",
+  "brandId": "dolce-gabbana",
+  "name": "K by Dolce&Gabbana",
+  "brandAliasesKo": [
+   "돌체앤가바나",
+   "돌체 앤 가바나",
+   "돌체가바나",
+   "D&G"
+  ],
+  "aliasesKo": [
+   "케이 바이 돌체앤가바나",
+   "돌체앤가바나 K",
+   "돌체 K"
+  ],
+  "notes": {
+   "top": [
+    "Juniper",
+    "Cardamom",
+    "Blood Orange",
+    "Citrus"
+   ],
+   "heart": [
+    "Geranium",
+    "Fig",
+    "Lavandin",
+    "Citrus",
+    "Sage"
+   ],
+   "base": [
+    "Cedarwood",
+    "Cypriol",
+    "Vetiver",
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Juniper",
+   "Cardamom",
+   "Blood Orange",
+   "Citrus",
+   "Geranium",
+   "Fig",
+   "Lavandin",
+   "Citrus",
+   "Sage",
+   "Cedarwood",
+   "Cypriol",
+   "Vetiver",
+   "Patchouli"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "fresh",
+   "herbal",
+   "citrusy",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Juniper, cardamom and blood orange are crisp and bracing, with geranium, fig and sage following. Cedarwood, cypriol, vetiver and patchouli ground it.",
+  "popularityRank": 226,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/dolce-gabbana-k-by-dolce-and-gabbana"
+ },
+ {
+  "id": "guerlain-habit-rouge",
+  "brand": "Guerlain",
+  "brandId": "guerlain",
+  "name": "Habit Rouge",
+  "brandAliasesKo": [
+   "겔랑"
+  ],
+  "aliasesKo": [
+   "아비 루즈",
+   "하빗 루즈",
+   "아비루즈"
+  ],
+  "notes": {
+   "top": [
+    "Bitter orange"
+   ],
+   "heart": [
+    "Neroli",
+    "Spice"
+   ],
+   "base": [
+    "Leather",
+    "Oud",
+    "Vanilla",
+    "Amber"
+   ]
+  },
+  "allNotes": [
+   "Bitter orange",
+   "Neroli",
+   "Spice",
+   "Leather",
+   "Oud",
+   "Vanilla",
+   "Amber"
+  ],
+  "family": "White Bloom",
+  "character": [
+   "warm",
+   "floral",
+   "spicy",
+   "citrusy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Bitter orange brightens a spiced neroli heart. Beneath, leather, vanilla and amber build a warm, resinous base with a hint of oud.",
+  "popularityRank": 227,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/habit-rouge-guerlain"
+ },
+ {
+  "id": "mugler-angel-nova",
+  "brand": "Mugler",
+  "brandId": "mugler",
+  "name": "Angel Nova",
+  "brandAliasesKo": [
+   "뮈글러",
+   "뮤글러",
+   "티에리 뮈글러"
+  ],
+  "aliasesKo": [
+   "엔젤 노바",
+   "엔젤노바"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Raspberry",
+   "Rose",
+   "Akigalawood"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "floral",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Raspberry and rose give a juicy floral sweetness, anchored by akigalawood. Fruity, rosy and gently woody.",
+  "popularityRank": 228,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/angel-nova-mugler"
+ },
+ {
+  "id": "narciso-rodriguez-for-her",
+  "brand": "Narciso Rodriguez",
+  "brandId": "narciso-rodriguez",
+  "name": "For Her",
+  "brandAliasesKo": [
+   "나르시소 로드리게즈",
+   "나르시소 로드리게스",
+   "나르시소"
+  ],
+  "aliasesKo": [
+   "포 허",
+   "나르시소 포허",
+   "나르시소 로드리게즈 포 허"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Orange Blossom",
+   "Osmanthus",
+   "Rose",
+   "Musk",
+   "Peach",
+   "Amber",
+   "Musk",
+   "Vanilla",
+   "Vetiver",
+   "Musk"
+  ],
+  "family": "Skin Musk",
+  "character": [
+   "floral",
+   "musky",
+   "clean",
+   "warm"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Orange blossom, osmanthus and rose meet peach, with a warm bed of musk, amber, vanilla and vetiver beneath.",
+  "popularityRank": 229,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/narciso-rodriguez-for-her-narciso-rodriguez"
+ },
+ {
+  "id": "ralph-lauren-polo-red",
+  "brand": "Ralph Lauren",
+  "brandId": "ralph-lauren",
+  "name": "Polo Red",
+  "brandAliasesKo": [
+   "랄프로렌",
+   "랄프 로렌"
+  ],
+  "aliasesKo": [
+   "폴로 레드",
+   "폴로레드"
+  ],
+  "notes": {
+   "top": [
+    "Lemon",
+    "Bergamot",
+    "Juniper"
+   ],
+   "heart": [
+    "Saffron",
+    "Clary Sage",
+    "Lavender"
+   ],
+   "base": [
+    "Cedarwood",
+    "Vetiver",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Lemon",
+   "Bergamot",
+   "Juniper",
+   "Saffron",
+   "Clary Sage",
+   "Lavender",
+   "Cedarwood",
+   "Vetiver",
+   "Vanilla"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "herbal",
+   "fresh",
+   "citrusy",
+   "spicy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Lemon, bergamot and juniper are crisp and herbal, with saffron, clary sage and lavender. Cedarwood, vetiver and vanilla finish it dry and warm.",
+  "popularityRank": 230,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/polo-red-ralph-lauren"
+ },
+ {
+  "id": "calvin-klein-obsession",
+  "brand": "Calvin Klein",
+  "brandId": "calvin-klein",
+  "name": "Obsession",
+  "brandAliasesKo": [
+   "캘빈클라인",
+   "캘빈 클라인",
+   "CK"
+  ],
+  "aliasesKo": [
+   "옵세션",
+   "캘빈클라인 옵세션"
+  ],
+  "notes": {
+   "top": [
+    "Mandarin",
+    "Bergamot"
+   ],
+   "heart": [
+    "Lavender",
+    "Myrrh",
+    "Spice"
+   ],
+   "base": [
+    "Musk",
+    "Sandalwood",
+    "Patchouli"
+   ]
+  },
+  "allNotes": [
+   "Mandarin",
+   "Bergamot",
+   "Lavender",
+   "Myrrh",
+   "Spice",
+   "Musk",
+   "Sandalwood",
+   "Patchouli"
+  ],
+  "family": "Sunlit Citrus",
+  "character": [
+   "fresh",
+   "citrusy",
+   "warm",
+   "herbal"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Mandarin and bergamot add freshness, lavender and myrrh bring a warm herbal heart, and musk, sandalwood and patchouli linger beneath.",
+  "popularityRank": 232,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/calvin-klein-obsession"
+ },
+ {
+  "id": "lattafa-fakhar-black",
+  "brand": "Lattafa",
+  "brandId": "lattafa",
+  "name": "Fakhar Black",
+  "brandAliasesKo": [
+   "라타파",
+   "라따파"
+  ],
+  "aliasesKo": [
+   "파카르 블랙",
+   "파하르 블랙",
+   "fakhar black"
+  ],
+  "notes": {
+   "top": [
+    "Apple",
+    "Bergamot",
+    "Ginger"
+   ],
+   "heart": [
+    "Lavender",
+    "Sage",
+    "Juniper",
+    "Geranium"
+   ],
+   "base": [
+    "Tonka Bean",
+    "Cedarwood",
+    "Amberwood",
+    "Vetiver"
+   ]
+  },
+  "allNotes": [
+   "Apple",
+   "Bergamot",
+   "Ginger",
+   "Lavender",
+   "Sage",
+   "Juniper",
+   "Geranium",
+   "Tonka Bean",
+   "Cedarwood",
+   "Amberwood",
+   "Vetiver"
+  ],
+  "family": "Green Leaf",
+  "character": [
+   "herbal",
+   "fresh",
+   "warm",
+   "floral"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Apple, bergamot and ginger freshen lavender, sage and juniper. Tonka bean, cedarwood and vetiver leave a herbal, warm finish.",
+  "popularityRank": 234,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/fakhar-black-lattafa"
+ },
+ {
+  "id": "marc-jacobs-perfect",
+  "brand": "Marc Jacobs",
+  "brandId": "marc-jacobs",
+  "name": "Perfect",
+  "brandAliasesKo": [
+   "마크 제이콥스",
+   "마크제이콥스"
+  ],
+  "aliasesKo": [
+   "퍼펙트",
+   "마크제이콥스 퍼펙트"
+  ],
+  "notes": {
+   "top": [
+    "Rhubarb",
+    "Daffodil"
+   ],
+   "heart": [
+    "Almond milk"
+   ],
+   "base": [
+    "Cashmeran"
+   ]
+  },
+  "allNotes": [
+   "Rhubarb",
+   "Daffodil",
+   "Almond milk",
+   "Cashmeran"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "green",
+   "floral",
+   "woody"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Rhubarb and daffodil give a green, slightly tart start that turns sweet and milky with almond milk, anchored by woody cashmeran.",
+  "popularityRank": 236,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/perfect-marc-jacobs"
+ },
+ {
+  "id": "tom-ford-fucking-fabulous",
+  "brand": "Tom Ford",
+  "brandId": "tom-ford",
+  "name": "Fucking Fabulous",
+  "brandAliasesKo": [
+   "톰포드",
+   "톰 포드"
+  ],
+  "aliasesKo": [
+   "퍽킹 퍼뷸러스",
+   "퍼킹 파뷸러스",
+   "퍽킹 패뷸러스"
+  ],
+  "notes": {
+   "top": [],
+   "heart": [],
+   "base": []
+  },
+  "allNotes": [
+   "Almond",
+   "Tonka Bean",
+   "Iris",
+   "Cashmeran",
+   "Leather",
+   "Clary Sage"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "warm",
+   "herbal",
+   "powdery"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Leathery and nutty-sweet: bitter almond, tonka and orris with cashmeran, leather and a herbal clary sage edge.",
+  "popularityRank": 237,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/fucking-fabulous-tom-ford"
+ },
+ {
+  "id": "viktor-rolf-spicebomb-extreme",
+  "brand": "Viktor&Rolf",
+  "brandId": "viktor-rolf",
+  "name": "Spicebomb Extreme",
+  "brandAliasesKo": [
+   "빅터앤롤프",
+   "빅터 앤 롤프",
+   "빅터롤프",
+   "빅토르 앤 롤프"
+  ],
+  "aliasesKo": [
+   "스파이스밤 익스트림",
+   "스파이스밤 엑스트림"
+  ],
+  "notes": {
+   "top": [
+    "Pepper"
+   ],
+   "heart": [
+    "Saffron"
+   ],
+   "base": [
+    "Labdanum"
+   ]
+  },
+  "allNotes": [
+   "Pepper",
+   "Saffron",
+   "Labdanum"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "warm",
+   "resinous"
+  ],
+  "seasons": [
+   "autumn",
+   "winter"
+  ],
+  "description": "Pepper and saffron give a dry, spicy heat, deepened by the resinous warmth of labdanum.",
+  "popularityRank": 238,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/viktor-rolf-spicebomb-extreme"
+ },
+ {
+  "id": "armaf-club-de-nuit-iconic",
+  "brand": "Armaf",
+  "brandId": "armaf",
+  "name": "Club de Nuit Iconic",
+  "brandAliasesKo": [
+   "아르마프",
+   "아르마프"
+  ],
+  "aliasesKo": [
+   "클럽 드 뉘 아이코닉",
+   "클럽드뉘 아이코닉"
+  ],
+  "notes": {
+   "top": [
+    "Grapefruit",
+    "Lemon",
+    "Mint",
+    "Pink Pepper",
+    "Coriander"
+   ],
+   "heart": [
+    "Ginger",
+    "Melon",
+    "Nutmeg",
+    "Jasmine"
+   ],
+   "base": [
+    "Sandalwood",
+    "Cedarwood",
+    "Incense",
+    "Amber",
+    "Patchouli",
+    "Labdanum"
+   ]
+  },
+  "allNotes": [
+   "Grapefruit",
+   "Lemon",
+   "Mint",
+   "Pink Pepper",
+   "Coriander",
+   "Ginger",
+   "Melon",
+   "Nutmeg",
+   "Jasmine",
+   "Sandalwood",
+   "Cedarwood",
+   "Incense",
+   "Amber",
+   "Patchouli",
+   "Labdanum"
+  ],
+  "family": "Spice Route",
+  "character": [
+   "spicy",
+   "warm",
+   "citrusy",
+   "woody"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Grapefruit, lemon, mint and pink pepper sparkle, with ginger and nutmeg in the heart. Sandalwood, cedarwood, incense and amber make a warm, woody base.",
+  "popularityRank": 239,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfume-database/perfumes/armaf-club-de-nuit-iconic"
+ },
+ {
+  "id": "carolina-herrera-very-good-girl",
+  "brand": "Carolina Herrera",
+  "brandId": "carolina-herrera",
+  "name": "Very Good Girl",
+  "brandAliasesKo": [
+   "캐롤라이나 헤레라",
+   "카롤리나 에레라",
+   "캐롤리나 헤레라"
+  ],
+  "aliasesKo": [
+   "베리 굿 걸",
+   "베리굿걸",
+   "굿걸",
+   "캐롤리나 헤레라 굿걸"
+  ],
+  "notes": {
+   "top": [
+    "Red currant",
+    "Lychee"
+   ],
+   "heart": [
+    "Rose"
+   ],
+   "base": [
+    "Vetiver",
+    "Vanilla"
+   ]
+  },
+  "allNotes": [
+   "Red currant",
+   "Lychee",
+   "Rose",
+   "Vetiver",
+   "Vanilla"
+  ],
+  "family": "Orchard Fruit",
+  "character": [
+   "fruity",
+   "floral",
+   "sweet",
+   "earthy"
+  ],
+  "seasons": [
+   "spring",
+   "summer",
+   "autumn"
+  ],
+  "description": "Redcurrant and lychee give a tart, juicy opening, with rose in the middle and a base of vetiver and vanilla.",
+  "popularityRank": 240,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/very-good-girl-elixir-carolina-herrera"
+ },
+ {
+  "id": "diptyque-orpheon",
+  "brand": "Diptyque",
+  "brandId": "diptyque",
+  "name": "Orphéon",
+  "brandAliasesKo": [
+   "딥티크",
+   "딥디크"
+  ],
+  "aliasesKo": [
+   "오르페옹",
+   "오르페온",
+   "딥티크 오르페옹"
+  ],
+  "notes": {
+   "top": [
+    "Juniper"
+   ],
+   "heart": [
+    "Cedarwood"
+   ],
+   "base": [
+    "Tonka Bean",
+    "Jasmine"
+   ]
+  },
+  "allNotes": [
+   "Juniper",
+   "Cedarwood",
+   "Tonka Bean",
+   "Jasmine"
+  ],
+  "family": "Wood & Root",
+  "character": [
+   "woody",
+   "herbal",
+   "floral",
+   "sweet"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Juniper berry gives an aromatic edge to a floral jasmine heart, which dries to cedar and a sweet touch of tonka bean.",
+  "popularityRank": 242,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/orpheon-diptyque"
+ },
+ {
+  "id": "issey-miyake-nuit-dissey",
+  "brand": "Issey Miyake",
+  "brandId": "issey-miyake",
+  "name": "Nuit d'Issey",
+  "brandAliasesKo": [
+   "이세이 미야케",
+   "이세이미야케"
+  ],
+  "aliasesKo": [
+   "뉘 디세이",
+   "뉘디세이",
+   "이세이미야케 뉘디세이"
+  ],
+  "notes": {
+   "top": [
+    "Grapefruit"
+   ],
+   "heart": [
+    "Leather",
+    "Vanilla"
+   ],
+   "base": [
+    "Patchouli",
+    "Tonka Bean"
+   ]
+  },
+  "allNotes": [
+   "Grapefruit",
+   "Leather",
+   "Vanilla",
+   "Patchouli",
+   "Tonka Bean"
+  ],
+  "family": "Velvet Sweet",
+  "character": [
+   "sweet",
+   "warm",
+   "smoky",
+   "citrusy"
+  ],
+  "seasons": [
+   "autumn",
+   "winter",
+   "spring"
+  ],
+  "description": "Grapefruit lifts a sweet heart of leather and vanilla. Patchouli and tonka bean make it smoky and warm.",
+  "popularityRank": 243,
+  "source": "dataset",
+  "url": "https://www.scento.com/perfumes/nuit-dissey-parfum-issey-miyake"
+ }
+]
