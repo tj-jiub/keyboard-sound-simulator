@@ -1,21 +1,23 @@
 import type { Perfume, Store } from '../types';
+import type { MoodProfile } from '../lib/mood';
 import { SearchBox } from './SearchBox';
 
 interface Props {
   store: Store;
   perfumes: Perfume[];
   onSelect: (p: Perfume) => void;
+  onMood: (m: MoodProfile) => void;
   onStaff: () => void;
 }
 
-export function TopBar({ store, perfumes, onSelect, onStaff }: Props) {
+export function TopBar({ store, perfumes, onSelect, onMood, onStaff }: Props) {
   return (
     <header className="topbar">
       <div className="topbar-left">
         <span className="wordmark">Scent Shelf</span>
         <span className="topbar-store">{store.name}</span>
       </div>
-      <SearchBox perfumes={perfumes} onSelect={onSelect} />
+      <SearchBox perfumes={perfumes} onSelect={onSelect} onMood={onMood} />
       <button type="button" className="pill pill-dark topbar-cta" onClick={onStaff}>
         재고 업로드
       </button>

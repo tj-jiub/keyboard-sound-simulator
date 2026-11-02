@@ -1,5 +1,5 @@
 import type { Perfume, StockItem } from '../types';
-import { PerfumeCover } from './PerfumeCover';
+import { BottleImage } from './BottleImage';
 import { usePerRow } from '../hooks/usePerRow';
 
 export interface ShelfEntry {
@@ -44,13 +44,29 @@ export function ShelfWall({ entries, ranks, onOpen }: Props) {
                   aria-label={label}
                   onClick={(e) => onOpen(perfume.id, e.currentTarget.getBoundingClientRect())}
                 >
-                  <PerfumeCover perfume={perfume} rank={rank} />
+                  <span className="bottle-slot">
+                    <BottleImage perfume={perfume} />
+                    <span className="bottle-shadow" aria-hidden="true" />
+                  </span>
+                  {rank !== undefined && (
+                    <span className="sticker" aria-hidden="true">
+                      <span className="sticker-small">시향</span>
+                      <span className="sticker-num">{rank}</span>
+                    </span>
+                  )}
                   {!stock.inStock && <span className="soldout-tag">품절</span>}
                 </button>
               );
             })}
           </div>
           <div className="shelf-plank" aria-hidden="true" />
+          <div className="shelf-tags" aria-hidden="true">
+            {row.map(({ perfume, stock }) => (
+              <span key={perfume.id} className="price-tag" data-pick={ranks.has(perfume.id) || undefined}>
+                <b>{stock.shelf}</b> {perfume.name}
+              </span>
+            ))}
+          </div>
         </div>
       ))}
     </div>

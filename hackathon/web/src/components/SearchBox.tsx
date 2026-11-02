@@ -1,31 +1,49 @@
 import { useId, useMemo, useState } from 'react';
 import type { Perfume } from '../types';
 import { normalize, searchPerfumes } from '../lib/search';
+import { parseMood, type MoodProfile } from '../lib/mood';
 
 interface Props {
   perfumes: Perfume[];
   onSelect: (p: Perfume) => void;
+  onMood: (m: MoodProfile) => void;
 }
 
-export function SearchBox({ perfumes, onSelect }: Props) {
+const EXAMPLES = ['비 오는 날 포근한', '깨끗한 비누향', '상큼한 여름', '달지 않은 우디'];
+
+type Option = { kind: 'mood'; mood: MoodProfile } | { kind: 'perfume'; perfume: Perfume };
+
+export function SearchBox({ perfumes, onSelect, onMood }: Props) {
   const [query, setQuery] = useState('');
+  const [focused, setFocused] = useState(false);
   const [active, setActive] = useState(0);
   const listId = useId();
-  const results = useMemo(() => searchPerfumes(perfumes, query), [perfumes, query]);
-  const showNotFound = normalize(query).length >= 2 && results.length === 0;
 
-  const choose = (p: Perfume) => {
-    onSelect(p);
+  const options: Option[] = useMemo(() => {
+    const mood = parseMood(query);
+    const named = searchPerfumes(perfumes, query, 6).map((perfume) => ({ kind: 'perfume' as const, perfume }));
+    const moodOpt = mood.matches.length ? [{ kind: 'mood' as const, mood }] : [];
+    // 이름이 정확히 맞으면 향수를 먼저, 아니면 느낌을 먼저
+    return named.length && !moodOpt.length ? named : [...moodOpt, ...named];
+  }, [perfumes, query]);
+
+  const q = normalize(query);
+  const showNotFound = q.length >= 2 && options.length === 0;
+  const showExamples = focused && q.length === 0;
+
+  const choose = (o: Option) => {
+    if (o.kind === 'mood') onMood(o.mood); else onSelect(o.perfume);
     setQuery('');
     setActive(0);
+    (document.activeElement as HTMLElement | null)?.blur();
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Escape') { setQuery(''); return; }
-    if (!results.length) return;
-    if (e.key === 'ArrowDown') { e.preventDefault(); setActive((i) => (i + 1) % results.length); }
-    if (e.key === 'ArrowUp') { e.preventDefault(); setActive((i) => (i - 1 + results.length) % results.length); }
-    if (e.key === 'Enter') { e.preventDefault(); choose(results[active]); }
+    if (!options.length) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActive((i) => (i + 1) % options.length); }
+    if (e.key === 'ArrowUp') { e.preventDefault(); setActive((i) => (i - 1 + options.length) % options.length); }
+    if (e.key === 'Enter') { e.preventDefault(); choose(options[active]); }
   };
 
   return (
@@ -38,35 +56,69 @@ export function SearchBox({ perfumes, onSelect }: Props) {
         className="search-input"
         type="search"
         role="combobox"
-        aria-label="좋아하는 향수 검색"
-        aria-expanded={results.length > 0}
+        aria-label="느낌이나 향수 이름으로 검색"
+        aria-expanded={options.length > 0}
         aria-controls={listId}
-        aria-activedescendant={results.length ? `${listId}-${active}` : undefined}
+        aria-activedescendant={options.length ? `${listId}-${active}` : undefined}
         autoComplete="off"
-        placeholder="좋아하는 향수 — 상탈 33, 블랑쉬…"
+        placeholder="어떤 느낌을 원하세요? 예: 비 오는 날 포근한"
         value={query}
         onChange={(e) => { setQuery(e.target.value); setActive(0); }}
         onKeyDown={onKeyDown}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
       />
-      {results.length > 0 && (
+      {options.length > 0 && (
         <ul id={listId} role="listbox" className="search-results">
-          {results.map((p, i) => (
+          {options.map((o, i) => (
             <li
-              key={p.id}
+              key={o.kind === 'mood' ? 'mood' : o.perfume.id}
               id={`${listId}-${i}`}
               role="option"
               aria-selected={i === active}
-              onMouseDown={(e) => { e.preventDefault(); choose(p); }}
+              className={o.kind === 'mood' ? 'option-mood' : undefined}
+              onMouseDown={(e) => { e.preventDefault(); choose(o); }}
               onMouseEnter={() => setActive(i)}
             >
-              <span className="result-name">{p.name}</span>
-              <span className="result-brand">{p.brand}</span>
+              {o.kind === 'mood' ? (
+                <>
+                  <span className="result-name">“{o.mood.text}” 느낌으로 찾기</span>
+                  <span className="mood-chips">
+                    {o.mood.matches.map((m) => (
+                      <span key={m.label} className="chip" data-neg={m.negated || undefined}>
+                        {m.negated ? `${m.label} 빼고` : m.label}
+                      </span>
+                    ))}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="result-name">{o.perfume.name}</span>
+                  <span className="result-brand">{o.perfume.brand}</span>
+                </>
+              )}
             </li>
           ))}
         </ul>
       )}
+      {showExamples && (
+        <div className="search-examples" role="listbox" aria-label="느낌 예시">
+          {EXAMPLES.map((ex) => (
+            <button
+              key={ex}
+              type="button"
+              className="chip chip-button"
+              onMouseDown={(e) => { e.preventDefault(); choose({ kind: 'mood', mood: parseMood(ex) }); }}
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
+      )}
       {showNotFound && (
-        <p className="search-empty" role="status">찾지 못했어요. 영문 이름으로도 검색해 보세요.</p>
+        <p className="search-empty" role="status">
+          알아듣지 못했어요. “포근한”, “상큼한”, “비누향”처럼 써 보세요.
+        </p>
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { Candidate, FeedbackSummary, Perfume, StockItem, Verdict } from '../types';
 import { paletteFor } from '../lib/coverStyle';
-import { PerfumeCover } from './PerfumeCover';
+import { BottleViewer } from './BottleViewer';
 import { NotePyramid } from './NotePyramid';
 import { SourceBadge } from './SourceBadge';
 import { FeedbackControl } from './FeedbackControl';
@@ -12,6 +12,8 @@ interface Props {
   originRect: DOMRect | null;
   base: Perfume | null;
   candidate: Candidate | null;
+  /** 느낌 검색일 때 입력 문장 */
+  moodText?: string;
   rank?: number;
   feedback: FeedbackSummary | null;
   voted: boolean;
@@ -24,7 +26,7 @@ const reduceMotion = () =>
 
 /** 선반에서 꺼낸 향수: 확대 → 뒤집으면 상세. */
 export function FocusView({
-  perfume, stock, originRect, base, candidate, rank, feedback, voted, onVote, onClose,
+  perfume, stock, originRect, base, candidate, moodText, rank, feedback, voted, onVote, onClose,
 }: Props) {
   const [flipped, setFlipped] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -79,7 +81,13 @@ export function FocusView({
       <div className="focus-stage" ref={stageRef}>
         <div className="flipper" data-flipped={flipped || undefined}>
           <div className="face face-front" aria-hidden={flipped}>
-            <PerfumeCover perfume={perfume} rank={rank} />
+            <BottleViewer perfume={perfume} active={!flipped} />
+            {rank !== undefined && (
+              <span className="sticker sticker-focus" aria-hidden="true">
+                <span className="sticker-small">시향</span>
+                <span className="sticker-num">{rank}</span>
+              </span>
+            )}
           </div>
           <div
             className="face face-back"
@@ -92,10 +100,12 @@ export function FocusView({
             </div>
             <p className="back-title">{perfume.name}</p>
 
-            {candidate && base && (
+            {candidate && (base || moodText) && (
               <div className="back-compare">
-                <p className="back-label">{base.name}와 비교</p>
-                <p className="back-sim">노트 유사도 {Math.round(candidate.similarity * 100)}%</p>
+                <p className="back-label">{base ? `${base.name}와 비교` : `“${moodText}” 느낌과 비교`}</p>
+                <p className="back-sim">
+                  {base ? '노트 유사도' : '느낌 일치도'} {Math.round(candidate.similarity * 100)}%
+                </p>
                 <p>{candidate.difference}</p>
                 {candidate.sharedNotes.length > 0 && (
                   <p className="back-shared">겹치는 노트 · {candidate.sharedNotes.join(', ')}</p>
@@ -103,7 +113,7 @@ export function FocusView({
               </div>
             )}
 
-            <NotePyramid notes={perfume.notes} highlight={candidate?.sharedNotes} />
+            <NotePyramid notes={perfume.notes} highlight={candidate?.sharedNotes} allNotes={perfume.allNotes} />
 
             <div className="back-foot">
               <SourceBadge source={perfume.source} />

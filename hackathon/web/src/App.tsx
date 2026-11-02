@@ -3,6 +3,7 @@ import type { Perfume, StockItem, Verdict } from './types';
 import { PERFUMES, PERFUMES_BY_ID } from './data/perfumes';
 import { DEMO_FEEDBACK_SEED, DEMO_STOCK, DEMO_STOCK_UPDATED_AT, DEMO_STORE } from './data/mockStore';
 import { findCandidates } from './lib/mockSimilarity';
+import { findMoodCandidates, type MoodProfile } from './lib/mood';
 import { createFeedbackStore } from './lib/feedbackStore';
 import { TopBar } from './components/TopBar';
 import { ShelfWall, type ShelfEntry } from './components/ShelfWall';
@@ -20,6 +21,7 @@ function formatUpdatedAt(iso: string): string {
 
 export default function App() {
   const [base, setBase] = useState<Perfume | null>(null);
+  const [mood, setMood] = useState<MoodProfile | null>(null);
   const [stock, setStock] = useState<StockItem[]>(DEMO_STOCK);
   const [stockUpdatedAt, setStockUpdatedAt] = useState(DEMO_STOCK_UPDATED_AT);
   const [focus, setFocus] = useState<{ id: string; rect: DOMRect | null } | null>(null);
@@ -35,10 +37,15 @@ export default function App() {
     [stock],
   );
 
-  const candidates = useMemo(
-    () => (base ? findCandidates(base, stock, PERFUMES_BY_ID) : []),
-    [base, stock],
-  );
+  const candidates = useMemo(() => {
+    if (base) return findCandidates(base, stock, PERFUMES_BY_ID);
+    if (mood) return findMoodCandidates(mood, stock, PERFUMES_BY_ID);
+    return [];
+  }, [base, mood, stock]);
+
+  const pickPerfume = (p: Perfume) => { setMood(null); setBase(p); };
+  const pickMood = (m: MoodProfile) => { setBase(null); setMood(m); };
+  const clearQuery = () => { setBase(null); setMood(null); };
   const ranks = useMemo(() => new Map(candidates.map((c, i) => [c.perfume.id, i + 1])), [candidates]);
 
   const onVote = (toId: string, v: Verdict) => {
@@ -55,20 +62,22 @@ export default function App() {
 
   return (
     <div className="app">
-      <TopBar store={DEMO_STORE} perfumes={PERFUMES} onSelect={setBase} onStaff={() => setStaffOpen((o) => !o)} />
+      <TopBar store={DEMO_STORE} perfumes={PERFUMES} onSelect={pickPerfume} onMood={pickMood} onStaff={() => setStaffOpen((o) => !o)} />
 
       {staffOpen && (
         <StockUploader knownIds={KNOWN_IDS} onApply={onStockApply} onClose={() => setStaffOpen(false)} />
       )}
 
       <div className="caption" aria-live="polite">
-        {base ? (
+        {base || mood ? (
           <>
             <p>
-              <strong>{base.name}</strong>와 비슷한 후보 {candidates.length}개
-              <span className="caption-sub">번호 순서대로 맡아보세요. 누르면 자세히 볼 수 있어요.</span>
+              {base
+                ? <><strong>{base.name}</strong>와 비슷한 후보 {candidates.length}개</>
+                : <><strong>“{mood!.text}”</strong> 느낌에 가까운 후보 {candidates.length}개</>}
+              <span className="caption-sub">번호 순서대로 맡아보세요. 병을 누르면 돌려 보고 뒤집어 볼 수 있어요.</span>
             </p>
-            <button type="button" className="pill" onClick={() => setBase(null)}>전체 보기</button>
+            <button type="button" className="pill" onClick={clearQuery}>전체 보기</button>
           </>
         ) : (
           <p>
@@ -79,7 +88,7 @@ export default function App() {
       </div>
 
       <main>
-        {base && candidates.length === 0 && (
+        {(base || mood) && candidates.length === 0 && (
           <p className="empty" role="status">이 매장 재고에는 비교할 향수가 없어요. 직원에게 문의해 주세요.</p>
         )}
         <ShelfWall entries={entries} ranks={ranks} onOpen={(id, rect) => setFocus({ id, rect })} />
@@ -96,6 +105,7 @@ export default function App() {
           originRect={focus?.rect ?? null}
           base={base}
           candidate={focusedCandidate}
+          moodText={mood?.text}
           rank={ranks.get(focused.perfume.id)}
           feedback={base && focusedCandidate ? feedback.summary(base.id, focused.perfume.id) : null}
           voted={base ? feedback.hasVoted(base.id, focused.perfume.id) : false}

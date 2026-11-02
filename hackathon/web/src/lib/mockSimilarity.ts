@@ -1,4 +1,5 @@
 import type { Candidate, Perfume, StockItem } from '../types';
+import { TAG_KO } from './mood';
 
 /*
  * 목업 유사도: 노트 자카드만 사용한다.
@@ -22,7 +23,7 @@ export function describeDifference(base: Perfume, other: Perfume): string {
   const baseChar = lower(base.character);
   const extraChar = other.character.filter((c) => !baseChar.has(c.toLowerCase())).slice(0, 1);
   const parts: string[] = [];
-  if (extraChar.length) parts.push(`${extraChar[0]} 느낌이 더 있고`);
+  if (extraChar.length) parts.push(`${TAG_KO[extraChar[0]] ?? extraChar[0]} 느낌이 더 있고`);
   if (extra.length) parts.push(`${extra.join('·')} 노트가 더해져요`);
   if (!parts.length) return `${base.name}와 노트 구성이 거의 같아요`;
   return `${base.name}보다 ${parts.join(' ')}`;

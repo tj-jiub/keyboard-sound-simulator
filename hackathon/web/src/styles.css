@@ -287,3 +287,58 @@ main { flex: 1; display: flex; flex-direction: column; justify-content: center; 
   .focus-actions { grid-column: 1; grid-row: 2; }
   .focus-info { grid-column: 1; grid-row: 3; justify-self: center; text-align: center; max-width: 320px; }
 }
+
+/* ── 3D 병 진열 ─────────────────────────── */
+.shelf-item { container-type: inline-size; aspect-ratio: 4 / 5; }
+.bottle-slot { position: absolute; inset: 0; display: block; }
+.bottle-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; user-select: none; }
+.bottle-placeholder {
+  position: absolute; left: 30%; right: 30%; bottom: 4%; height: 62%; border-radius: 18% 18% 8% 8%;
+  background: linear-gradient(90deg, rgba(255,255,255,.15), rgba(255,255,255,.55), rgba(255,255,255,.15));
+  background-size: 200% 100%; animation: shimmer 1.2s linear infinite; opacity: .6;
+}
+.bottle-shadow {
+  position: absolute; left: 22%; right: 22%; bottom: -1.5%; height: 6%; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--shadow), transparent); z-index: -1;
+}
+.bottle-fallback { position: absolute; inset: 6% 10% 0; }
+.bottle-fallback .cover { box-shadow: 0 14px 16px -10px var(--shadow); }
+.shelf-item .sticker { top: 2cqw; right: 2cqw; width: 26cqw; height: 26cqw; }
+.shelf-item .sticker-small { font-size: 5cqw; }
+.shelf-item .sticker-num { font-size: 12cqw; }
+.shelf-item[data-state='pick'] .bottle-img { filter: drop-shadow(0 10px 18px var(--shadow)); }
+
+.shelf-tags {
+  display: grid; grid-template-columns: repeat(var(--per-row), 1fr); gap: var(--gap);
+  padding: 8px clamp(8px, 3vw, 40px) 0;
+}
+.price-tag {
+  justify-self: center; max-width: 100%; padding: 2px 6px; border-radius: 3px;
+  background: var(--surface); border: 1px solid var(--line); font-size: 10px; line-height: 1.3; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.price-tag b { color: var(--text); }
+.wall[data-focusing] .price-tag:not([data-pick]) { opacity: .35; }
+.price-tag[data-pick] { border-color: var(--text); color: var(--text); }
+
+.face-front { container-type: inline-size; box-shadow: none; background: radial-gradient(60% 50% at 50% 55%, rgba(255,255,255,.55), transparent 70%); }
+.bottle-viewer { position: absolute; inset: 0; cursor: grab; touch-action: pan-y; }
+.bottle-viewer:active { cursor: grabbing; }
+.bottle-viewer canvas { display: block; width: 100%; height: 100%; }
+.sticker-focus { top: 4cqw; right: 6cqw; width: 18cqw; height: 18cqw; }
+.sticker-focus .sticker-small { font-size: 3.4cqw; }
+.sticker-focus .sticker-num { font-size: 8cqw; }
+
+/* 느낌 검색 */
+.option-mood { flex-direction: column; align-items: flex-start !important; border-bottom: 1px solid var(--line); border-radius: 10px 10px 0 0 !important; }
+.mood-chips, .search-examples { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--wall-lo); color: var(--text); }
+.chip[data-neg] { text-decoration: line-through; color: var(--muted); }
+.search-examples {
+  position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 30; padding: 10px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 18px 40px -16px var(--shadow);
+}
+.chip-button { border: 1px solid var(--line); background: var(--surface); height: 28px; padding: 0 12px; font-size: 12px; }
+.chip-button:hover { background: var(--wall-lo); }
+
+@keyframes shimmer { to { background-position: -200% 0; } }

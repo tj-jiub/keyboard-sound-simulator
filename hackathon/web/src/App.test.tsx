@@ -39,9 +39,20 @@ describe('App 흐름: 검색 → 진열대 강조 → 꺼내 보기 → 피드�
     expect(soldout.getAttribute('aria-label')).not.toMatch(/순위/);
   });
 
-  it('없는 이름은 안내 문구를 보여준다', () => {
+  it('느낌으로 검색하면 느낌 후보를 보여준다', () => {
+    render(<App />);
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: '비 오는 날 포근한' } });
+    const opt = screen.getByText(/느낌으로 찾기/);
+    fireEvent.mouseDown(opt.closest('[role=option]')!);
+    expect(screen.getByText(/느낌에 가까운 후보 \d개/)).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /시향 1순위/ }));
+    const dialog = screen.getByRole('dialog');
+    expect(within(dialog).getByText(/느낌 일치도/)).toBeTruthy();
+  });
+
+  it('알아듣지 못한 말은 안내 문구를 보여준다', () => {
     render(<App />);
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'zzzqqq' } });
-    expect(screen.getByText(/찾지 못했어요/)).toBeTruthy();
+    expect(screen.getByText(/알아듣지 못했어요/)).toBeTruthy();
   });
 });
